@@ -268,6 +268,9 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       navigator.mediaSession.setActionHandler('pause', () => {
         togglePlayPause();
       });
+      navigator.mediaSession.setActionHandler('stop', () => {
+        togglePlayPause();
+      });
       navigator.mediaSession.setActionHandler('previoustrack', () => {
         previousTrack();
       });
@@ -279,10 +282,40 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
           audioEngine.seek(details.seekTime);
         }
       });
+      navigator.mediaSession.setActionHandler('seekforward', (details) => {
+        const offset = details.seekOffset || 10;
+        audioEngine.seek(currentTime + offset);
+      });
+      navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+        const offset = details.seekOffset || 10;
+        audioEngine.seek(currentTime - offset);
+      });
     } catch (err) {
       console.warn('Error configuring MediaSession actions', err);
     }
-  }, [currentTrack, isPlaying, togglePlayPause, previousTrack, nextTrack]);
+  }, [currentTrack, isPlaying, currentTime, togglePlayPause, previousTrack, nextTrack]);
+
+  // Synchronize live playback position to car display/Bluetooth HUD
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      'mediaSession' in navigator &&
+      'setPositionState' in navigator.mediaSession &&
+      duration > 0 &&
+      !isNaN(currentTime) &&
+      isFinite(currentTime)
+    ) {
+      try {
+        navigator.mediaSession.setPositionState({
+          duration: Math.max(1, duration),
+          playbackRate: isPlaying ? 1 : 0,
+          position: Math.min(Math.max(0, currentTime), duration),
+        });
+      } catch (err) {
+        // Silently catch temporary race condition when changing tracks
+      }
+    }
+  }, [currentTime, duration, isPlaying]);
 
   const seek = useCallback((seconds: number) => {
     audioEngine.seek(seconds);

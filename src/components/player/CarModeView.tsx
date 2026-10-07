@@ -99,9 +99,13 @@ export const CarModeView: React.FC = () => {
                 <Compass className="w-3 h-3" />
                 Seguro na Rodovia
               </span>
+              <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold">
+                <Radio className="w-3 h-3" />
+                Bluetooth & Cabo
+              </span>
             </div>
             <p className="text-xs text-[#A7A7A7] font-medium">
-              Botões gigantes • Zero distração • Modão sem parar
+              Botões gigantes • Bluetooth e Cabo • Comandos no volante
             </p>
           </div>
         </div>

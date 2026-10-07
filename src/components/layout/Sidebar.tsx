@@ -56,7 +56,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
           <img
             src="/logo-radio-modao.webp"
             alt="Rádio Modão"
-            className="h-10 sm:h-11 w-auto max-w-[190px] object-contain drop-shadow group-hover:scale-102 transition"
+            className="h-12 sm:h-13 w-auto max-w-[215px] object-contain drop-shadow group-hover:scale-105 transition"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = '/logo-radio-modao';
             }}

@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
           <img
             src="/logo-radio-modao.webp"
             alt="Rádio Modão"
-            className="h-8 sm:h-9 w-auto max-w-[150px] object-contain drop-shadow"
+            className="h-10 sm:h-12 w-auto max-w-[170px] sm:max-w-[210px] object-contain drop-shadow group-hover:scale-105 transition"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = '/logo-radio-modao';
             }}
@@ -63,24 +63,24 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
           </span>
         </div>
 
-        {/* Integrated Search Input (Responsive width) */}
+        {/* Integrated Search Input (Compact responsive width) */}
         <form
           onSubmit={handleSearchSubmit}
-          className="flex-1 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg relative"
+          className="flex-1 max-w-[150px] xs:max-w-[180px] sm:max-w-[220px] md:max-w-[260px] lg:max-w-[290px] relative"
         >
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#C98A2E] pointer-events-none" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#C98A2E] pointer-events-none" />
           <input
             type="text"
             value={headerSearch}
             onChange={(e) => handleSearchChange(e.target.value)}
-            placeholder="Buscar entre 352 modões e artistas..."
-            className="w-full bg-[#1B1B1B] hover:bg-[#222222] focus:bg-[#242424] border border-[#2E2E2E] focus:border-[#C98A2E] rounded-full py-2 pl-10 pr-9 text-xs sm:text-sm text-[#FAF7F2] placeholder-[#777777] font-medium focus:outline-none transition shadow-inner"
+            placeholder="Buscar modões..."
+            className="w-full bg-[#1B1B1B] hover:bg-[#222222] focus:bg-[#242424] border border-[#2E2E2E] focus:border-[#C98A2E] rounded-full py-1.5 sm:py-2 pl-9 pr-8 text-xs sm:text-sm text-[#FAF7F2] placeholder-[#777777] font-medium focus:outline-none transition shadow-inner"
           />
           {headerSearch && (
             <button
               type="button"
               onClick={handleClear}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 text-[#A7A7A7] hover:text-white rounded-full"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 text-[#A7A7A7] hover:text-white rounded-full"
               aria-label="Limpar busca"
             >
               <X className="w-3.5 h-3.5" />
@@ -100,13 +100,13 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
             <span>Aleatório</span>
           </button>
 
-          {/* Car Mode button */}
+          {/* Car Mode button with enlarged car icon */}
           <button
             onClick={openCarMode}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-full bg-[#1B1B1B] border border-[#333333] hover:border-[#D97706] text-xs font-semibold text-[#FAF7F2] hover:text-[#D97706] transition active:scale-95"
+            className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-full bg-[#1B1B1B] border border-[#333333] hover:border-[#D97706] text-xs sm:text-sm font-semibold text-[#FAF7F2] hover:text-[#D97706] transition active:scale-95"
             title="Abrir Modo Estrada (Botões gigantes para viagem)"
           >
-            <Car className="w-4 h-4 text-[#D97706]" />
+            <Car className="w-5 h-5 sm:w-6 sm:h-6 text-[#D97706] shrink-0" />
             <span className="hidden sm:inline">Modo Estrada</span>
           </button>
 

@@ -80,10 +80,14 @@ class AudioEngine {
   public setVolume(val: number) {
     this.volume = Math.max(0, Math.min(1, val));
     if (this.htmlAudio) {
-      this.htmlAudio.volume = this.volume;
+      try {
+        this.htmlAudio.volume = this.volume;
+      } catch {}
     }
     if (this.masterGainNode && this.audioCtx) {
-      this.masterGainNode.gain.setValueAtTime(this.volume, this.audioCtx.currentTime);
+      try {
+        this.masterGainNode.gain.setValueAtTime(this.volume, this.audioCtx.currentTime);
+      } catch {}
     }
   }
 
@@ -121,6 +125,9 @@ class AudioEngine {
       if (localBlobUrl && this.htmlAudio) {
         this.htmlAudio.src = localBlobUrl;
         try {
+          this.htmlAudio.volume = this.volume;
+        } catch {}
+        try {
           this.htmlAudio.currentTime = this.currentTime;
         } catch {}
         const playPromise = this.htmlAudio.play();
@@ -147,6 +154,9 @@ class AudioEngine {
           if (this.htmlAudio) {
             this.htmlAudio.src = cachedBlobUrl;
             try {
+              this.htmlAudio.volume = this.volume;
+            } catch {}
+            try {
               this.htmlAudio.currentTime = this.currentTime;
             } catch {}
             const playPromise = this.htmlAudio.play();
@@ -169,6 +179,9 @@ class AudioEngine {
     if (audioSource && this.htmlAudio) {
       try {
         this.htmlAudio.src = audioSource;
+        try {
+          this.htmlAudio.volume = this.volume;
+        } catch {}
         try {
           this.htmlAudio.currentTime = this.currentTime;
         } catch {}

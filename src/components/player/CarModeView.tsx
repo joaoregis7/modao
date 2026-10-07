@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Play,
   Pause,
@@ -14,6 +14,7 @@ import {
   Compass,
   Radio,
   Flame,
+  Info,
 } from 'lucide-react';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
 import { audioEngine } from '../../services/audioEngine';
@@ -36,10 +37,21 @@ export const CarModeView: React.FC = () => {
     queueIndex,
   } = useAudioPlayer();
 
+  const [maxVolumeNotice, setMaxVolumeNotice] = useState(false);
+  const noticeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   if (!isCarMode) return null;
 
   // Se abrir sem faixa ativa, seleciona a última ou a primeira do catálogo
   const activeTrack = currentTrack || lastPlayedTrack || allTracks[0];
+
+  const showMaxNotice = () => {
+    if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current);
+    setMaxVolumeNotice(true);
+    noticeTimerRef.current = setTimeout(() => {
+      setMaxVolumeNotice(false);
+    }, 4500);
+  };
 
   const handleTogglePlay = () => {
     if (isPlaying) {
@@ -58,16 +70,40 @@ export const CarModeView: React.FC = () => {
   };
 
   const handleVolumeDown = () => {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try {
+        navigator.vibrate(30);
+      } catch {}
+    }
     const newVol = Math.max(0, Math.round((volume - 0.1) * 10) / 10);
     setVolume(newVol);
   };
 
   const handleVolumeUp = () => {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try {
+        navigator.vibrate(35);
+      } catch {}
+    }
+
+    if (volume >= 1) {
+      showMaxNotice();
+      return;
+    }
+
     const newVol = Math.min(1, Math.round((volume + 0.1) * 10) / 10);
     setVolume(newVol);
+    if (newVol >= 1) {
+      showMaxNotice();
+    }
   };
 
   const handleToggleMute = () => {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try {
+        navigator.vibrate(30);
+      } catch {}
+    }
     setVolume(volume > 0 ? 0 : 0.85);
   };
 
@@ -203,69 +239,98 @@ export const CarModeView: React.FC = () => {
         </div>
 
         {/* Tactile Car Mode Volume Strip: Diminuir (-), Barra Central, Aumentar (+) */}
-        <div className="bg-[#181818]/90 border border-[#2B2B2B] rounded-3xl p-3 sm:p-4 shadow-xl flex items-center justify-between gap-3 sm:gap-4">
-          {/* Botão Diminuir Volume (-) */}
-          <button
-            type="button"
-            onClick={handleVolumeDown}
-            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#242424] hover:bg-[#2E2E2E] active:scale-90 flex items-center justify-center text-[#FAF7F2] border border-[#383838] shadow-md transition shrink-0"
-            aria-label="Diminuir volume"
-            title="Diminuir volume (-10%)"
-          >
-            <Minus className="w-6 h-6 sm:w-7 sm:h-7 stroke-[3]" />
-          </button>
+        <div className="space-y-2">
+          <div className="bg-[#181818]/95 border border-[#2B2B2B] rounded-3xl p-3 sm:p-4 shadow-xl flex items-center justify-between gap-3 sm:gap-4">
+            {/* Botão Diminuir Volume (-) */}
+            <button
+              type="button"
+              onClick={handleVolumeDown}
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#242424] hover:bg-[#2E2E2E] active:scale-90 flex items-center justify-center text-[#FAF7F2] border border-[#383838] shadow-md transition shrink-0 touch-manipulation cursor-pointer select-none"
+              aria-label="Diminuir volume"
+              title="Diminuir volume (-10%)"
+            >
+              <Minus className="w-6 h-6 sm:w-7 sm:h-7 stroke-[3]" />
+            </button>
 
-          {/* Centro: Indicador de Volume e Controle Tátil */}
-          <div className="flex-1 flex flex-col items-center justify-center gap-1.5 px-2">
-            <div className="w-full flex items-center justify-between">
-              <button
-                type="button"
-                onClick={handleToggleMute}
-                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#A7A7A7] hover:text-[#FAF7F2] transition"
-                title={volume === 0 ? 'Desmutar som' : 'Mutar som'}
-              >
-                {volume === 0 ? (
-                  <>
-                    <VolumeX className="w-5 h-5 text-red-400" />
-                    <span className="text-red-400 font-bold">Mudo</span>
-                  </>
-                ) : (
-                  <>
-                    <Volume2 className="w-5 h-5 text-[#C98A2E]" />
-                    <span className="text-[#FAF7F2]">Volume</span>
-                  </>
-                )}
-              </button>
+            {/* Centro: Indicador de Volume e Controle Tátil */}
+            <div className="flex-1 flex flex-col items-center justify-center gap-1.5 px-1 sm:px-2">
+              <div className="w-full flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={handleToggleMute}
+                  className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#A7A7A7] hover:text-[#FAF7F2] transition touch-manipulation cursor-pointer"
+                  title={volume === 0 ? 'Desmutar som' : 'Mutar som'}
+                >
+                  {volume === 0 ? (
+                    <>
+                      <VolumeX className="w-5 h-5 text-red-400" />
+                      <span className="text-red-400 font-bold">Mudo</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-5 h-5 text-[#C98A2E]" />
+                      <span className="text-[#FAF7F2]">Volume</span>
+                    </>
+                  )}
+                </button>
+
+                {/* Badge visível da porcentagem exata */}
+                <span
+                  className={`text-xs sm:text-sm font-black font-mono px-2.5 py-0.5 rounded-lg border tabular-nums transition ${
+                    volume >= 1
+                      ? 'bg-[#C98A2E]/20 text-[#F59E0B] border-[#C98A2E]/50 shadow-sm'
+                      : volume === 0
+                      ? 'bg-red-500/20 text-red-400 border-red-500/40'
+                      : 'bg-[#262626] text-[#FAF7F2] border-[#363636]'
+                  }`}
+                >
+                  {volumePercent}% {volume >= 1 ? '• Máx' : ''}
+                </span>
+              </div>
+
+              {/* Slider Tátil Largo */}
+              <div className="w-full relative flex items-center py-1">
+                <input
+                  type="range"
+                  min={0}
+                  max={1}
+                  step={0.05}
+                  value={volume}
+                  onChange={(e) => setVolume(parseFloat(e.target.value))}
+                  className="w-full h-3.5 sm:h-4 bg-[#2A2A2A] rounded-full appearance-none cursor-pointer accent-[#C98A2E] focus:outline-none transition-all shadow-inner touch-manipulation"
+                  style={{
+                    background: `linear-gradient(to right, #C98A2E 0%, #D97706 ${volumePercent}%, #2A2A2A ${volumePercent}%, #2A2A2A 100%)`,
+                  }}
+                  aria-label="Ajuste do volume no carro"
+                />
+              </div>
             </div>
 
-            {/* Slider Tátil Largo */}
-            <div className="w-full relative flex items-center py-1">
-              <input
-                type="range"
-                min={0}
-                max={1}
-                step={0.05}
-                value={volume}
-                onChange={(e) => setVolume(parseFloat(e.target.value))}
-                className="w-full h-3 sm:h-3.5 bg-[#2A2A2A] rounded-full appearance-none cursor-pointer accent-[#C98A2E] focus:outline-none transition-all shadow-inner"
-                style={{
-                  background: `linear-gradient(to right, #C98A2E 0%, #D97706 ${volumePercent}%, #2A2A2A ${volumePercent}%, #2A2A2A 100%)`,
-                }}
-                aria-label="Ajuste do volume no carro"
-              />
-            </div>
+            {/* Botão Aumentar Volume (+) */}
+            <button
+              type="button"
+              onClick={handleVolumeUp}
+              className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center border shadow-md transition shrink-0 touch-manipulation cursor-pointer select-none ${
+                volume >= 1
+                  ? 'bg-[#2A241C] border-[#C98A2E]/60 text-[#F59E0B] active:scale-95 shadow-[#C98A2E]/20'
+                  : 'bg-[#242424] hover:bg-[#2E2E2E] border-[#383838] text-[#FAF7F2] active:scale-90'
+              }`}
+              aria-label="Aumentar volume"
+              title={volume >= 1 ? 'Volume já está no máximo (100%)' : 'Aumentar volume (+10%)'}
+            >
+              <Plus className="w-6 h-6 sm:w-7 sm:h-7 stroke-[3]" />
+            </button>
           </div>
 
-          {/* Botão Aumentar Volume (+) */}
-          <button
-            type="button"
-            onClick={handleVolumeUp}
-            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#242424] hover:bg-[#2E2E2E] active:scale-90 flex items-center justify-center text-[#FAF7F2] border border-[#383838] shadow-md transition shrink-0"
-            aria-label="Aumentar volume"
-            title="Aumentar volume (+10%)"
-          >
-            <Plus className="w-6 h-6 sm:w-7 sm:h-7 stroke-[3]" />
-          </button>
+          {/* Aviso inteligente na rodovia: Se estiver em 100%, explica como aumentar no aparelho */}
+          {maxVolumeNotice && (
+            <div className="animate-in fade-in slide-in-from-bottom-2 duration-200 p-2.5 sm:p-3 rounded-2xl bg-gradient-to-r from-[#2B2314] to-[#1F1C16] border border-[#C98A2E]/50 text-amber-200 text-xs text-center flex items-center justify-center gap-2.5 shadow-lg">
+              <Volume2 className="w-5 h-5 shrink-0 text-[#F59E0B] animate-pulse" />
+              <span className="text-left leading-snug">
+                <strong>Volume do app no máximo (100%)!</strong> Para aumentar mais o som, use os <strong>botões físicos laterais do seu celular</strong> ou aumente o volume no <strong>aparelho de som do carro</strong>.
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>

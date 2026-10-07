@@ -7,6 +7,9 @@ import {
   X,
   Volume2,
   VolumeX,
+  Volume1,
+  Minus,
+  Plus,
   Car,
   Compass,
   Radio,
@@ -45,7 +48,22 @@ export const CarModeView: React.FC = () => {
     }
   };
 
+  const handleVolumeDown = () => {
+    const newVol = Math.max(0, Math.round((volume - 0.1) * 10) / 10);
+    setVolume(newVol);
+  };
+
+  const handleVolumeUp = () => {
+    const newVol = Math.min(1, Math.round((volume + 0.1) * 10) / 10);
+    setVolume(newVol);
+  };
+
+  const handleToggleMute = () => {
+    setVolume(volume > 0 ? 0 : 0.85);
+  };
+
   const nextSong = queue[queueIndex + 1] || queue[0];
+  const volumePercent = Math.round(volume * 100);
 
   return (
     <div className="fixed inset-0 z-50 bg-[#0A0A0A] text-[#FAF7F2] flex flex-col justify-between p-4 sm:p-8 select-none overflow-hidden">
@@ -134,6 +152,7 @@ export const CarModeView: React.FC = () => {
 
       {/* Bottom: Giant Tactile Car Controls */}
       <div className="relative z-10 max-w-xl mx-auto w-full pb-safe space-y-4">
+        {/* Playback Controls (Previous, Play/Pause, Next) */}
         <div className="flex items-center justify-center gap-5 sm:gap-10">
           {/* Giant Previous (80px - 96px) */}
           <button
@@ -170,32 +189,73 @@ export const CarModeView: React.FC = () => {
           </button>
         </div>
 
-        {/* Big Mute / Sound Toggle & Volume Quick Presets */}
-        <div className="flex items-center justify-center gap-3">
+        {/* Tactile Car Mode Volume Strip: Diminuir (-), Barra Central, Aumentar (+) */}
+        <div className="bg-[#181818]/90 border border-[#2B2B2B] rounded-3xl p-3 sm:p-4 shadow-xl flex items-center justify-between gap-3 sm:gap-4">
+          {/* Botão Diminuir Volume (-) */}
           <button
             type="button"
-            onClick={() => setVolume(volume > 0 ? 0 : 0.9)}
-            className="flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-[#1C1C1C] hover:bg-[#242424] border border-[#2E2E2E] text-xs sm:text-sm font-bold text-[#FAF7F2] active:scale-95 transition"
+            onClick={handleVolumeDown}
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#242424] hover:bg-[#2E2E2E] active:scale-90 flex items-center justify-center text-[#FAF7F2] border border-[#383838] shadow-md transition shrink-0"
+            aria-label="Diminuir volume"
+            title="Diminuir volume (-10%)"
           >
-            {volume === 0 ? (
-              <>
-                <VolumeX className="w-5 h-5 text-red-400" />
-                <span>Mudo (Toque para ligar)</span>
-              </>
-            ) : (
-              <>
-                <Volume2 className="w-5 h-5 text-[#C98A2E]" />
-                <span>Volume {Math.round(volume * 100)}%</span>
-              </>
-            )}
+            <Minus className="w-6 h-6 sm:w-7 sm:h-7 stroke-[3]" />
           </button>
 
+          {/* Centro: Indicador de Volume e Controle Tátil */}
+          <div className="flex-1 flex flex-col items-center justify-center gap-1.5 px-2">
+            <div className="w-full flex items-center justify-between">
+              <button
+                type="button"
+                onClick={handleToggleMute}
+                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#A7A7A7] hover:text-[#FAF7F2] transition"
+                title={volume === 0 ? 'Desmutar som' : 'Mutar som'}
+              >
+                {volume === 0 ? (
+                  <>
+                    <VolumeX className="w-5 h-5 text-red-400" />
+                    <span className="text-red-400 font-bold">Mudo</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="w-5 h-5 text-[#C98A2E]" />
+                    <span className="text-[#FAF7F2]">Volume</span>
+                  </>
+                )}
+              </button>
+
+              <span className="font-heading font-black text-sm sm:text-base text-[#FAF7F2] tabular-nums">
+                {volume === 0 ? '0%' : `${volumePercent}%`}
+              </span>
+            </div>
+
+            {/* Slider Tátil Largo */}
+            <div className="w-full relative flex items-center py-1">
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.05}
+                value={volume}
+                onChange={(e) => setVolume(parseFloat(e.target.value))}
+                className="w-full h-3 sm:h-3.5 bg-[#2A2A2A] rounded-full appearance-none cursor-pointer accent-[#C98A2E] focus:outline-none transition-all shadow-inner"
+                style={{
+                  background: `linear-gradient(to right, #C98A2E 0%, #D97706 ${volumePercent}%, #2A2A2A ${volumePercent}%, #2A2A2A 100%)`,
+                }}
+                aria-label="Ajuste do volume no carro"
+              />
+            </div>
+          </div>
+
+          {/* Botão Aumentar Volume (+) */}
           <button
             type="button"
-            onClick={() => setVolume(1.0)}
-            className="px-4 py-3 rounded-2xl bg-[#1C1C1C] hover:bg-[#242424] border border-[#2E2E2E] text-xs font-bold text-[#A7A7A7] hover:text-[#FAF7F2] active:scale-95 transition"
+            onClick={handleVolumeUp}
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#242424] hover:bg-[#2E2E2E] active:scale-90 flex items-center justify-center text-[#FAF7F2] border border-[#383838] shadow-md transition shrink-0"
+            aria-label="Aumentar volume"
+            title="Aumentar volume (+10%)"
           >
-            100%
+            <Plus className="w-6 h-6 sm:w-7 sm:h-7 stroke-[3]" />
           </button>
         </div>
       </div>

@@ -94,7 +94,7 @@ export const MiniPlayer: React.FC = () => {
       {/* ========================================================= */}
       {/* 1. DESKTOP PLAYER BAR (md:flex) - Fixed Bottom Dock       */}
       {/* ========================================================= */}
-      <div className="hidden md:flex items-center justify-between w-full h-[88px] px-6 lg:px-8 bg-[#181818] border-t border-[#262626] shadow-2xl z-40 select-none shrink-0 relative">
+      <div className="hidden md:flex items-center justify-between w-full h-[88px] px-4 lg:px-8 bg-[#181818] border-t border-[#262626] shadow-2xl z-40 select-none shrink-0 relative">
         {/* Real-time progress line at top edge */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#2A2A2A]">
           <div
@@ -104,10 +104,10 @@ export const MiniPlayer: React.FC = () => {
         </div>
 
         {/* LEFT SECTION: Track Info & Quick Actions */}
-        <div className="flex items-center gap-3.5 w-1/4 min-w-[200px] max-w-[320px]">
+        <div className="flex items-center gap-3 w-auto min-w-[160px] max-w-[240px] lg:max-w-[320px]">
           <div
             onClick={openFullPlayer}
-            className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-[#242424] shadow-md border border-[#333333] cursor-pointer group"
+            className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-xl overflow-hidden shrink-0 bg-[#242424] shadow-md border border-[#333333] cursor-pointer group"
             title="Expandir capa e letra"
           >
             <img
@@ -133,12 +133,12 @@ export const MiniPlayer: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-1 shrink-0">
+          <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
             {/* Favorite button */}
             <button
               type="button"
               onClick={() => toggleFavorite(currentTrack.id)}
-              className={`p-2 rounded-full transition active:scale-75 ${
+              className={`p-1.5 sm:p-2 rounded-full transition active:scale-75 ${
                 favorited ? 'text-red-500' : 'text-[#777777] hover:text-[#FAF7F2]'
               }`}
               aria-label={favorited ? 'Desfavoritar' : 'Favoritar'}
@@ -152,8 +152,8 @@ export const MiniPlayer: React.FC = () => {
               type="button"
               onClick={handleDownloadClick}
               aria-label={downloaded ? 'Música salva no aparelho' : 'Baixar no aparelho'}
-              title={downloaded ? 'Salva no celular/computador (offline)' : 'Salvar no aparelho'}
-              className={`p-2 rounded-full transition active:scale-75 ${
+              title={downloaded ? 'Salva no aparelho (offline)' : 'Salvar no aparelho'}
+              className={`p-1.5 sm:p-2 rounded-full transition active:scale-75 ${
                 downloaded ? 'text-emerald-400' : 'text-[#777777] hover:text-[#C98A2E]'
               }`}
             >
@@ -169,13 +169,13 @@ export const MiniPlayer: React.FC = () => {
         </div>
 
         {/* CENTER SECTION: Media Controls & Interactive Scrubber */}
-        <div className="flex-1 max-w-xl mx-4 flex flex-col items-center justify-center gap-1">
+        <div className="flex-1 max-w-xl mx-2 sm:mx-4 flex flex-col items-center justify-center gap-1 min-w-0">
           {/* Controls buttons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <button
               type="button"
               onClick={toggleShuffle}
-              className={`p-2 rounded-full transition active:scale-90 ${
+              className={`p-1.5 sm:p-2 rounded-full transition active:scale-90 ${
                 isShuffle ? 'text-[#C98A2E]' : 'text-[#777777] hover:text-[#FAF7F2]'
               }`}
               title={isShuffle ? 'Modo aleatório ativado' : 'Ativar aleatório'}
@@ -187,7 +187,7 @@ export const MiniPlayer: React.FC = () => {
             <button
               type="button"
               onClick={previousTrack}
-              className="p-2 rounded-full text-[#A7A7A7] hover:text-[#FAF7F2] transition active:scale-90"
+              className="p-1.5 sm:p-2 rounded-full text-[#A7A7A7] hover:text-[#FAF7F2] transition active:scale-90"
               title="Música anterior (Alt + Seta Esquerda)"
               aria-label="Música anterior"
             >
@@ -211,7 +211,7 @@ export const MiniPlayer: React.FC = () => {
             <button
               type="button"
               onClick={nextTrack}
-              className="p-2 rounded-full text-[#A7A7A7] hover:text-[#FAF7F2] transition active:scale-90"
+              className="p-1.5 sm:p-2 rounded-full text-[#A7A7A7] hover:text-[#FAF7F2] transition active:scale-90"
               title="Próxima música (Alt + Seta Direita)"
               aria-label="Próxima música"
             >
@@ -221,7 +221,7 @@ export const MiniPlayer: React.FC = () => {
             <button
               type="button"
               onClick={toggleRepeat}
-              className={`p-2 rounded-full transition active:scale-90 ${
+              className={`p-1.5 sm:p-2 rounded-full transition active:scale-90 ${
                 isRepeat ? 'text-[#C98A2E]' : 'text-[#777777] hover:text-[#FAF7F2]'
               }`}
               title={isRepeat ? 'Repetir faixa ativado' : 'Ativar repetição'}
@@ -232,12 +232,12 @@ export const MiniPlayer: React.FC = () => {
           </div>
 
           {/* Scrubber slider bar */}
-          <div className="w-full flex items-center gap-3">
-            <span className="text-[11px] font-mono text-[#888888] w-10 text-right tabular-nums select-none">
+          <div className="w-full flex items-center gap-2 sm:gap-3">
+            <span className="text-[11px] font-mono text-[#888888] w-9 sm:w-10 text-right tabular-nums select-none shrink-0">
               {formatSeconds(displayedTime)}
             </span>
 
-            <div className="flex-1 relative flex items-center group cursor-pointer py-1">
+            <div className="flex-1 relative flex items-center group cursor-pointer py-1 min-w-0">
               <input
                 type="range"
                 min={0}
@@ -255,19 +255,19 @@ export const MiniPlayer: React.FC = () => {
               />
             </div>
 
-            <span className="text-[11px] font-mono text-[#888888] w-10 text-left tabular-nums select-none">
+            <span className="text-[11px] font-mono text-[#888888] w-9 sm:w-10 text-left tabular-nums select-none shrink-0">
               {formatSeconds(duration)}
             </span>
           </div>
         </div>
 
         {/* RIGHT SECTION: Mode & Volume Controls */}
-        <div className="flex items-center justify-end gap-2.5 w-1/4 min-w-[200px] max-w-[320px]">
+        <div className="flex items-center justify-end gap-1.5 sm:gap-2.5 w-auto min-w-[150px] max-w-[260px] lg:max-w-[320px]">
           {/* Car Mode Shortcut */}
           <button
             type="button"
             onClick={openCarMode}
-            className="p-2 rounded-full text-[#A7A7A7] hover:text-[#D97706] hover:bg-[#242424] transition active:scale-90"
+            className="p-1.5 sm:p-2 rounded-full text-[#A7A7A7] hover:text-[#D97706] hover:bg-[#242424] transition active:scale-90"
             title="Abrir Modo Estrada (Botões gigantes)"
             aria-label="Modo Estrada"
           >
@@ -278,7 +278,7 @@ export const MiniPlayer: React.FC = () => {
           <button
             type="button"
             onClick={openQueue}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[#A7A7A7] hover:text-[#C98A2E] hover:bg-[#242424] transition active:scale-90"
+            className="flex items-center gap-1.5 px-2 sm:px-2.5 py-1.5 rounded-full text-[#A7A7A7] hover:text-[#C98A2E] hover:bg-[#242424] transition active:scale-90"
             title={`Fila de reprodução (${queue.length} músicas)`}
             aria-label="Fila de reprodução"
           >
@@ -287,11 +287,11 @@ export const MiniPlayer: React.FC = () => {
           </button>
 
           {/* Volume Control */}
-          <div className="flex items-center gap-2 pl-1 group">
+          <div className="flex items-center gap-1.5 pl-1 group">
             <button
               type="button"
               onClick={() => setVolume(volume > 0 ? 0 : 0.9)}
-              className="p-1.5 text-[#A7A7A7] hover:text-[#FAF7F2] transition"
+              className="p-1 text-[#A7A7A7] hover:text-[#FAF7F2] transition"
               title={volume === 0 ? 'Desmutar' : 'Mutar som'}
               aria-label="Controle de volume"
             >
@@ -308,7 +308,7 @@ export const MiniPlayer: React.FC = () => {
               step={0.05}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
-              className="w-20 lg:w-24 h-1.5 bg-[#2A2A2A] group-hover:h-2 rounded-lg appearance-none cursor-pointer accent-[#C98A2E] transition-all"
+              className="w-14 sm:w-18 lg:w-24 h-1.5 bg-[#2A2A2A] group-hover:h-2 rounded-lg appearance-none cursor-pointer accent-[#C98A2E] transition-all"
               aria-label="Volume"
             />
           </div>
@@ -317,7 +317,7 @@ export const MiniPlayer: React.FC = () => {
           <button
             type="button"
             onClick={openFullPlayer}
-            className="p-2 rounded-full text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#242424] transition"
+            className="p-1.5 sm:p-2 rounded-full text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#242424] transition"
             title="Expandir player em tela cheia"
             aria-label="Expandir player"
           >

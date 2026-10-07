@@ -24,10 +24,22 @@ import { PlaylistDetailView } from './components/views/PlaylistDetailView';
 
 const MainAppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>({ type: 'home' });
-  const { togglePlayPause, nextTrack, previousTrack, closeFullPlayer, isFullPlayerOpen } = useAudioPlayer();
+  const {
+    togglePlayPause,
+    nextTrack,
+    previousTrack,
+    closeFullPlayer,
+    isFullPlayerOpen,
+    closeCarMode,
+    isCarMode,
+    closeQueue,
+    isQueueOpen,
+  } = useAudioPlayer();
+  const mainScrollRef = React.useRef<HTMLElement>(null);
 
   // Scroll to top on view changes
   useEffect(() => {
+    mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentView]);
 
@@ -46,14 +58,16 @@ const MainAppContent: React.FC = () => {
         nextTrack();
       } else if (e.code === 'ArrowLeft' && e.altKey) {
         previousTrack();
-      } else if (e.code === 'Escape' && isFullPlayerOpen) {
-        closeFullPlayer();
+      } else if (e.code === 'Escape') {
+        if (isFullPlayerOpen) closeFullPlayer();
+        else if (isQueueOpen) closeQueue();
+        else if (isCarMode) closeCarMode();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [togglePlayPause, nextTrack, previousTrack, closeFullPlayer, isFullPlayerOpen]);
+  }, [togglePlayPause, nextTrack, previousTrack, closeFullPlayer, isFullPlayerOpen, isQueueOpen, closeQueue, isCarMode, closeCarMode]);
 
   // Render current view
   const renderView = () => {
@@ -84,27 +98,33 @@ const MainAppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-[#FAF7F2] flex flex-col selection:bg-[#C98A2E] selection:text-black">
-      <div className="flex-1 flex overflow-hidden">
+    <div className="h-[100dvh] w-full bg-[#121212] text-[#FAF7F2] flex flex-col selection:bg-[#C98A2E] selection:text-black overflow-hidden">
+      {/* Upper Layout: Desktop Sidebar + Scrollable Content View */}
+      <div className="flex-1 flex overflow-hidden min-h-0">
         {/* Desktop Sidebar (hidden on mobile) */}
-        <div className="hidden md:block h-screen sticky top-0">
+        <div className="hidden md:flex flex-col h-full shrink-0">
           <Sidebar currentView={currentView} onNavigate={setCurrentView} />
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-1 flex flex-col min-w-0 min-h-screen">
+        <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden bg-[#121212]">
           <Header currentView={currentView} onNavigate={setCurrentView} />
 
-          <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 pb-36 md:pb-28">
-            {renderView()}
+          <main
+            ref={mainScrollRef}
+            className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 pb-32 md:pb-10 scroll-smooth"
+          >
+            <div className="max-w-7xl mx-auto w-full">
+              {renderView()}
+            </div>
           </main>
         </div>
       </div>
 
-      {/* Persistent Audio Mini Player */}
+      {/* Persistent Audio Player (Desktop Dock & Mobile Floating Bar) */}
       <MiniPlayer />
 
-      {/* Mobile Bottom Navigation Bar */}
+      {/* Mobile Bottom Navigation Bar (hidden on desktop) */}
       <BottomNav currentView={currentView} onNavigate={setCurrentView} />
 
       {/* Modals & Overlays */}

@@ -138,9 +138,15 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
         </div>
       </div>
 
-      {/* Right Actions: Duration, Download & Favorite button */}
+      {/* Right Actions: Genre badge, Duration, Download & Favorite button */}
       <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 ml-3">
-        <span className="text-xs sm:text-sm text-[#A7A7A7] font-medium hidden xs:inline">
+        {track.genre && (
+          <span className="hidden md:inline-flex px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#262626] text-[#A7A7A7] border border-[#333333] max-w-[150px] truncate">
+            {track.genre}
+          </span>
+        )}
+
+        <span className="text-xs sm:text-sm text-[#A7A7A7] font-medium hidden xs:inline tabular-nums">
           {track.durationFormatted}
         </span>
 

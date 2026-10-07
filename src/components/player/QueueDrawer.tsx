@@ -16,8 +16,14 @@ export const QueueDrawer: React.FC = () => {
   if (!isQueueOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex justify-end bg-black/75 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="w-full max-w-md bg-[#1B1B1B] h-full flex flex-col border-l border-[#2E2E2E] shadow-2xl animate-in slide-in-from-right duration-200 pb-safe">
+    <div
+      onClick={closeQueue}
+      className="fixed inset-0 z-[60] flex justify-end bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="w-full max-w-md bg-[#1B1B1B] h-full flex flex-col border-l border-[#2E2E2E] shadow-2xl animate-in slide-in-from-right duration-200 pb-safe"
+      >
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-[#2A2A2A] flex items-center justify-between">
           <div className="flex items-center gap-2.5">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Music2, Car, Radio, Sparkles } from 'lucide-react';
+import { Home, Music2, Car, Radio, Sparkles, Heart } from 'lucide-react';
 import { ViewState } from '../../types';
 import { STATIONS } from '../../data/stations';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
@@ -11,7 +11,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => {
-  const { openCarMode, playRandomTrack, isCarMode } = useAudioPlayer();
+  const { openCarMode, playRandomTrack, isCarMode, favorites } = useAudioPlayer();
 
   const navItems = [
     {
@@ -27,6 +27,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
       icon: Music2,
       isActive: currentView.type === 'all_tracks' && !isCarMode,
       onClick: () => onNavigate({ type: 'all_tracks' }),
+    },
+    {
+      id: 'favorites',
+      label: 'Favoritos',
+      icon: Heart,
+      badge: favorites.length > 0 ? favorites.length : undefined,
+      isActive: currentView.type === 'favorites' && !isCarMode,
+      onClick: () => onNavigate({ type: 'favorites' }),
     },
     {
       id: 'car_mode',
@@ -76,6 +84,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
                   <Icon className={`w-5 h-5 ${item.isActive ? 'text-[#C98A2E]' : 'text-[#A7A7A7]'}`} />
                   <span>{item.label}</span>
                 </div>
+                {item.badge !== undefined && (
+                  <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
+                    item.isActive ? 'bg-[#C98A2E] text-black' : 'bg-[#2E2E2E] text-[#A7A7A7]'
+                  }`}>
+                    {item.badge}
+                  </span>
+                )}
               </button>
             );
           })}

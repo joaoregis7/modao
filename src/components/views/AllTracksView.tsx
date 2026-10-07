@@ -249,7 +249,7 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
             )}
           </div>
 
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none pt-0.5">
+          <div className="flex items-center gap-2 overflow-x-auto md:flex-wrap md:overflow-visible pb-2 scrollbar-none pt-0.5">
             {GENRE_FILTERS.map(filter => {
               const isSelected = selectedGenre === filter.id;
               const count = genreCounts[filter.id] || 0;

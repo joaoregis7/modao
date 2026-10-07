@@ -72,30 +72,25 @@ export const PWAInstallModal: React.FC = () => {
           <X className="w-4 h-4" />
         </button>
 
-        {/* Topo: Logo + Título Chamativo */}
+        {/* Topo: Logo Exata da Rádio Modão + Título */}
         <div className="flex items-center gap-3 pr-8">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#F59E0B] via-[#C98A2E] to-[#8C4A08] p-0.5 shadow-lg shadow-[#C98A2E]/25 shrink-0 flex items-center justify-center ring-2 ring-[#F59E0B]/40">
+          <div className="p-1.5 rounded-2xl bg-[#221F1B] border border-[#3A3326] shadow-md shrink-0 flex items-center justify-center">
             <img
-              src="/apple-touch-icon.png"
+              src="/logo-radio-modao.webp"
               alt="Rádio Modão"
-              className="w-full h-full object-cover rounded-[14px]"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
+              className="h-10 sm:h-11 w-auto max-w-[125px] sm:max-w-[135px] object-contain drop-shadow"
             />
           </div>
           <div className="min-w-0">
-            <div className="flex items-center gap-1.5">
-              <span className="px-2 py-0.5 rounded-full bg-[#C98A2E]/20 text-[#F59E0B] text-[10px] font-black uppercase tracking-wider border border-[#C98A2E]/35">
-                App Grátis
-              </span>
-              <span className="text-[10px] text-[#A7A7A7] font-semibold flex items-center gap-0.5">
-                <Sparkles className="w-2.5 h-2.5 text-[#C98A2E]" /> Sem ocupar espaço
+            <h3 className="font-heading font-black text-base sm:text-lg text-[#FAF7F2] tracking-tight leading-tight">
+              Instale o Aplicativo
+            </h3>
+            <div className="flex items-center gap-1 mt-1">
+              <Sparkles className="w-3 h-3 text-[#F59E0B] shrink-0" />
+              <span className="text-[11px] sm:text-xs text-[#A7A7A7] font-medium leading-none">
+                Sem ocupar espaço
               </span>
             </div>
-            <h3 className="font-heading font-black text-base sm:text-lg text-[#FAF7F2] tracking-tight leading-snug">
-              Instalar na Tela do Celular
-            </h3>
           </div>
         </div>
 

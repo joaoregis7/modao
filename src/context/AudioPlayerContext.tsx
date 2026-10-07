@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import { Track } from '../types';
 import { audioEngine } from '../services/audioEngine';
 import { StorageService } from '../services/storage';
@@ -68,7 +68,6 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(200);
   const [queue, setQueue] = useState<Track[]>(TRACKS);
   const [queueIndex, setQueueIndex] = useState<number>(0);
@@ -80,6 +79,11 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const [isFullPlayerOpen, setIsFullPlayerOpen] = useState<boolean>(false);
   const [isQueueOpen, setIsQueueOpen] = useState<boolean>(false);
   const [lastPlayedTrack, setLastPlayedTrack] = useState<Track | null>(null);
+
+  const currentTrackRef = useRef<Track | null>(null);
+  currentTrackRef.current = currentTrack;
+  const lastSavedPositionRef = useRef<number>(0);
+  const lastMediaSessionUpdateRef = useRef<number>(0);
 
   // Combine built-in tracks + user-imported tracks
   const allTracks = useMemo(() => {
@@ -112,7 +116,6 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       if (found) {
         setLastPlayedTrack(found);
         setCurrentTrack(found);
-        setCurrentTime(lastState.position || 0);
         setDuration(found.duration);
         const idx = combinedTracks.findIndex(t => t.id === found.id);
         if (idx !== -1) setQueueIndex(idx);
@@ -123,13 +126,59 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
   }, []);
 
-  // Sync audio engine events
+  // Sync audio engine events (optimized: without high-frequency React re-renders)
   useEffect(() => {
-    const unsubPlay = audioEngine.onPlay(() => setIsPlaying(true));
-    const unsubPause = audioEngine.onPause(() => setIsPlaying(false));
+    const unsubPlay = audioEngine.onPlay(() => {
+      setIsPlaying(true);
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.playbackState = 'playing';
+      }
+    });
+
+    const unsubPause = audioEngine.onPause(() => {
+      setIsPlaying(false);
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.playbackState = 'paused';
+      }
+      const cur = currentTrackRef.current;
+      if (cur) {
+        StorageService.setLastState({
+          trackId: cur.id,
+          position: audioEngine.getCurrentTime(),
+          updatedAt: Date.now(),
+        });
+      }
+    });
+
     const unsubTime = audioEngine.onTimeUpdate((time, dur) => {
-      setCurrentTime(time);
-      if (dur > 0) setDuration(dur);
+      const cur = currentTrackRef.current;
+      if (cur && time > 0) {
+        // Salva progresso no localStorage suavemente (a cada 5 segundos) sem bloquear thread
+        if (Math.abs(time - lastSavedPositionRef.current) >= 5) {
+          lastSavedPositionRef.current = time;
+          StorageService.setLastState({
+            trackId: cur.id,
+            position: time,
+            updatedAt: Date.now(),
+          });
+        }
+
+        // Sincroniza HUD de Bluetooth/carro a cada 4 segundos
+        if (
+          'mediaSession' in navigator &&
+          'setPositionState' in navigator.mediaSession &&
+          Math.abs(time - lastMediaSessionUpdateRef.current) >= 4
+        ) {
+          lastMediaSessionUpdateRef.current = time;
+          try {
+            navigator.mediaSession.setPositionState({
+              duration: Math.max(1, dur > 0 ? dur : (cur.duration || 200)),
+              playbackRate: 1,
+              position: Math.min(Math.max(0, time), dur > 0 ? dur : 200),
+            });
+          } catch {}
+        }
+      }
     });
 
     return () => {
@@ -138,17 +187,6 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       unsubTime();
     };
   }, []);
-
-  // Save current position periodically to localStorage
-  useEffect(() => {
-    if (currentTrack && currentTime > 0) {
-      StorageService.setLastState({
-        trackId: currentTrack.id,
-        position: currentTime,
-        updatedAt: Date.now(),
-      });
-    }
-  }, [currentTrack, currentTime]);
 
   // Handle Play track
   const playTrack = useCallback((track: Track, customQueue?: Track[]) => {
@@ -169,8 +207,6 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
     setCurrentTrack(track);
     setLastPlayedTrack(track);
-    // Always start any selected or new track at the very beginning (0:00)
-    setCurrentTime(0);
     setDuration(track.duration || 200);
     StorageService.addRecentlyPlayed(track.id);
     audioEngine.playTrack(track, 0);
@@ -211,9 +247,8 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const previousTrack = useCallback(() => {
     if (queue.length === 0) return;
 
-    // If more than 3 seconds played, restart song to the beginning
-    if (currentTime > 3) {
-      setCurrentTime(0);
+    // Se tocou mais de 3 segundos, reinicia a música atual para o início
+    if (audioEngine.getCurrentTime() > 3) {
       audioEngine.seek(0);
       return;
     }
@@ -221,7 +256,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     const prevIdx = (queueIndex - 1 + queue.length) % queue.length;
     setQueueIndex(prevIdx);
     playTrack(queue[prevIdx]);
-  }, [queue, queueIndex, currentTime, playTrack]);
+  }, [queue, queueIndex, playTrack]);
 
   // Handle audio track end automatically
   useEffect(() => {
@@ -284,38 +319,16 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       });
       navigator.mediaSession.setActionHandler('seekforward', (details) => {
         const offset = details.seekOffset || 10;
-        audioEngine.seek(currentTime + offset);
+        audioEngine.seek(audioEngine.getCurrentTime() + offset);
       });
       navigator.mediaSession.setActionHandler('seekbackward', (details) => {
         const offset = details.seekOffset || 10;
-        audioEngine.seek(currentTime - offset);
+        audioEngine.seek(Math.max(0, audioEngine.getCurrentTime() - offset));
       });
     } catch (err) {
       console.warn('Error configuring MediaSession actions', err);
     }
-  }, [currentTrack, isPlaying, currentTime, togglePlayPause, previousTrack, nextTrack]);
-
-  // Synchronize live playback position to car display/Bluetooth HUD
-  useEffect(() => {
-    if (
-      typeof window !== 'undefined' &&
-      'mediaSession' in navigator &&
-      'setPositionState' in navigator.mediaSession &&
-      duration > 0 &&
-      !isNaN(currentTime) &&
-      isFinite(currentTime)
-    ) {
-      try {
-        navigator.mediaSession.setPositionState({
-          duration: Math.max(1, duration),
-          playbackRate: isPlaying ? 1 : 0,
-          position: Math.min(Math.max(0, currentTime), duration),
-        });
-      } catch (err) {
-        // Silently catch temporary race condition when changing tracks
-      }
-    }
-  }, [currentTime, duration, isPlaying]);
+  }, [currentTrack, isPlaying, togglePlayPause, previousTrack, nextTrack]);
 
   const seek = useCallback((seconds: number) => {
     audioEngine.seek(seconds);
@@ -474,55 +487,99 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const openQueue = useCallback(() => setIsQueueOpen(true), []);
   const closeQueue = useCallback(() => setIsQueueOpen(false), []);
 
+  const contextValue = useMemo<AudioPlayerContextType>(() => ({
+    currentTrack,
+    isPlaying,
+    currentTime: audioEngine.getCurrentTime(),
+    duration,
+    queue,
+    queueIndex,
+    isShuffle,
+    isRepeat,
+    volume,
+    favorites,
+    isCarMode,
+    isFullPlayerOpen,
+    isQueueOpen,
+    lastPlayedTrack,
+    allTracks,
+    importedTracks,
+    downloadedTrackIds,
+    isDownloaded,
+    downloadTrack,
+    removeDownloadedTrack,
+    downloadAllTracks,
+    isDownloadingAll,
+    downloadAllProgress,
+    playTrack,
+    togglePlayPause,
+    nextTrack,
+    previousTrack,
+    seek,
+    setVolume,
+    toggleShuffle,
+    toggleRepeat,
+    toggleFavorite,
+    isFavorite,
+    playRandomTrack,
+    playAll,
+    openFullPlayer,
+    closeFullPlayer,
+    openCarMode,
+    closeCarMode,
+    openQueue,
+    closeQueue,
+    addCustomTracks,
+    deleteCustomTrack,
+    clearCustomTracks,
+  }), [
+    currentTrack,
+    isPlaying,
+    duration,
+    queue,
+    queueIndex,
+    isShuffle,
+    isRepeat,
+    volume,
+    favorites,
+    isCarMode,
+    isFullPlayerOpen,
+    isQueueOpen,
+    lastPlayedTrack,
+    allTracks,
+    importedTracks,
+    downloadedTrackIds,
+    isDownloaded,
+    downloadTrack,
+    removeDownloadedTrack,
+    downloadAllTracks,
+    isDownloadingAll,
+    downloadAllProgress,
+    playTrack,
+    togglePlayPause,
+    nextTrack,
+    previousTrack,
+    seek,
+    setVolume,
+    toggleShuffle,
+    toggleRepeat,
+    toggleFavorite,
+    isFavorite,
+    playRandomTrack,
+    playAll,
+    openFullPlayer,
+    closeFullPlayer,
+    openCarMode,
+    closeCarMode,
+    openQueue,
+    closeQueue,
+    addCustomTracks,
+    deleteCustomTrack,
+    clearCustomTracks,
+  ]);
+
   return (
-    <AudioPlayerContext.Provider
-      value={{
-        currentTrack,
-        isPlaying,
-        currentTime,
-        duration,
-        queue,
-        queueIndex,
-        isShuffle,
-        isRepeat,
-        volume,
-        favorites,
-        isCarMode,
-        isFullPlayerOpen,
-        isQueueOpen,
-        lastPlayedTrack,
-        allTracks,
-        importedTracks,
-        downloadedTrackIds,
-        isDownloaded,
-        downloadTrack,
-        removeDownloadedTrack,
-        downloadAllTracks,
-        isDownloadingAll,
-        downloadAllProgress,
-        playTrack,
-        togglePlayPause,
-        nextTrack,
-        previousTrack,
-        seek,
-        setVolume,
-        toggleShuffle,
-        toggleRepeat,
-        toggleFavorite,
-        isFavorite,
-        playRandomTrack,
-        playAll,
-        openFullPlayer,
-        closeFullPlayer,
-        openCarMode,
-        closeCarMode,
-        openQueue,
-        closeQueue,
-        addCustomTracks,
-        deleteCustomTrack,
-        clearCustomTracks,
-      }}
-    >
+    <AudioPlayerContext.Provider value={contextValue}>
       {children}
     </AudioPlayerContext.Provider>
   );

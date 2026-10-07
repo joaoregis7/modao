@@ -66,6 +66,10 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'default' | 'title' | 'artist' | 'duration'>('default');
 
+  // Progressive rendering for mobile performance & smooth 60fps scrolling
+  const [visibleCount, setVisibleCount] = useState(24);
+  const loadMoreSentinelRef = useRef<HTMLDivElement>(null);
+
   // Draggable filter rail state
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -80,6 +84,11 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
       setSearchQuery(initialSearchQuery);
     }
   }, [initialSearchQuery]);
+
+  // Reseta contagem ao alterar filtros, busca ou ordenação
+  useEffect(() => {
+    setVisibleCount(24);
+  }, [searchQuery, selectedGenre, onlyDownloaded, sortBy]);
 
   // Contagem dinâmica por categoria para feedback visual instantâneo
   const genreCounts = useMemo(() => {
@@ -123,6 +132,32 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
 
     return result;
   }, [allTracks, searchQuery, selectedGenre, onlyDownloaded, downloadedTrackIds, sortBy]);
+
+  // Carregamento progressivo infinito super leve para celulares e telas móveis (evita travar o navegador)
+  useEffect(() => {
+    const el = loadMoreSentinelRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + 24, filteredTracks.length));
+        }
+      },
+      {
+        root: null,
+        rootMargin: '400px', // Antecipa a rolagem para uma experiência perfeitamente contínua
+        threshold: 0.05,
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [filteredTracks.length]);
+
+  const displayedTracks = useMemo(() => {
+    return filteredTracks.slice(0, visibleCount);
+  }, [filteredTracks, visibleCount]);
 
   // Check filter slider scroll bounds for showing arrows
   const checkScrollBounds = () => {
@@ -537,28 +572,76 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
         </div>
       ) : viewMode === 'grid' ? (
         /* Modo Grade de Cards de Modão - Perfeito para Celular, Tablet e Computador */
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 sm:gap-4.5">
-          {filteredTracks.map((track, idx) => (
-            <TrackCard
-              key={track.id}
-              track={track}
-              index={idx}
-              playlistContext={filteredTracks}
-            />
-          ))}
+        <div className="space-y-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 sm:gap-4.5">
+            {displayedTracks.map((track, idx) => (
+              <TrackCard
+                key={track.id}
+                track={track}
+                index={idx}
+                playlistContext={filteredTracks}
+              />
+            ))}
+          </div>
+
+          {/* Sentinela de rolagem contínua fluida para celular & indicador de total */}
+          {visibleCount < filteredTracks.length && (
+            <div
+              ref={loadMoreSentinelRef}
+              className="py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center"
+            >
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#8E8E8E]">
+                <Loader2 className="w-4 h-4 animate-spin text-[#C98A2E]" />
+                <span>
+                  Mostrando {displayedTracks.length} de {filteredTracks.length} modões
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setVisibleCount((prev) => Math.min(prev + 24, filteredTracks.length))}
+                className="px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#2C2C2C] border border-[#3A3A3A] hover:border-[#C98A2E]/60 text-xs font-bold text-[#FAF7F2] transition active:scale-95 shadow-sm"
+              >
+                Carregar mais modões (+24)
+              </button>
+            </div>
+          )}
         </div>
       ) : (
         /* Modo Lista Responsiva em 2 Colunas no Computador / Tablet para Melhor Ergonomia */
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5">
-          {filteredTracks.map((track, idx) => (
-            <TrackListItem
-              key={track.id}
-              track={track}
-              index={idx}
-              showIndex
-              playlistContext={filteredTracks}
-            />
-          ))}
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5">
+            {displayedTracks.map((track, idx) => (
+              <TrackListItem
+                key={track.id}
+                track={track}
+                index={idx}
+                showIndex
+                playlistContext={filteredTracks}
+              />
+            ))}
+          </div>
+
+          {/* Sentinela de rolagem contínua fluida para celular & indicador de total */}
+          {visibleCount < filteredTracks.length && (
+            <div
+              ref={loadMoreSentinelRef}
+              className="py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center"
+            >
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#8E8E8E]">
+                <Loader2 className="w-4 h-4 animate-spin text-[#C98A2E]" />
+                <span>
+                  Mostrando {displayedTracks.length} de {filteredTracks.length} modões
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setVisibleCount((prev) => Math.min(prev + 24, filteredTracks.length))}
+                className="px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#2C2C2C] border border-[#3A3A3A] hover:border-[#C98A2E]/60 text-xs font-bold text-[#FAF7F2] transition active:scale-95 shadow-sm"
+              >
+                Carregar mais modões (+24)
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

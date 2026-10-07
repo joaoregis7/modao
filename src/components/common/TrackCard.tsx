@@ -19,7 +19,7 @@ interface TrackCardProps {
   playlistContext?: Track[];
 }
 
-export const TrackCard: React.FC<TrackCardProps> = ({
+export const TrackCard: React.FC<TrackCardProps> = React.memo(({
   track,
   index,
   onPlay,
@@ -81,6 +81,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({
   return (
     <div
       onClick={handlePlayClick}
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '240px' }}
       className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-3 sm:p-3.5 transition-all duration-300 cursor-pointer select-none border ${
         isCurrent
           ? 'bg-gradient-to-b from-[#2C241B] via-[#201D19] to-[#161514] border-[#C98A2E] shadow-xl shadow-[#C98A2E]/20 ring-1 ring-[#C98A2E]/60 -translate-y-0.5'
@@ -94,6 +95,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({
           alt={track.title}
           className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
           loading="lazy"
+          decoding="async"
         />
 
         {/* Ambient Cover Overlay on Hover / Playing */}
@@ -220,4 +222,4 @@ export const TrackCard: React.FC<TrackCardProps> = ({
       </div>
     </div>
   );
-};
+});

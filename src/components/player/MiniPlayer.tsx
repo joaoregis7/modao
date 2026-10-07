@@ -17,13 +17,12 @@ import {
   Loader2,
 } from 'lucide-react';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
+import { useAudioProgress } from '../../hooks/useAudioProgress';
 
 export const MiniPlayer: React.FC = () => {
   const {
     currentTrack,
     isPlaying,
-    currentTime,
-    duration,
     togglePlayPause,
     nextTrack,
     previousTrack,
@@ -44,6 +43,8 @@ export const MiniPlayer: React.FC = () => {
     removeDownloadedTrack,
     queue,
   } = useAudioPlayer();
+
+  const { currentTime, duration } = useAudioProgress();
 
   const [isSeeking, setIsSeeking] = useState(false);
   const [seekVal, setSeekVal] = useState(0);

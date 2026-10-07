@@ -11,7 +11,7 @@ interface TrackListItemProps {
   playlistContext?: Track[];
 }
 
-export const TrackListItem: React.FC<TrackListItemProps> = ({
+export const TrackListItem: React.FC<TrackListItemProps> = React.memo(({
   track,
   index,
   showIndex = false,
@@ -75,6 +75,7 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
   return (
     <div
       onClick={handlePlayClick}
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '64px' }}
       className={`group flex items-center justify-between p-3 sm:p-3.5 rounded-2xl transition cursor-pointer select-none border ${
         isCurrent
           ? 'bg-[#242424] border-[#C98A2E]/60 shadow-md shadow-[#C98A2E]/5'
@@ -99,6 +100,7 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
             alt={track.title}
             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
             loading="lazy"
+            decoding="async"
           />
           <div
             className={`absolute inset-0 bg-black/40 flex items-center justify-center transition ${
@@ -207,4 +209,4 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
       </div>
     </div>
   );
-};
+});

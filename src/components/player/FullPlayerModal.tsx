@@ -17,13 +17,12 @@ import {
   Loader2,
 } from 'lucide-react';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
+import { useAudioProgress } from '../../hooks/useAudioProgress';
 
 export const FullPlayerModal: React.FC = () => {
   const {
     currentTrack,
     isPlaying,
-    currentTime,
-    duration,
     isShuffle,
     isRepeat,
     volume,
@@ -45,6 +44,8 @@ export const FullPlayerModal: React.FC = () => {
     openCarMode,
     queue,
   } = useAudioPlayer();
+
+  const { currentTime, duration } = useAudioProgress();
 
   const [isDownloading, setIsDownloading] = useState(false);
 

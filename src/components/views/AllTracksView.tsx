@@ -192,98 +192,102 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
 
   return (
     <div className="space-y-6 sm:space-y-8 pb-24">
-      {/* 1. Header Hero Card com Atmosfera Sertaneja e Acabamento Premium */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#262119] via-[#1C1A17] to-[#121212] border border-[#3E3424] p-5 sm:p-7 lg:p-8 shadow-2xl">
-        {/* Glow de fundo e efeitos visuais */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C98A2E]/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#C98A2E]/40 to-transparent" />
+      {/* 1. Header Hero Card com Atmosfera Sertaneja Compacta e Botões Lado a Lado */}
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#262119] via-[#1C1A17] to-[#121212] border border-[#3E3424] p-4 sm:p-5.5 lg:p-6 shadow-xl">
+        {/* Glow de fundo e efeitos visuais sutis */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#C98A2E]/10 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
+        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-transparent via-[#C98A2E]/40 to-transparent" />
 
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-5 relative z-10">
           {/* Informações e Título */}
-          <div className="flex items-start sm:items-center gap-4 sm:gap-5">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-[#F59E0B] via-[#C98A2E] to-[#8C4A08] flex items-center justify-center shadow-xl shadow-[#C98A2E]/30 text-black shrink-0 ring-2 ring-[#F59E0B]/50 group">
-              <Disc3 className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 transition-transform duration-700 group-hover:rotate-180" />
+          <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+            <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#F59E0B] via-[#C98A2E] to-[#8C4A08] flex items-center justify-center shadow-lg shadow-[#C98A2E]/25 text-black shrink-0 ring-2 ring-[#F59E0B]/40 group">
+              <Disc3 className="w-6 h-6 sm:w-7 sm:h-7 transition-transform duration-700 group-hover:rotate-180" />
             </div>
 
-            <div>
-              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C98A2E]/25 text-[#F59E0B] border border-[#C98A2E]/40 text-[11px] font-black uppercase tracking-wider">
-                  <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
-                  Catálogo Completo • 352 Clássicos
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-1 flex-wrap">
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#C98A2E]/20 text-[#F59E0B] border border-[#C98A2E]/35 text-[10px] sm:text-[11px] font-black uppercase tracking-wider">
+                  <Sparkles className="w-3 h-3 text-[#F59E0B]" />
+                  352 Clássicos
                 </span>
                 {downloadedTrackIds.length > 0 && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[11px] font-bold">
-                    <Smartphone className="w-3.5 h-3.5" />
-                    {downloadedTrackIds.length} salvas no aparelho
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[10px] sm:text-[11px] font-bold">
+                    <Smartphone className="w-3 h-3" />
+                    {downloadedTrackIds.length} salvas
                   </span>
                 )}
               </div>
 
-              <h1 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#FAF7F2] tracking-tight">
+              <h1 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-[#FAF7F2] tracking-tight truncate">
                 Músicas & Modões
               </h1>
 
-              <p className="text-xs sm:text-sm text-[#B3B3B3] mt-1.5 max-w-xl font-medium">
+              <p className="text-xs sm:text-sm text-[#A8A8A8] mt-0.5 max-w-xl font-medium truncate">
                 {searchQuery || selectedGenre !== 'all' || onlyDownloaded
-                  ? `Mostrando ${filteredTracks.length} de ${allTracks.length} modões selecionados com os filtros atuais.`
-                  : '352 clássicos das duplas lendárias do sertanejo. Ouça online com som remasterizado ou salve no aparelho.'}
+                  ? `Mostrando ${filteredTracks.length} de ${allTracks.length} modões selecionados.`
+                  : 'Catálogo completo das lendas sertanejas. Ouça online ou sem internet.'}
               </p>
             </div>
           </div>
 
-          {/* Ações Rápidas: Tocar Todas, Aleatório, Baixar Offline */}
-          <div className="flex items-center gap-2.5 flex-wrap sm:justify-end shrink-0">
+          {/* Ações Rápidas: Botões Compactos Lado a Lado (grid no celular, inline no tablet/pc) */}
+          <div className="grid grid-cols-3 gap-2 w-full sm:flex sm:items-center sm:gap-2 sm:w-auto shrink-0 pt-1 lg:pt-0">
+            {/* 1. Tocar Todas */}
+            {filteredTracks.length > 0 && (
+              <button
+                type="button"
+                onClick={() => playAll(filteredTracks, false)}
+                className="flex items-center justify-center gap-1.5 px-3 sm:px-4.5 py-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#F59E0B] via-[#C98A2E] to-[#D97706] text-black font-heading font-black text-xs sm:text-sm shadow-md shadow-[#C98A2E]/20 hover:brightness-110 active:scale-95 transition whitespace-nowrap"
+                title="Tocar todas as músicas selecionadas"
+              >
+                <Play className="w-3.5 h-3.5 fill-current ml-0.5 shrink-0" />
+                <span className="truncate">Tocar ({filteredTracks.length})</span>
+              </button>
+            )}
+
+            {/* 2. Aleatório */}
+            {filteredTracks.length > 0 && (
+              <button
+                type="button"
+                onClick={() => playAll(filteredTracks, true)}
+                className="flex items-center justify-center gap-1.5 px-2.5 sm:px-3.5 py-2.5 rounded-xl sm:rounded-2xl bg-[#222222] hover:bg-[#2C2C2C] border border-[#3A3A3A] hover:border-[#C98A2E]/60 text-[#FAF7F2] font-bold text-xs sm:text-sm active:scale-95 transition shadow-sm whitespace-nowrap"
+                title="Tocar em ordem aleatória"
+              >
+                <Shuffle className="w-3.5 h-3.5 text-[#C98A2E] shrink-0" />
+                <span className="truncate">Aleatório</span>
+              </button>
+            )}
+
+            {/* 3. Salvar Offline */}
             <button
               type="button"
               onClick={downloadAllTracks}
               disabled={isDownloadingAll}
-              className={`flex items-center gap-2 px-4 sm:px-5 py-3.5 rounded-2xl border text-xs sm:text-sm font-bold active:scale-95 transition shadow-lg ${
+              className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3.5 py-2.5 rounded-xl sm:rounded-2xl border text-xs sm:text-sm font-bold active:scale-95 transition shadow-sm whitespace-nowrap ${
                 isAllDownloaded
-                  ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
+                  ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                   : 'bg-[#222222] hover:bg-[#2C2C2C] border-[#3A3A3A] hover:border-[#C98A2E] text-[#FAF7F2]'
               }`}
-              title="Salva todo o catálogo no aplicativo para escutar sem internet"
+              title="Salva as faixas para escutar sem internet"
             >
               {isDownloadingAll ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin text-[#C98A2E]" />
-                  <span>Baixando ({downloadAllProgress?.percentage || 0}%)...</span>
+                  <Loader2 className="w-3.5 h-3.5 animate-spin text-[#C98A2E] shrink-0" />
+                  <span className="truncate">{downloadAllProgress?.percentage || 0}%</span>
                 </>
               ) : isAllDownloaded ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span>Todas Salvas ({downloadedTrackIds.length})</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span className="truncate">Salvas</span>
                 </>
               ) : (
                 <>
-                  <ArrowDownToLine className="w-4 h-4 text-[#C98A2E]" />
-                  <span>Salvar Offline</span>
+                  <ArrowDownToLine className="w-3.5 h-3.5 text-[#C98A2E] shrink-0" />
+                  <span className="truncate">Offline</span>
                 </>
               )}
             </button>
-
-            {filteredTracks.length > 0 && (
-              <>
-                <button
-                  type="button"
-                  onClick={() => playAll(filteredTracks, false)}
-                  className="flex items-center gap-2.5 px-5 sm:px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#F59E0B] via-[#C98A2E] to-[#D97706] text-black font-heading font-black text-xs sm:text-sm shadow-xl shadow-[#C98A2E]/30 hover:brightness-110 active:scale-95 transition"
-                >
-                  <Play className="w-4 h-4 fill-current ml-0.5" />
-                  <span>Tocar Todas ({filteredTracks.length})</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => playAll(filteredTracks, true)}
-                  className="flex items-center gap-2 px-4 sm:px-4.5 py-3.5 rounded-2xl bg-[#222222] hover:bg-[#2C2C2C] border border-[#3A3A3A] hover:border-[#C98A2E]/60 text-[#FAF7F2] font-bold text-xs sm:text-sm active:scale-95 transition shadow-lg"
-                  title="Tocar em ordem aleatória"
-                >
-                  <Shuffle className="w-4 h-4 text-[#C98A2E]" />
-                  <span>Aleatório</span>
-                </button>
-              </>
-            )}
           </div>
         </div>
       </div>

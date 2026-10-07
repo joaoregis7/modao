@@ -81,38 +81,38 @@ export const TrackCard: React.FC<TrackCardProps> = ({
   return (
     <div
       onClick={handlePlayClick}
-      className={`group relative flex flex-col justify-between rounded-2xl p-3 sm:p-3.5 transition-all duration-200 cursor-pointer select-none border ${
+      className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-3 sm:p-3.5 transition-all duration-300 cursor-pointer select-none border ${
         isCurrent
-          ? 'bg-[#242424] border-[#C98A2E] shadow-xl shadow-[#C98A2E]/10 ring-1 ring-[#C98A2E]/50'
-          : 'bg-[#1A1A1A] hover:bg-[#222222] border-[#2A2A2A] hover:border-[#3E3E3E] hover:shadow-lg'
+          ? 'bg-gradient-to-b from-[#2C241B] via-[#201D19] to-[#161514] border-[#C98A2E] shadow-xl shadow-[#C98A2E]/20 ring-1 ring-[#C98A2E]/60 -translate-y-0.5'
+          : 'bg-gradient-to-b from-[#222222] via-[#1B1B1B] to-[#141414] hover:bg-gradient-to-b hover:from-[#282828] hover:via-[#202020] hover:to-[#171717] border-[#2C2C2C] hover:border-[#C98A2E]/60 hover:shadow-2xl hover:shadow-[#C98A2E]/10 hover:-translate-y-1'
       }`}
     >
       {/* Top Section: Album Cover with Overlay & Status Badges */}
-      <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[#242424] mb-3 shadow-md">
+      <div className="relative aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#242424] mb-3 shadow-md ring-1 ring-white/10 group-hover:ring-[#C98A2E]/40 transition-all duration-300">
         <img
           src={track.coverUrl}
           alt={track.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
           loading="lazy"
         />
 
-        {/* Playing or Hover Overlay */}
+        {/* Ambient Cover Overlay on Hover / Playing */}
         <div
-          className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-200 ${
+          className={`absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center transition-opacity duration-200 ${
             isCurrent ? 'opacity-100 bg-black/50' : 'opacity-0 group-hover:opacity-100'
           }`}
         >
           <div
-            className={`w-12 h-12 rounded-full flex items-center justify-center shadow-xl transition-transform active:scale-90 ${
+            className={`w-12 h-12 sm:w-13 sm:h-13 rounded-full flex items-center justify-center shadow-2xl transition-transform active:scale-90 ${
               isCurrentPlaying
-                ? 'bg-[#C98A2E] text-black scale-100'
-                : 'bg-[#C98A2E] text-black group-hover:scale-105 hover:brightness-110'
+                ? 'bg-gradient-to-tr from-[#F59E0B] to-[#C98A2E] text-black scale-100 shadow-[#C98A2E]/40'
+                : 'bg-gradient-to-tr from-[#F59E0B] to-[#C98A2E] text-black group-hover:scale-105 hover:brightness-110 shadow-[#C98A2E]/40'
             }`}
           >
             {isCurrentPlaying ? (
-              <Pause className="w-6 h-6 fill-current" />
+              <Pause className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
             ) : (
-              <Play className="w-6 h-6 fill-current ml-0.5" />
+              <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current ml-0.5" />
             )}
           </div>
         </div>
@@ -120,16 +120,16 @@ export const TrackCard: React.FC<TrackCardProps> = ({
         {/* Top Badges (Playing Equalizer, Saved indicator, Index) */}
         <div className="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
           {isCurrentPlaying ? (
-            <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-sm text-[#C98A2E] text-[10px] font-black uppercase tracking-wider border border-[#C98A2E]/40 shadow-sm">
+            <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/85 backdrop-blur-md text-[#F59E0B] text-[10px] font-black uppercase tracking-wider border border-[#F59E0B]/50 shadow-md">
               <span className="flex items-end gap-0.5 h-2.5">
-                <span className="w-0.5 h-2 bg-[#C98A2E] animate-bounce" />
-                <span className="w-0.5 h-3 bg-[#C98A2E] animate-bounce delay-100" />
-                <span className="w-0.5 h-1.5 bg-[#C98A2E] animate-bounce delay-200" />
+                <span className="w-0.5 h-2 bg-[#F59E0B] animate-bounce" />
+                <span className="w-0.5 h-3 bg-[#F59E0B] animate-bounce delay-100" />
+                <span className="w-0.5 h-1.5 bg-[#F59E0B] animate-bounce delay-200" />
               </span>
               Tocando
             </span>
           ) : index !== undefined ? (
-            <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm text-[#A7A7A7] text-[10px] font-mono font-bold">
+            <span className="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-[#B0B0B0] text-[10px] font-mono font-bold border border-white/5">
               #{index + 1}
             </span>
           ) : (
@@ -139,7 +139,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({
           {downloaded && (
             <span
               title="Salva no aparelho"
-              className="p-1 rounded-full bg-black/75 backdrop-blur-sm text-emerald-400 border border-emerald-500/30"
+              className="p-1 rounded-full bg-black/80 backdrop-blur-md text-emerald-400 border border-emerald-500/40 shadow-sm"
             >
               <CheckCircle2 className="w-3.5 h-3.5" />
             </span>
@@ -148,7 +148,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({
 
         {/* Bottom Duration pill on cover */}
         <div className="absolute bottom-2 right-2 pointer-events-none">
-          <span className="px-2 py-0.5 rounded-full bg-black/75 backdrop-blur-sm text-[#FAF7F2] text-[10px] font-medium tabular-nums border border-white/10">
+          <span className="px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[#FAF7F2] text-[10px] font-semibold tabular-nums border border-white/10 shadow-sm">
             {track.durationFormatted}
           </span>
         </div>
@@ -157,15 +157,15 @@ export const TrackCard: React.FC<TrackCardProps> = ({
       {/* Track Details */}
       <div className="min-w-0 flex-1">
         <h4
-          className={`font-heading font-bold text-sm sm:text-base truncate leading-snug group-hover:text-[#C98A2E] transition-colors ${
-            isCurrent ? 'text-[#C98A2E]' : 'text-[#FAF7F2]'
+          className={`font-heading font-black text-sm sm:text-base truncate leading-snug group-hover:text-[#F59E0B] transition-colors ${
+            isCurrent ? 'text-[#F59E0B]' : 'text-[#FAF7F2]'
           }`}
           title={track.title}
         >
           {track.title}
         </h4>
         <p
-          className="text-xs text-[#A7A7A7] truncate mt-0.5 font-medium"
+          className="text-xs text-[#A3A3A3] truncate mt-1 font-medium"
           title={track.artist}
         >
           {track.artist}
@@ -173,8 +173,8 @@ export const TrackCard: React.FC<TrackCardProps> = ({
       </div>
 
       {/* Footer Info: Genre badge & Action Buttons */}
-      <div className="flex items-center justify-between pt-2.5 mt-2 border-t border-[#262626]/80 text-xs text-[#A7A7A7]">
-        <span className="text-[10px] font-semibold text-[#888888] truncate max-w-[90px] sm:max-w-[120px]">
+      <div className="flex items-center justify-between pt-2.5 mt-2.5 border-t border-[#292929] text-xs text-[#A7A7A7]">
+        <span className="inline-block px-2 py-0.5 rounded-md bg-[#222222] text-[10px] font-semibold text-[#8E8E8E] border border-[#2E2E2E] truncate max-w-[95px] sm:max-w-[120px]">
           {track.genre || 'Modão Raiz'}
         </span>
 

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import {
   Music2,
   Play,
@@ -14,6 +14,10 @@ import {
   LayoutGrid,
   List,
   ArrowUpDown,
+  ChevronLeft,
+  ChevronRight,
+  Disc3,
+  SlidersHorizontal,
 } from 'lucide-react';
 import { ViewState, Track } from '../../types';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
@@ -30,6 +34,18 @@ interface AllTracksViewProps {
   initialGenre?: string;
   onNavigate: (view: ViewState) => void;
 }
+
+const GENRE_EMOJIS: Record<string, string> = {
+  all: '🎶',
+  'Modão Raiz': '🎻',
+  'Moda de Viola': '🪕',
+  'Modão de Boteco': '🍺',
+  'Modão de Estrada': '🚛',
+  'Sofrência das Antigas': '💔',
+  Românticas: '❤️',
+  'Clássicos Sertanejos': '👑',
+  'Rodeio & Peão': '🤠',
+};
 
 export const AllTracksView: React.FC<AllTracksViewProps> = ({
   initialSearchQuery = '',
@@ -49,6 +65,15 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
   const [onlyDownloaded, setOnlyDownloaded] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'default' | 'title' | 'artist' | 'duration'>('default');
+
+  // Draggable filter rail state
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftState, setScrollLeftState] = useState(0);
+  const [hasDragged, setHasDragged] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   useEffect(() => {
     if (initialSearchQuery !== undefined) {
@@ -99,6 +124,62 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
     return result;
   }, [allTracks, searchQuery, selectedGenre, onlyDownloaded, downloadedTrackIds, sortBy]);
 
+  // Check filter slider scroll bounds for showing arrows
+  const checkScrollBounds = () => {
+    const el = sliderRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 6);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 6);
+  };
+
+  useEffect(() => {
+    const el = sliderRef.current;
+    if (!el) return;
+    checkScrollBounds();
+    el.addEventListener('scroll', checkScrollBounds, { passive: true });
+    window.addEventListener('resize', checkScrollBounds);
+    return () => {
+      el.removeEventListener('scroll', checkScrollBounds);
+      window.removeEventListener('resize', checkScrollBounds);
+    };
+  }, []);
+
+  // Mouse drag handlers for filter chips
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const el = sliderRef.current;
+    if (!el) return;
+    setIsDragging(true);
+    setHasDragged(false);
+    setStartX(e.pageX - el.offsetLeft);
+    setScrollLeftState(el.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const el = sliderRef.current;
+    if (!isDragging || !el) return;
+    e.preventDefault();
+    const x = e.pageX - el.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 4) {
+      setHasDragged(true);
+    }
+    el.scrollLeft = scrollLeftState - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setTimeout(() => {
+      setHasDragged(false);
+    }, 60);
+  };
+
+  const handleScrollStep = (direction: 'left' | 'right') => {
+    const el = sliderRef.current;
+    if (!el) return;
+    const offset = direction === 'left' ? -280 : 280;
+    el.scrollBy({ left: offset, behavior: 'smooth' });
+  };
+
   const handleResetFilters = () => {
     setSearchQuery('');
     setSelectedGenre('all');
@@ -111,49 +192,57 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
 
   return (
     <div className="space-y-6 sm:space-y-8 pb-24">
-      {/* 1. Header Premium com Identidade Sertaneja */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#242424] via-[#1C1C1C] to-[#141414] border border-[#2D2D2D] p-5 sm:p-7 shadow-xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-[#C98A2E] to-[#996016] flex items-center justify-center shadow-xl shadow-[#C98A2E]/20 text-black shrink-0 ring-2 ring-[#C98A2E]/30">
-              <Music2 className="w-7 h-7 sm:w-8 sm:h-8 fill-current" />
+      {/* 1. Header Hero Card com Atmosfera Sertaneja e Acabamento Premium */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#262119] via-[#1C1A17] to-[#121212] border border-[#3E3424] p-5 sm:p-7 lg:p-8 shadow-2xl">
+        {/* Glow de fundo e efeitos visuais */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C98A2E]/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#C98A2E]/40 to-transparent" />
+
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+          {/* Informações e Título */}
+          <div className="flex items-start sm:items-center gap-4 sm:gap-5">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-[#F59E0B] via-[#C98A2E] to-[#8C4A08] flex items-center justify-center shadow-xl shadow-[#C98A2E]/30 text-black shrink-0 ring-2 ring-[#F59E0B]/50 group">
+              <Disc3 className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 transition-transform duration-700 group-hover:rotate-180" />
             </div>
+
             <div>
-              <div className="flex items-center gap-2 mb-1 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#C98A2E]/20 text-[#C98A2E] border border-[#C98A2E]/30 text-[11px] font-bold uppercase tracking-wider">
-                  <Sparkles className="w-3 h-3" />
-                  352 Músicas no Catálogo
+              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C98A2E]/25 text-[#F59E0B] border border-[#C98A2E]/40 text-[11px] font-black uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
+                  Catálogo Completo • 352 Clássicos
                 </span>
                 {downloadedTrackIds.length > 0 && (
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[11px] font-bold">
-                    <Smartphone className="w-3 h-3" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[11px] font-bold">
+                    <Smartphone className="w-3.5 h-3.5" />
                     {downloadedTrackIds.length} salvas no aparelho
                   </span>
                 )}
               </div>
+
               <h1 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#FAF7F2] tracking-tight">
                 Músicas & Modões
               </h1>
-              <p className="text-xs sm:text-sm text-[#A7A7A7] mt-1 font-medium">
+
+              <p className="text-xs sm:text-sm text-[#B3B3B3] mt-1.5 max-w-xl font-medium">
                 {searchQuery || selectedGenre !== 'all' || onlyDownloaded
-                  ? `Mostrando ${filteredTracks.length} de ${allTracks.length} modões selecionados`
-                  : '352 clássicos sertanejos prontos para ouvir online ou sem internet'}
+                  ? `Mostrando ${filteredTracks.length} de ${allTracks.length} modões selecionados com os filtros atuais.`
+                  : '352 clássicos das duplas lendárias do sertanejo. Ouça online com som remasterizado ou salve no aparelho.'}
               </p>
             </div>
           </div>
 
-          {/* Quick Play & Download Actions */}
-          <div className="flex items-center gap-2.5 flex-wrap sm:justify-end">
+          {/* Ações Rápidas: Tocar Todas, Aleatório, Baixar Offline */}
+          <div className="flex items-center gap-2.5 flex-wrap sm:justify-end shrink-0">
             <button
               type="button"
               onClick={downloadAllTracks}
               disabled={isDownloadingAll}
-              className={`flex items-center gap-2 px-4 sm:px-5 py-3 rounded-2xl border text-xs sm:text-sm font-bold active:scale-95 transition shadow-lg ${
+              className={`flex items-center gap-2 px-4 sm:px-5 py-3.5 rounded-2xl border text-xs sm:text-sm font-bold active:scale-95 transition shadow-lg ${
                 isAllDownloaded
                   ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
-                  : 'bg-[#2A2A2A] hover:bg-[#323232] border-[#3E3E3E] hover:border-[#C98A2E] text-[#FAF7F2]'
+                  : 'bg-[#222222] hover:bg-[#2C2C2C] border-[#3A3A3A] hover:border-[#C98A2E] text-[#FAF7F2]'
               }`}
-              title="Salva as músicas no aplicativo para ouvir sem precisar de internet"
+              title="Salva todo o catálogo no aplicativo para escutar sem internet"
             >
               {isDownloadingAll ? (
                 <>
@@ -178,16 +267,16 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
                 <button
                   type="button"
                   onClick={() => playAll(filteredTracks, false)}
-                  className="flex items-center gap-2 px-5 sm:px-6 py-3 rounded-2xl bg-gradient-to-r from-[#C98A2E] to-[#D97706] text-black font-heading font-black text-xs sm:text-sm shadow-xl shadow-[#C98A2E]/25 hover:brightness-110 active:scale-95 transition"
+                  className="flex items-center gap-2.5 px-5 sm:px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#F59E0B] via-[#C98A2E] to-[#D97706] text-black font-heading font-black text-xs sm:text-sm shadow-xl shadow-[#C98A2E]/30 hover:brightness-110 active:scale-95 transition"
                 >
                   <Play className="w-4 h-4 fill-current ml-0.5" />
-                  <span>Tocar Todas</span>
+                  <span>Tocar Todas ({filteredTracks.length})</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => playAll(filteredTracks, true)}
-                  className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-[#242424] hover:bg-[#2E2E2E] border border-[#3A3A3A] hover:border-[#C98A2E]/50 text-[#FAF7F2] font-semibold text-xs sm:text-sm active:scale-95 transition shadow-md"
+                  className="flex items-center gap-2 px-4 sm:px-4.5 py-3.5 rounded-2xl bg-[#222222] hover:bg-[#2C2C2C] border border-[#3A3A3A] hover:border-[#C98A2E]/60 text-[#FAF7F2] font-bold text-xs sm:text-sm active:scale-95 transition shadow-lg"
                   title="Tocar em ordem aleatória"
                 >
                   <Shuffle className="w-4 h-4 text-[#C98A2E]" />
@@ -199,17 +288,17 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
         </div>
       </div>
 
-      {/* 2. Barra de Busca Inteligente, Abas e Controles de Visualização */}
-      <div className="bg-[#1B1B1B] border border-[#2B2B2B] rounded-3xl p-4 sm:p-5 space-y-4 shadow-lg">
-        {/* Input de Busca */}
+      {/* 2. Central de Busca, Visualização e Filtros Arrastáveis */}
+      <div className="bg-[#1A1A1A] border border-[#2D2D2D] rounded-3xl p-4 sm:p-5.5 space-y-4 sm:space-y-5 shadow-xl">
+        {/* Campo de Busca Inteligente */}
         <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#C98A2E]" />
+          <Search className="absolute left-4 sm:left-4.5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#C98A2E]" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Buscar modão por título ou artista (ex: Boate Azul, Zezé, Tião Carreiro, Milionário)..."
-            className="w-full bg-[#242424] border border-[#383838] focus:border-[#C98A2E] rounded-2xl py-3.5 pl-12 pr-11 text-sm sm:text-base text-[#FAF7F2] placeholder-[#777777] font-medium focus:outline-none transition shadow-inner"
+            placeholder="Buscar por título ou artista (ex: Boate Azul, Zezé, Tião Carreiro, Milionário)..."
+            className="w-full bg-[#232323] border border-[#383838] focus:border-[#C98A2E] rounded-2xl py-3.5 pl-12 sm:pl-13 pr-11 text-sm sm:text-base text-[#FAF7F2] placeholder-[#777777] font-medium focus:outline-none transition shadow-inner"
           />
           {searchQuery && (
             <button
@@ -223,17 +312,17 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
           )}
         </div>
 
-        {/* Linha de Abas Rápidas + Seletor de Modo Cards/Lista + Ordenação */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-b border-[#262626] pb-3.5">
-          {/* Abas Rápidas */}
+        {/* Linha de Abas Rápidas + Ferramentas de Visualização e Ordenação */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-b border-[#282828] pb-3.5">
+          {/* Abas Rápidas (Todas vs Salvas Offline) */}
           <div className="flex items-center gap-2 flex-wrap">
             <button
               type="button"
               onClick={() => setOnlyDownloaded(false)}
-              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition ${
                 !onlyDownloaded
-                  ? 'bg-[#C98A2E] text-black shadow-md'
-                  : 'bg-[#242424] text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#2A2A2A]'
+                  ? 'bg-gradient-to-r from-[#C98A2E] to-[#D97706] text-black shadow-md'
+                  : 'bg-[#232323] text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#2B2B2B] border border-[#333333]'
               }`}
             >
               Todas ({allTracks.length})
@@ -241,10 +330,10 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
             <button
               type="button"
               onClick={() => setOnlyDownloaded(true)}
-              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
                 onlyDownloaded
                   ? 'bg-emerald-500 text-black shadow-md'
-                  : 'bg-[#242424] text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#2A2A2A]'
+                  : 'bg-[#232323] text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#2B2B2B] border border-[#333333]'
               }`}
             >
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
@@ -252,10 +341,10 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
             </button>
           </div>
 
-          {/* Ferramentas de Visualização (Cards vs Lista & Ordenar) */}
+          {/* Controles de Visualização: Ordenar & Alternar Cards/Lista */}
           <div className="flex items-center gap-2.5 self-end sm:self-auto">
-            {/* Ordenação */}
-            <div className="flex items-center gap-1.5 bg-[#242424] px-2.5 py-1.5 rounded-xl border border-[#333333] text-xs">
+            {/* Dropdown de Ordenação */}
+            <div className="flex items-center gap-1.5 bg-[#232323] px-3 py-1.5 rounded-xl border border-[#363636] text-xs">
               <ArrowUpDown className="w-3.5 h-3.5 text-[#C98A2E]" />
               <select
                 value={sortBy}
@@ -270,8 +359,8 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
               </select>
             </div>
 
-            {/* Alternar Grade (Cards) ou Lista */}
-            <div className="flex items-center bg-[#242424] p-1 rounded-xl border border-[#333333]">
+            {/* Alternador de Visualização: Cards em Grade vs Lista */}
+            <div className="flex items-center bg-[#232323] p-1 rounded-xl border border-[#363636]">
               <button
                 type="button"
                 onClick={() => setViewMode('grid')}
@@ -280,7 +369,7 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
                     ? 'bg-[#C98A2E] text-black shadow-sm font-bold'
                     : 'text-[#A7A7A7] hover:text-[#FAF7F2]'
                 }`}
-                title="Visualização em Cards de Modões"
+                title="Visualização em Cards"
                 aria-label="Visualização em grade de cards"
               >
                 <LayoutGrid className="w-4 h-4" />
@@ -302,53 +391,114 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
           </div>
         </div>
 
-        {/* 3. Filtros por Categoria / Estilo */}
+        {/* 3. Filtros Arrastáveis por Estilo de Modão (Mouse Drag + Touch Drag + Setas) */}
         <div className="space-y-2.5">
           <div className="flex items-center justify-between text-xs font-semibold text-[#A7A7A7]">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <Filter className="w-3.5 h-3.5 text-[#C98A2E]" />
-              <span>Estilo de Modão:</span>
+              <span className="text-[#FAF7F2]">Estilo de Modão:</span>
+              <span className="text-[11px] text-[#7E7E7E] hidden sm:inline font-normal">
+                (Arraste para os lados ou use as setas)
+              </span>
             </div>
+
             {(searchQuery || selectedGenre !== 'all' || onlyDownloaded || sortBy !== 'default') && (
               <button
                 type="button"
                 onClick={handleResetFilters}
-                className="text-[#C98A2E] hover:underline font-bold transition"
+                className="text-[#C98A2E] hover:underline font-bold transition text-xs"
               >
                 Limpar todos os filtros
               </button>
             )}
           </div>
 
-          <div className="flex items-center gap-2 overflow-x-auto md:flex-wrap md:overflow-visible pb-2 scrollbar-none pt-0.5">
-            {GENRE_FILTERS.map(filter => {
-              const isSelected = selectedGenre === filter.id;
-              const count = genreCounts[filter.id] || 0;
+          {/* Carrossel Arrastável com Setas de Navegação e Máscaras de Fade */}
+          <div className="relative group">
+            {/* Seta Esquerda */}
+            {canScrollLeft && (
+              <button
+                type="button"
+                onClick={() => handleScrollStep('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1A1A1A]/95 hover:bg-[#C98A2E] text-[#FAF7F2] hover:text-black border border-[#3E3E3E] hover:border-[#C98A2E] shadow-xl flex items-center justify-center transition active:scale-90"
+                aria-label="Rolar filtros para esquerda"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+            )}
 
-              return (
-                <button
-                  key={filter.id}
-                  type="button"
-                  onClick={() => setSelectedGenre(filter.id)}
-                  className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold shrink-0 transition-all active:scale-95 flex items-center gap-1.5 ${
-                    isSelected
-                      ? 'bg-gradient-to-r from-[#C98A2E] to-[#D97706] text-black shadow-lg shadow-[#C98A2E]/25 font-bold scale-[1.02]'
-                      : 'bg-[#242424] text-[#B0B0B0] hover:text-[#FAF7F2] hover:bg-[#2B2B2B] border border-[#323232]'
-                  }`}
-                >
-                  <span>{filter.label}</span>
-                  <span
-                    className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+            {/* Máscara de Fade Esquerda */}
+            {canScrollLeft && (
+              <div className="absolute left-0 inset-y-0 w-10 bg-gradient-to-r from-[#1A1A1A] to-transparent pointer-events-none z-10" />
+            )}
+
+            {/* Container dos Filtros: Arrastável com Mouse no Computador e Dedo no Celular */}
+            <div
+              ref={sliderRef}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              className={`flex items-center gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 select-none scroll-smooth transition-all ${
+                isDragging ? 'cursor-grabbing' : 'cursor-grab'
+              }`}
+              style={{
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+              }}
+            >
+              {GENRE_FILTERS.map(filter => {
+                const isSelected = selectedGenre === filter.id;
+                const count = genreCounts[filter.id] || 0;
+                const emoji = GENRE_EMOJIS[filter.id] || '🎵';
+
+                return (
+                  <button
+                    key={filter.id}
+                    type="button"
+                    onClick={() => {
+                      if (hasDragged) return; // Não ativa clique se estava arrastando
+                      setSelectedGenre(filter.id);
+                    }}
+                    className={`px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold shrink-0 transition-all active:scale-95 flex items-center gap-2 select-none shadow-sm ${
                       isSelected
-                        ? 'bg-black/25 text-black'
-                        : 'bg-[#1A1A1A] text-[#888888]'
+                        ? 'bg-gradient-to-r from-[#F59E0B] via-[#C98A2E] to-[#D97706] text-black shadow-lg shadow-[#C98A2E]/25 font-black ring-2 ring-[#F59E0B]/60 scale-[1.02]'
+                        : 'bg-[#232323] text-[#B8B8B8] hover:text-[#FAF7F2] hover:bg-[#2C2C2C] border border-[#343434] hover:border-[#C98A2E]/50'
                     }`}
                   >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
+                    <span className="text-sm">{emoji}</span>
+                    <span>{filter.label}</span>
+                    <span
+                      className={`text-[11px] px-2 py-0.5 rounded-full font-bold tabular-nums transition ${
+                        isSelected
+                          ? 'bg-black/30 text-black'
+                          : 'bg-[#181818] text-[#888888]'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Máscara de Fade Direita */}
+            {canScrollRight && (
+              <div className="absolute right-0 inset-y-0 w-10 bg-gradient-to-l from-[#1A1A1A] to-transparent pointer-events-none z-10" />
+            )}
+
+            {/* Seta Direita */}
+            {canScrollRight && (
+              <button
+                type="button"
+                onClick={() => handleScrollStep('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1A1A1A]/95 hover:bg-[#C98A2E] text-[#FAF7F2] hover:text-black border border-[#3E3E3E] hover:border-[#C98A2E] shadow-xl flex items-center justify-center transition active:scale-90"
+                aria-label="Rolar filtros para direita"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            )}
           </div>
         </div>
       </div>

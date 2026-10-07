@@ -46,7 +46,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
   ];
 
   return (
-    <aside className="w-56 lg:w-64 bg-[#1B1B1B] border-r border-[#242424] flex flex-col justify-between shrink-0 h-full p-3.5 lg:p-4 select-none">
+    <aside className="w-60 lg:w-64 shrink-0 bg-[#1B1B1B] border-r border-[#242424] flex flex-col justify-between h-full p-3.5 lg:p-4 select-none">
       <div className="space-y-6 overflow-y-auto pr-1">
         {/* Brand */}
         <div
@@ -136,8 +136,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
       </div>
 
       {/* Bottom PWA Install Widget */}
-      <div className="pt-4 border-t border-[#242424]">
-        <PWAInstallButton variant="banner" />
+      <div className="pt-3 border-t border-[#242424]">
+        <PWAInstallButton variant="sidebar" />
       </div>
     </aside>
   );

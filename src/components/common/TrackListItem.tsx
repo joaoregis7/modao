@@ -139,14 +139,14 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
       </div>
 
       {/* Right Actions: Genre badge, Duration, Download & Favorite button */}
-      <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 ml-3">
+      <div className="flex items-center gap-1 sm:gap-2 shrink-0 ml-2">
         {track.genre && (
-          <span className="hidden md:inline-flex px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#262626] text-[#A7A7A7] border border-[#333333] max-w-[150px] truncate">
+          <span className="hidden xl:inline-flex px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#262626] text-[#A7A7A7] border border-[#333333] max-w-[120px] truncate">
             {track.genre}
           </span>
         )}
 
-        <span className="text-xs sm:text-sm text-[#A7A7A7] font-medium hidden xs:inline tabular-nums">
+        <span className="text-xs text-[#A7A7A7] font-medium hidden sm:inline tabular-nums">
           {track.durationFormatted}
         </span>
 
@@ -156,7 +156,7 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
           onClick={handleDownloadClick}
           aria-label={downloaded ? 'Música salva no aparelho' : 'Baixar para ouvir offline no app'}
           title={downloaded ? 'Salva no aparelho (toca offline na plataforma)' : 'Baixar para ouvir offline dentro do app'}
-          className={`p-1.5 sm:p-2 rounded-full transition active:scale-75 ${
+          className={`p-1.5 rounded-full transition active:scale-75 ${
             downloaded
               ? 'text-emerald-400 hover:text-red-400'
               : 'text-[#666666] hover:text-[#C98A2E]'
@@ -176,14 +176,14 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
           type="button"
           onClick={handleFavoriteClick}
           aria-label={favorited ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
-          className={`p-1.5 sm:p-2 rounded-full transition active:scale-75 ${
+          className={`p-1.5 rounded-full transition active:scale-75 ${
             favorited
               ? 'text-red-500 hover:text-red-400'
               : 'text-[#666666] hover:text-[#FAF7F2]'
           }`}
         >
           <Heart
-            className={`w-4 h-4 sm:w-5 sm:h-5 ${favorited ? 'fill-current' : ''}`}
+            className={`w-4 h-4 ${favorited ? 'fill-current' : ''}`}
           />
         </button>
 
@@ -192,7 +192,7 @@ export const TrackListItem: React.FC<TrackListItemProps> = ({
           type="button"
           onClick={handlePlayClick}
           aria-label={isCurrentPlaying ? 'Pausar' : 'Tocar'}
-          className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition active:scale-95 ${
+          className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition active:scale-95 shrink-0 ${
             isCurrentPlaying
               ? 'bg-[#C98A2E] text-black shadow-md'
               : 'bg-[#2A2A2A] text-[#FAF7F2] hover:bg-[#C98A2E] hover:text-black'

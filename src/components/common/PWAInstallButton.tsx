@@ -3,7 +3,7 @@ import { Download, Share2, X, Smartphone, Check } from 'lucide-react';
 import { usePWAInstall } from '../../hooks/usePWAInstall';
 
 interface PWAInstallButtonProps {
-  variant?: 'banner' | 'pill' | 'header';
+  variant?: 'banner' | 'pill' | 'header' | 'sidebar';
 }
 
 export const PWAInstallButton: React.FC<PWAInstallButtonProps> = ({ variant = 'pill' }) => {
@@ -93,6 +93,36 @@ export const PWAInstallButton: React.FC<PWAInstallButtonProps> = ({ variant = 'p
         <Check className="w-4 h-4 text-emerald-400" />
         Aplicativo instalado!
       </div>
+    );
+  }
+
+  if (variant === 'sidebar') {
+    return (
+      <>
+        <div className="relative overflow-hidden rounded-2xl bg-[#242424] border border-[#333333] hover:border-[#C98A2E]/50 p-3.5 flex flex-col gap-2.5 transition">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#C98A2E] to-[#996016] flex items-center justify-center shadow shrink-0">
+              <Smartphone className="w-4 h-4 text-black" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h4 className="text-xs font-bold text-[#FAF7F2] truncate leading-tight">
+                Instale no Celular
+              </h4>
+              <p className="text-[10px] text-[#A7A7A7] truncate">
+                Ouça com 1 toque na tela
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={handleInstallClick}
+            className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#C98A2E] to-[#D97706] py-2 px-3 text-xs font-bold text-black shadow hover:brightness-110 active:scale-95 transition"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Instalar Aplicativo</span>
+          </button>
+        </div>
+        {renderIOSModal()}
+      </>
     );
   }
 

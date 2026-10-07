@@ -293,67 +293,83 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
       </div>
 
       {/* 2. Central de Busca, Visualização e Filtros Arrastáveis */}
-      <div className="bg-[#1A1A1A] border border-[#2D2D2D] rounded-3xl p-4 sm:p-5.5 space-y-4 sm:space-y-5 shadow-xl">
+      <div className="bg-[#1A1A1A] border border-[#2D2D2D] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 space-y-3.5 sm:space-y-4 shadow-xl">
         {/* Campo de Busca Inteligente */}
         <div className="relative">
-          <Search className="absolute left-4 sm:left-4.5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#C98A2E]" />
+          <Search className="absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-[#C98A2E]" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Buscar por título ou artista (ex: Boate Azul, Zezé, Tião Carreiro, Milionário)..."
-            className="w-full bg-[#232323] border border-[#383838] focus:border-[#C98A2E] rounded-2xl py-3.5 pl-12 sm:pl-13 pr-11 text-sm sm:text-base text-[#FAF7F2] placeholder-[#777777] font-medium focus:outline-none transition shadow-inner"
+            placeholder="Buscar por título ou artista (ex: Boate Azul, Zezé, Tião Carreiro)..."
+            className="w-full bg-[#232323] border border-[#363636] focus:border-[#C98A2E] rounded-xl sm:rounded-2xl py-2.5 sm:py-3 pl-10 sm:pl-12 pr-10 text-xs sm:text-sm text-[#FAF7F2] placeholder-[#777777] font-medium focus:outline-none transition shadow-inner"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery('')}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1.5 text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#333333] rounded-full transition"
-              aria-label="Limpar texto de busca"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#333333] rounded-full transition"
+              aria-label="Limpar busca"
             >
-              <X className="w-4 h-4" />
+              <X className="w-3.5 h-3.5" />
             </button>
           )}
         </div>
 
-        {/* Linha de Abas Rápidas + Ferramentas de Visualização e Ordenação */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-b border-[#282828] pb-3.5">
-          {/* Abas Rápidas (Todas vs Salvas Offline) */}
-          <div className="flex items-center gap-2 flex-wrap">
+        {/* Linha de Abas Rápidas + Ferramentas de Visualização (Organizada e Simétrica) */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-0.5 border-b border-[#262626] pb-3">
+          {/* Segmented Control: Todas vs Salvas Offline */}
+          <div className="flex bg-[#232323] p-1 rounded-xl border border-[#333333] w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setOnlyDownloaded(false)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition ${
+              className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${
                 !onlyDownloaded
-                  ? 'bg-gradient-to-r from-[#C98A2E] to-[#D97706] text-black shadow-md'
-                  : 'bg-[#232323] text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#2B2B2B] border border-[#333333]'
+                  ? 'bg-gradient-to-r from-[#C98A2E] to-[#D97706] text-black shadow-sm font-black'
+                  : 'text-[#A7A7A7] hover:text-[#FAF7F2]'
               }`}
             >
-              Todas ({allTracks.length})
+              <span>Todas</span>
+              <span
+                className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                  !onlyDownloaded ? 'bg-black/20 text-black' : 'bg-[#181818] text-[#888888]'
+                }`}
+              >
+                {allTracks.length}
+              </span>
             </button>
             <button
               type="button"
               onClick={() => setOnlyDownloaded(true)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 ${
                 onlyDownloaded
-                  ? 'bg-emerald-500 text-black shadow-md'
-                  : 'bg-[#232323] text-[#A7A7A7] hover:text-[#FAF7F2] hover:bg-[#2B2B2B] border border-[#333333]'
+                  ? 'bg-emerald-500 text-black shadow-sm font-black'
+                  : 'text-[#A7A7A7] hover:text-[#FAF7F2]'
               }`}
             >
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Salvas Offline ({downloadedTrackIds.length})</span>
+              <CheckCircle2
+                className={`w-3.5 h-3.5 ${onlyDownloaded ? 'text-black' : 'text-emerald-400'}`}
+              />
+              <span>Salvas Offline</span>
+              <span
+                className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                  onlyDownloaded ? 'bg-black/20 text-black' : 'bg-[#181818] text-[#888888]'
+                }`}
+              >
+                {downloadedTrackIds.length}
+              </span>
             </button>
           </div>
 
-          {/* Controles de Visualização: Ordenar & Alternar Cards/Lista */}
-          <div className="flex items-center gap-2.5 self-end sm:self-auto">
+          {/* Controles de Visualização: Ordenar & Alternar Cards/Lista (Perfeitamente Alinhados) */}
+          <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
             {/* Dropdown de Ordenação */}
-            <div className="flex items-center gap-1.5 bg-[#232323] px-3 py-1.5 rounded-xl border border-[#363636] text-xs">
-              <ArrowUpDown className="w-3.5 h-3.5 text-[#C98A2E]" />
+            <div className="flex-1 sm:flex-initial flex items-center gap-1.5 bg-[#232323] px-2.5 py-1.5 rounded-xl border border-[#333333] text-xs">
+              <ArrowUpDown className="w-3.5 h-3.5 text-[#C98A2E] shrink-0" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-transparent text-[#FAF7F2] font-semibold focus:outline-none cursor-pointer text-xs"
+                className="bg-transparent text-[#FAF7F2] font-semibold focus:outline-none cursor-pointer text-xs w-full sm:w-auto"
                 aria-label="Ordenar modões"
               >
                 <option value="default" className="bg-[#242424] text-[#FAF7F2]">Ordem do Disco</option>
@@ -364,7 +380,7 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
             </div>
 
             {/* Alternador de Visualização: Cards em Grade vs Lista */}
-            <div className="flex items-center bg-[#232323] p-1 rounded-xl border border-[#363636]">
+            <div className="flex items-center bg-[#232323] p-1 rounded-xl border border-[#333333] shrink-0">
               <button
                 type="button"
                 onClick={() => setViewMode('grid')}
@@ -376,7 +392,7 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
                 title="Visualização em Cards"
                 aria-label="Visualização em grade de cards"
               >
-                <LayoutGrid className="w-4 h-4" />
+                <LayoutGrid className="w-3.5 h-3.5" />
               </button>
               <button
                 type="button"
@@ -389,120 +405,110 @@ export const AllTracksView: React.FC<AllTracksViewProps> = ({
                 title="Visualização em Lista"
                 aria-label="Visualização em lista"
               >
-                <List className="w-4 h-4" />
+                <List className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* 3. Filtros Arrastáveis por Estilo de Modão (Mouse Drag + Touch Drag + Setas) */}
-        <div className="space-y-2.5">
+        {/* 3. Filtros Arrastáveis por Estilo de Modão */}
+        <div className="space-y-2">
+          {/* Cabeçalho dos Filtros com Setas Embutidas (Sem sobrepor os botões!) */}
           <div className="flex items-center justify-between text-xs font-semibold text-[#A7A7A7]">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <Filter className="w-3.5 h-3.5 text-[#C98A2E]" />
-              <span className="text-[#FAF7F2]">Estilo de Modão:</span>
-              <span className="text-[11px] text-[#7E7E7E] hidden sm:inline font-normal">
+              <span className="text-[#FAF7F2] font-bold">Estilo de Modão:</span>
+              <span className="text-[11px] text-[#777777] hidden sm:inline font-normal">
                 (Arraste para os lados ou use as setas)
               </span>
             </div>
 
-            {(searchQuery || selectedGenre !== 'all' || onlyDownloaded || sortBy !== 'default') && (
-              <button
-                type="button"
-                onClick={handleResetFilters}
-                className="text-[#C98A2E] hover:underline font-bold transition text-xs"
-              >
-                Limpar todos os filtros
-              </button>
-            )}
+            <div className="flex items-center gap-2">
+              {(searchQuery || selectedGenre !== 'all' || onlyDownloaded || sortBy !== 'default') && (
+                <button
+                  type="button"
+                  onClick={handleResetFilters}
+                  className="text-[#C98A2E] hover:underline font-bold transition text-xs mr-0.5"
+                >
+                  Limpar
+                </button>
+              )}
+
+              {/* Setas de rolagem embutidas na barra de título - nunca cobrem as categorias! */}
+              <div className="flex items-center gap-1 bg-[#232323] p-0.5 rounded-lg border border-[#333333]">
+                <button
+                  type="button"
+                  onClick={() => handleScrollStep('left')}
+                  disabled={!canScrollLeft}
+                  className="w-6 h-6 rounded-md hover:bg-[#C98A2E] text-[#FAF7F2] hover:text-black disabled:opacity-25 disabled:hover:bg-transparent disabled:hover:text-[#FAF7F2] flex items-center justify-center transition active:scale-90"
+                  title="Rolar filtros para esquerda"
+                  aria-label="Rolar filtros para esquerda"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleScrollStep('right')}
+                  disabled={!canScrollRight}
+                  className="w-6 h-6 rounded-md hover:bg-[#C98A2E] text-[#FAF7F2] hover:text-black disabled:opacity-25 disabled:hover:bg-transparent disabled:hover:text-[#FAF7F2] flex items-center justify-center transition active:scale-90"
+                  title="Rolar filtros para direita"
+                  aria-label="Rolar filtros para direita"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Carrossel Arrastável com Setas de Navegação e Máscaras de Fade */}
-          <div className="relative group">
-            {/* Seta Esquerda */}
-            {canScrollLeft && (
-              <button
-                type="button"
-                onClick={() => handleScrollStep('left')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1A1A1A]/95 hover:bg-[#C98A2E] text-[#FAF7F2] hover:text-black border border-[#3E3E3E] hover:border-[#C98A2E] shadow-xl flex items-center justify-center transition active:scale-90"
-                aria-label="Rolar filtros para esquerda"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-            )}
+          {/* Container dos Filtros: Arrastável com Mouse no Computador e Dedo no Celular */}
+          <div
+            ref={sliderRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            className={`flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 select-none scroll-smooth transition-all ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            {GENRE_FILTERS.map(filter => {
+              const isSelected = selectedGenre === filter.id;
+              const count = genreCounts[filter.id] || 0;
+              const emoji = GENRE_EMOJIS[filter.id] || '🎵';
 
-            {/* Máscara de Fade Esquerda */}
-            {canScrollLeft && (
-              <div className="absolute left-0 inset-y-0 w-10 bg-gradient-to-r from-[#1A1A1A] to-transparent pointer-events-none z-10" />
-            )}
-
-            {/* Container dos Filtros: Arrastável com Mouse no Computador e Dedo no Celular */}
-            <div
-              ref={sliderRef}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseUp}
-              className={`flex items-center gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 select-none scroll-smooth transition-all ${
-                isDragging ? 'cursor-grabbing' : 'cursor-grab'
-              }`}
-              style={{
-                WebkitOverflowScrolling: 'touch',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-              }}
-            >
-              {GENRE_FILTERS.map(filter => {
-                const isSelected = selectedGenre === filter.id;
-                const count = genreCounts[filter.id] || 0;
-                const emoji = GENRE_EMOJIS[filter.id] || '🎵';
-
-                return (
-                  <button
-                    key={filter.id}
-                    type="button"
-                    onClick={() => {
-                      if (hasDragged) return; // Não ativa clique se estava arrastando
-                      setSelectedGenre(filter.id);
-                    }}
-                    className={`px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold shrink-0 transition-all active:scale-95 flex items-center gap-2 select-none shadow-sm ${
+              return (
+                <button
+                  key={filter.id}
+                  type="button"
+                  onClick={() => {
+                    if (hasDragged) return; // Não ativa clique se estava arrastando
+                    setSelectedGenre(filter.id);
+                  }}
+                  className={`px-3 sm:px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold shrink-0 transition-all active:scale-95 flex items-center gap-1.5 select-none shadow-sm ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-[#F59E0B] via-[#C98A2E] to-[#D97706] text-black shadow-md shadow-[#C98A2E]/25 font-black ring-1 ring-[#F59E0B]/60 scale-[1.02]'
+                      : 'bg-[#232323] text-[#B8B8B8] hover:text-[#FAF7F2] hover:bg-[#2A2A2A] border border-[#343434] hover:border-[#C98A2E]/50'
+                  }`}
+                >
+                  <span className="text-xs sm:text-sm">{emoji}</span>
+                  <span className="whitespace-nowrap">{filter.label}</span>
+                  <span
+                    className={`text-[10px] sm:text-[11px] px-1.5 py-0.5 rounded-full font-bold tabular-nums transition ${
                       isSelected
-                        ? 'bg-gradient-to-r from-[#F59E0B] via-[#C98A2E] to-[#D97706] text-black shadow-lg shadow-[#C98A2E]/25 font-black ring-2 ring-[#F59E0B]/60 scale-[1.02]'
-                        : 'bg-[#232323] text-[#B8B8B8] hover:text-[#FAF7F2] hover:bg-[#2C2C2C] border border-[#343434] hover:border-[#C98A2E]/50'
+                        ? 'bg-black/30 text-black'
+                        : 'bg-[#181818] text-[#888888]'
                     }`}
                   >
-                    <span className="text-sm">{emoji}</span>
-                    <span>{filter.label}</span>
-                    <span
-                      className={`text-[11px] px-2 py-0.5 rounded-full font-bold tabular-nums transition ${
-                        isSelected
-                          ? 'bg-black/30 text-black'
-                          : 'bg-[#181818] text-[#888888]'
-                      }`}
-                    >
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Máscara de Fade Direita */}
-            {canScrollRight && (
-              <div className="absolute right-0 inset-y-0 w-10 bg-gradient-to-l from-[#1A1A1A] to-transparent pointer-events-none z-10" />
-            )}
-
-            {/* Seta Direita */}
-            {canScrollRight && (
-              <button
-                type="button"
-                onClick={() => handleScrollStep('right')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1A1A1A]/95 hover:bg-[#C98A2E] text-[#FAF7F2] hover:text-black border border-[#3E3E3E] hover:border-[#C98A2E] shadow-xl flex items-center justify-center transition active:scale-90"
-                aria-label="Rolar filtros para direita"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            )}
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

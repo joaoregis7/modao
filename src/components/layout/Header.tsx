@@ -32,18 +32,18 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
   return (
     <header className="sticky top-0 z-30 bg-[#121212]/95 backdrop-blur-md border-b border-[#242424] px-3 sm:px-6 py-2.5 sm:py-3 transition">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-2.5 sm:gap-4">
-        {/* Mobile Brand identity (hidden on desktop to avoid duplicate logo with sidebar) */}
+        {/* Brand identity (Visible on all devices: Mobile, Tablet & Desktop) */}
         <div
           onClick={() => {
             setHeaderSearch('');
             onNavigate({ type: 'home' });
           }}
-          className="md:hidden flex items-center cursor-pointer select-none group shrink-0"
+          className="flex items-center cursor-pointer select-none group shrink-0"
         >
           <img
             src="/logo-radio-modao.webp"
             alt="Rádio Modão"
-            className="h-12 sm:h-14 w-auto max-w-[190px] sm:max-w-[230px] object-contain drop-shadow group-hover:scale-105 transition"
+            className="h-10 sm:h-12 md:h-13 lg:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[240px] object-contain drop-shadow group-hover:scale-105 transition"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = '/logo-radio-modao';
             }}
@@ -51,8 +51,8 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
         </div>
 
         {/* Desktop View Context Title */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
-          <span className="font-heading font-black text-base lg:text-lg text-[#FAF7F2] tracking-tight truncate max-w-[200px] lg:max-w-none">
+        <div className="hidden lg:flex items-center gap-2.5 shrink-0 pl-3 border-l border-[#2E2E2E]">
+          <span className="font-heading font-black text-sm lg:text-base text-[#FAF7F2] tracking-tight truncate max-w-[180px] lg:max-w-none">
             {currentView.type === 'home' && 'Início'}
             {currentView.type === 'all_tracks' && 'Músicas & Modões'}
             {currentView.type === 'favorites' && 'Meus Modões'}
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
         {/* Integrated Search Input (Comfortable balanced width) */}
         <form
           onSubmit={handleSearchSubmit}
-          className="flex-1 max-w-[210px] xs:max-w-[260px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px] relative"
+          className="flex-1 max-w-[180px] xs:max-w-[220px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[380px] relative"
         >
           <Search className="absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#C98A2E] pointer-events-none" />
           <input

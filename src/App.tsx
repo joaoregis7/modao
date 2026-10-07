@@ -14,6 +14,7 @@ import { FullPlayerModal } from './components/player/FullPlayerModal';
 import { CarModeView } from './components/player/CarModeView';
 import { QueueDrawer } from './components/player/QueueDrawer';
 import { OfflineIndicator } from './components/common/OfflineIndicator';
+import { PWAInstallModal } from './components/common/PWAInstallModal';
 
 import { HomeView } from './components/views/HomeView';
 import { FavoritesView } from './components/views/FavoritesView';
@@ -131,6 +132,7 @@ const MainAppContent: React.FC = () => {
       <FullPlayerModal />
       <QueueDrawer />
       <CarModeView />
+      <PWAInstallModal />
     </div>
   );
 };

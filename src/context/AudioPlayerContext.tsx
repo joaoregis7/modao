@@ -49,6 +49,9 @@ interface AudioPlayerContextType {
   closeCarMode: () => void;
   openQueue: () => void;
   closeQueue: () => void;
+  isInstallModalOpen: boolean;
+  openInstallModal: () => void;
+  closeInstallModal: () => void;
   addCustomTracks: (newTracks: Track[]) => void;
   deleteCustomTrack: (trackId: string) => void;
   clearCustomTracks: () => void;
@@ -78,12 +81,34 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const [isCarMode, setIsCarMode] = useState<boolean>(false);
   const [isFullPlayerOpen, setIsFullPlayerOpen] = useState<boolean>(false);
   const [isQueueOpen, setIsQueueOpen] = useState<boolean>(false);
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState<boolean>(false);
   const [lastPlayedTrack, setLastPlayedTrack] = useState<Track | null>(null);
 
   const currentTrackRef = useRef<Track | null>(null);
   currentTrackRef.current = currentTrack;
   const lastSavedPositionRef = useRef<number>(0);
   const lastMediaSessionUpdateRef = useRef<number>(0);
+
+  // Exibe o popup de instalação ao entrar no aplicativo no celular (se ainda não instalado)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const isStandalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      (window.navigator as unknown as { standalone?: boolean }).standalone === true;
+
+    if (isStandalone) return;
+
+    try {
+      const dismissed = localStorage.getItem('modao_pwa_dismissed');
+      if (dismissed !== 'true') {
+        const timer = setTimeout(() => {
+          setIsInstallModalOpen(true);
+        }, 1200);
+        return () => clearTimeout(timer);
+      }
+    } catch {}
+  }, []);
 
   // Combine built-in tracks + user-imported tracks
   const allTracks = useMemo(() => {
@@ -486,6 +511,8 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const closeCarMode = useCallback(() => setIsCarMode(false), []);
   const openQueue = useCallback(() => setIsQueueOpen(true), []);
   const closeQueue = useCallback(() => setIsQueueOpen(false), []);
+  const openInstallModal = useCallback(() => setIsInstallModalOpen(true), []);
+  const closeInstallModal = useCallback(() => setIsInstallModalOpen(false), []);
 
   const contextValue = useMemo<AudioPlayerContextType>(() => ({
     currentTrack,
@@ -501,6 +528,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     isCarMode,
     isFullPlayerOpen,
     isQueueOpen,
+    isInstallModalOpen,
     lastPlayedTrack,
     allTracks,
     importedTracks,
@@ -529,6 +557,8 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     closeCarMode,
     openQueue,
     closeQueue,
+    openInstallModal,
+    closeInstallModal,
     addCustomTracks,
     deleteCustomTrack,
     clearCustomTracks,
@@ -545,6 +575,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     isCarMode,
     isFullPlayerOpen,
     isQueueOpen,
+    isInstallModalOpen,
     lastPlayedTrack,
     allTracks,
     importedTracks,
@@ -573,6 +604,8 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     closeCarMode,
     openQueue,
     closeQueue,
+    openInstallModal,
+    closeInstallModal,
     addCustomTracks,
     deleteCustomTrack,
     clearCustomTracks,

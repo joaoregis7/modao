@@ -51,19 +51,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
         {/* Brand */}
         <div
           onClick={() => onNavigate({ type: 'home' })}
-          className="flex items-center gap-3 cursor-pointer group px-2 py-1"
+          className="flex items-center cursor-pointer group px-2 py-1"
         >
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#C98A2E] to-[#996016] flex items-center justify-center shadow-lg group-hover:scale-105 transition">
-            <Radio className="w-5 h-5 text-black" />
-          </div>
-          <div>
-            <span className="font-heading font-black text-lg text-[#FAF7F2] group-hover:text-[#C98A2E] transition block leading-tight">
-              Rádio Modão
-            </span>
-            <span className="text-[11px] text-[#A7A7A7] leading-none">
-              O modão de verdade
-            </span>
-          </div>
+          <img
+            src="/logo-radio-modao.webp"
+            alt="Rádio Modão"
+            className="h-10 sm:h-11 w-auto max-w-[190px] object-contain drop-shadow group-hover:scale-102 transition"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/logo-radio-modao';
+            }}
+          />
         </div>
 
         {/* Primary Navigation - Somente Início, Músicas e Estrada */}

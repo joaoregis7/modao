@@ -38,19 +38,16 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
             setHeaderSearch('');
             onNavigate({ type: 'home' });
           }}
-          className="md:hidden flex items-center gap-2 sm:gap-2.5 cursor-pointer select-none group shrink-0"
+          className="md:hidden flex items-center cursor-pointer select-none group shrink-0"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#C98A2E] to-[#996016] flex items-center justify-center shadow-md shadow-[#C98A2E]/20 group-hover:scale-105 transition">
-            <Radio className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
-          </div>
-          <div className="hidden xs:block">
-            <h1 className="font-heading font-extrabold text-base tracking-tight text-[#FAF7F2] group-hover:text-[#C98A2E] transition leading-none">
-              Rádio Modão
-            </h1>
-            <p className="text-[10px] text-[#A7A7A7] font-medium leading-tight mt-0.5">
-              O modão de verdade
-            </p>
-          </div>
+          <img
+            src="/logo-radio-modao.webp"
+            alt="Rádio Modão"
+            className="h-8 sm:h-9 w-auto max-w-[150px] object-contain drop-shadow"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/logo-radio-modao';
+            }}
+          />
         </div>
 
         {/* Desktop View Context Title */}

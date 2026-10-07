@@ -16,6 +16,7 @@ import {
   Flame,
 } from 'lucide-react';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
+import { audioEngine } from '../../services/audioEngine';
 
 export const CarModeView: React.FC = () => {
   const {
@@ -41,10 +42,18 @@ export const CarModeView: React.FC = () => {
   const activeTrack = currentTrack || lastPlayedTrack || allTracks[0];
 
   const handleTogglePlay = () => {
-    if (!currentTrack && activeTrack) {
-      playTrack(activeTrack, allTracks);
-    } else {
+    if (isPlaying) {
       togglePlayPause();
+    } else {
+      const trackToPlay = currentTrack || activeTrack;
+      if (trackToPlay) {
+        const engineTrack = audioEngine.getCurrentTrack();
+        if (!engineTrack || engineTrack.id !== trackToPlay.id) {
+          playTrack(trackToPlay, queue.length > 0 ? queue : allTracks);
+        } else {
+          togglePlayPause();
+        }
+      }
     }
   };
 
@@ -223,10 +232,6 @@ export const CarModeView: React.FC = () => {
                   </>
                 )}
               </button>
-
-              <span className="font-heading font-black text-sm sm:text-base text-[#FAF7F2] tabular-nums">
-                {volume === 0 ? '0%' : `${volumePercent}%`}
-              </span>
             </div>
 
             {/* Slider Tátil Largo */}

@@ -169,6 +169,9 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
     setCurrentTrack(track);
     setLastPlayedTrack(track);
+    // Always start any selected or new track at the very beginning (0:00)
+    setCurrentTime(0);
+    setDuration(track.duration || 200);
     StorageService.addRecentlyPlayed(track.id);
     audioEngine.playTrack(track, 0);
   }, [queue]);
@@ -177,13 +180,18 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     if (isPlaying) {
       audioEngine.pause();
     } else {
-      if (currentTrack) {
+      const trackToPlay = currentTrack || lastPlayedTrack || queue[0] || allTracks[0];
+      if (!trackToPlay) return;
+
+      const engineTrack = audioEngine.getCurrentTrack();
+      // If the engine hasn't loaded or started this track yet, start playback from beginning!
+      if (!engineTrack || engineTrack.id !== trackToPlay.id) {
+        playTrack(trackToPlay, queue.length > 0 ? queue : allTracks);
+      } else {
         audioEngine.resume();
-      } else if (queue.length > 0) {
-        playTrack(queue[0]);
       }
     }
-  }, [isPlaying, currentTrack, queue, playTrack]);
+  }, [isPlaying, currentTrack, lastPlayedTrack, queue, allTracks, playTrack]);
 
   const nextTrack = useCallback(() => {
     if (queue.length === 0) return;
@@ -203,8 +211,9 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const previousTrack = useCallback(() => {
     if (queue.length === 0) return;
 
-    // If more than 3 seconds played, restart song
+    // If more than 3 seconds played, restart song to the beginning
     if (currentTime > 3) {
+      setCurrentTime(0);
       audioEngine.seek(0);
       return;
     }

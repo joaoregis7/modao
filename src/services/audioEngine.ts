@@ -92,19 +92,37 @@ class AudioEngine {
   }
 
   public async playTrack(track: Track, startPosition?: number): Promise<void> {
+    // 1. Stop any currently active audio or procedurally generated synth immediately
+    if (this.synthTimerId) {
+      clearInterval(this.synthTimerId);
+      this.synthTimerId = null;
+    }
+    if (this.htmlAudio) {
+      this.htmlAudio.pause();
+      try {
+        this.htmlAudio.currentTime = 0;
+      } catch {}
+    }
+
     this.currentTrack = track;
     this.duration = track.duration || 200;
+    // Guaranteed to start at position (defaults to 0 for every new track)
     this.currentTime = startPosition !== undefined ? startPosition : 0;
     this.synthStep = Math.floor(this.currentTime * 4);
 
+    // Immediately notify all listeners that currentTime is 0:00
+    this.notifyTimeUpdate();
+
     this.initAudioContext();
 
-    // 1. Check if real MP3 was downloaded to local phone storage (IndexedDB)
+    // 2. Check if real MP3 was downloaded to local phone storage (IndexedDB)
     try {
       const localBlobUrl = await AudioStorage.getLocalAudioUrl(track.id);
       if (localBlobUrl && this.htmlAudio) {
         this.htmlAudio.src = localBlobUrl;
-        this.htmlAudio.currentTime = this.currentTime;
+        try {
+          this.htmlAudio.currentTime = this.currentTime;
+        } catch {}
         const playPromise = this.htmlAudio.play();
         if (playPromise !== undefined) {
           await playPromise;
@@ -118,7 +136,7 @@ class AudioEngine {
       // If offline blob fails to play, smoothly fall through
     }
 
-    // 1b. Check if audio is cached in CacheStorage (PWA offline download)
+    // 2b. Check if audio is cached in CacheStorage (PWA offline download)
     try {
       if (typeof window !== 'undefined' && 'caches' in window && track.audioUrl) {
         const cache = await caches.open('radio-modao-media-v1');
@@ -128,7 +146,9 @@ class AudioEngine {
           const cachedBlobUrl = URL.createObjectURL(blob);
           if (this.htmlAudio) {
             this.htmlAudio.src = cachedBlobUrl;
-            this.htmlAudio.currentTime = this.currentTime;
+            try {
+              this.htmlAudio.currentTime = this.currentTime;
+            } catch {}
             const playPromise = this.htmlAudio.play();
             if (playPromise !== undefined) {
               await playPromise;
@@ -144,12 +164,14 @@ class AudioEngine {
       // Continue to network streaming
     }
 
-    // 2. If online audioUrl or /musicas/ folder audio is available, stream via HTML audio
+    // 3. If online audioUrl or /musicas/ folder audio is available, stream via HTML audio
     const audioSource = track.audioUrl || (track.id.startsWith('custom-') ? undefined : `/musicas/${track.id}.mp3`);
     if (audioSource && this.htmlAudio) {
       try {
         this.htmlAudio.src = audioSource;
-        this.htmlAudio.currentTime = this.currentTime;
+        try {
+          this.htmlAudio.currentTime = this.currentTime;
+        } catch {}
         const playPromise = this.htmlAudio.play();
         if (playPromise !== undefined) {
           await playPromise;

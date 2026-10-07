@@ -289,12 +289,22 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
               key={artist.id}
               className="p-3 sm:p-4 rounded-2xl bg-[#1E1E1E] border border-[#2B2B2B] text-center flex flex-col items-center select-none shadow-md"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-3 border-2 border-[#383838] shadow-md ring-1 ring-white/5">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-3 border-2 border-[#383838] shadow-md ring-1 ring-white/5 bg-[#141414]">
                 <img
                   src={artist.photoUrl}
                   alt={artist.name}
-                  className="w-full h-full object-cover"
+                  width={112}
+                  height={112}
+                  decoding="async"
                   loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    // Fallback to jpg or generic placeholder if webp fails
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (target.src.endsWith('.webp')) {
+                      target.src = target.src.replace(/\.webp$/, '.jpg');
+                    }
+                  }}
                 />
               </div>
 

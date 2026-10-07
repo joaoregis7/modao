@@ -1,0 +1,6 @@
+{
+  "name": "Rádio Modão",
+  "description": "O modão de verdade no seu celular. Plataforma simples e direta de sertanejo raiz, modas de viola e clássicos antigos sem login.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

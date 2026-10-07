@@ -1,0 +1,39 @@
+# PASTA DE MÚSICAS DO RÁDIO MODÃO (120 MÚSICAS)
+
+Você pode colocar seus 120 arquivos MP3 diretamente aqui nesta pasta:
+`/public/musicas/`
+
+### OPÇÃO 1: Nomeando por ID ou número
+Exemplo:
+- `/public/musicas/track-1.mp3`
+- `/public/musicas/track-2.mp3`
+- ... até `/public/musicas/track-120.mp3`
+
+Ou:
+- `/public/musicas/001.mp3`
+- `/public/musicas/002.mp3`
+
+### OPÇÃO 2: Nomeando pelo nome da música ou artista
+Exemplo:
+- `/public/musicas/estrada-da-vida.mp3`
+- `/public/musicas/telefone-mudo.mp3`
+- `/public/musicas/menino-da-porteira.mp3`
+
+No arquivo `src/data/tracks.ts`, basta indicar o caminho em `audioUrl`:
+```typescript
+{
+  id: 'track-1',
+  title: 'Estrada da Vida',
+  artist: 'Milionário & José Rico',
+  duration: 212,
+  durationFormatted: '03:32',
+  audioUrl: '/musicas/track-1.mp3', // <-- aponta diretamente para o arquivo aqui!
+  coverUrl: '...',
+  stationId: 'station-estrada',
+  genre: 'Modão de Estrada',
+}
+```
+
+### IMPORTADOR AUTOMÁTICO NO PRÓPRIO APLICATIVO:
+O Rádio Modão também conta com o botão "📁 Carregar 120 Músicas" direto na tela inicial!
+Basta selecionar a pasta ou os 120 arquivos MP3 do seu computador ou celular, que o aplicativo carrega, salva no armazenamento interno (IndexedDB) e toca 100% offline sem precisar alterar nenhum código!

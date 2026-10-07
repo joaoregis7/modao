@@ -1,0 +1,60 @@
+import { Playlist } from '../types';
+
+export const PLAYLISTS: Playlist[] = [
+  {
+    id: 'pl-so-modao-raiz',
+    title: 'Só Modão Raiz',
+    description: 'A nata da tradição cabocla para quem não abre mão do autêntico sertanejo.',
+    coverUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format&fit=crop&q=80',
+    badge: 'Essencial',
+    trackIds: ['track-6', 'track-3', 'track-16', 'track-22', 'track-24', 'track-9'],
+  },
+  {
+    id: 'pl-ouvindo-tomando-uma',
+    title: 'Para ouvir tomando uma',
+    description: 'Copo cheio, churrasco no ponto e aqueles modões que fazem a garganta queimar.',
+    coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80',
+    badge: 'Boteco',
+    trackIds: ['track-2', 'track-5', 'track-7', 'track-11', 'track-18', 'track-20'],
+  },
+  {
+    id: 'pl-pegar-estrada',
+    title: 'Modões para pegar a estrada',
+    description: 'Para acompanhar cada quilômetro de asfalto com saudade no peito e rádio ligado.',
+    coverUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80',
+    badge: 'Viagem',
+    trackIds: ['track-1', 'track-19', 'track-10', 'track-21', 'track-22'],
+  },
+  {
+    id: 'pl-domingo-interior',
+    title: 'Domingo no Interior',
+    description: 'Paz da varanda da fazenda, café coado e o cheiro de terra molhada ao som da viola.',
+    coverUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80',
+    badge: 'Tranquilo',
+    trackIds: ['track-16', 'track-22', 'track-23', 'track-6', 'track-13'],
+  },
+  {
+    id: 'pl-so-as-romanticas',
+    title: 'Só as Românticas',
+    description: 'Poemas sertanejos para os corações apaixonados e nostálgicos.',
+    coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&auto=format&fit=crop&q=80',
+    badge: 'Romântico',
+    trackIds: ['track-8', 'track-12', 'track-13', 'track-14', 'track-4', 'track-19'],
+  },
+  {
+    id: 'pl-moda-de-viola',
+    title: 'Moda de Viola',
+    description: 'Ponteados magistrais de 10 cordas com os maiores violeiros da nossa história.',
+    coverUrl: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&auto=format&fit=crop&q=80',
+    badge: '10 Cordas',
+    trackIds: ['track-3', 'track-9', 'track-17', 'track-6', 'track-24'],
+  },
+  {
+    id: 'pl-classicos-nao-envelhecem',
+    title: 'Clássicos que não envelhecem',
+    description: 'Sucessos imortais que atravessam gerações e todo brasileiro sabe cantar de cor.',
+    coverUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80',
+    badge: 'Imortais',
+    trackIds: ['track-1', 'track-2', 'track-4', 'track-5', 'track-10', 'track-18', 'track-23'],
+  },
+];

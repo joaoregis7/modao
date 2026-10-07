@@ -1,0 +1,877 @@
+[
+  {
+    "rawFolder": "A Saudade ‚ Uma Pedra - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - A Saudade ‚ Uma Pedra - lv_0_20260403173513.mp3",
+    "folder": "A Saudade é Uma Pedra - Zezé di Camargo e Luciano",
+    "file": "00 - A Saudade é Uma Pedra - lv_0_20260403173513.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\A Saudade ‚ Uma Pedra - Zez‚ di Camargo e Luciano\\00 - A Saudade ‚ Uma Pedra - lv_0_20260403173513.mp3"
+  },
+  {
+    "rawFolder": "Aline - JoÆo Mineiro e Marciano",
+    "rawFile": "00 - Aline - JoÆo Mineiro e Marciano.mp3",
+    "folder": "Aline - João Mineiro e Marciano",
+    "file": "00 - Aline - João Mineiro e Marciano.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Aline - JoÆo Mineiro e Marciano\\00 - Aline - JoÆo Mineiro e Marciano.mp3"
+  },
+  {
+    "rawFolder": "Altha¡r & Alexandre - Ata¡de e Alexandre em Vit¢ria-ES (Ao Vivo)",
+    "rawFile": "00 - Altha¡r & Alexandre - La‡o Aberto (Ao Vivo)(M4A_128K).mp3",
+    "folder": "Althaír & Alexandre - Ataíde e Alexandre em Vitória-ES (Ao Vivo)",
+    "file": "00 - Althaír & Alexandre - Laço Aberto (Ao Vivo)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Altha¡r & Alexandre - Ata¡de e Alexandre em Vit¢ria-ES (Ao Vivo)\\00 - Altha¡r & Alexandre - La‡o Aberto (Ao Vivo)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Amaremos - Barrerito",
+    "rawFile": "00 - Amaremos - amaremos.mp3",
+    "folder": "Amaremos - Barrerito",
+    "file": "00 - Amaremos - amaremos.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Amaremos - Barrerito\\00 - Amaremos - amaremos.mp3"
+  },
+  {
+    "rawFolder": "Amaremos Acapella - Barrerito",
+    "rawFile": "00 - Amaremos Acapella - amaremosacapella.mp3",
+    "folder": "Amaremos Acapella - Barrerito",
+    "file": "00 - Amaremos Acapella - amaremosacapella.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Amaremos Acapella - Barrerito\\00 - Amaremos Acapella - amaremosacapella.mp3"
+  },
+  {
+    "rawFolder": "Amor Selvagem - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Amor Selvagem - lv_0_20260403162554.mp3",
+    "folder": "Amor Selvagem - Zezé di Camargo e Luciano",
+    "file": "00 - Amor Selvagem - lv_0_20260403162554.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Amor Selvagem - Zez‚ di Camargo e Luciano\\00 - Amor Selvagem - lv_0_20260403162554.mp3"
+  },
+  {
+    "rawFolder": "Anjo Loiro - Milion rio e Jos‚ Rico",
+    "rawFile": "00 - Anjo Loiro - anjoloiro.mp3.mp3",
+    "folder": "Anjo Loiro - Milionário e José Rico",
+    "file": "00 - Anjo Loiro - anjoloiro.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Anjo Loiro - Milion rio e Jos‚ Rico\\00 - Anjo Loiro - anjoloiro.mp3.mp3"
+  },
+  {
+    "rawFolder": "Ara Po - TiÆo Carreiro e Pardinho",
+    "rawFile": "00 - Ara po - arapo.mp3.mp3",
+    "folder": "Ara Po - Tião Carreiro e Pardinho",
+    "file": "00 - Ara po - arapo.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Ara Po - TiÆo Carreiro e Pardinho\\00 - Ara po - arapo.mp3.mp3"
+  },
+  {
+    "rawFolder": "Arrependida - Gino e Geno",
+    "rawFile": "00 - Arrependida - lv_0_20260403161855.mp3",
+    "folder": "Arrependida - Gino e Geno",
+    "file": "00 - Arrependida - lv_0_20260403161855.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Arrependida - Gino e Geno\\00 - Arrependida - lv_0_20260403161855.mp3"
+  },
+  {
+    "rawFolder": "Barco de Papel - Trio Parada Dura",
+    "rawFile": "00 - Barco de Papel - lv_0_20260403163637.mp3",
+    "folder": "Barco de Papel - Trio Parada Dura",
+    "file": "00 - Barco de Papel - lv_0_20260403163637.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Barco de Papel - Trio Parada Dura\\00 - Barco de Papel - lv_0_20260403163637.mp3"
+  },
+  {
+    "rawFolder": "Bate Cora‡Æo - Leandro e Leonardo",
+    "rawFile": "00 - Bate cora‡Æo - lv_0_20260403172741.mp3",
+    "folder": "Bate Coração - Leandro e Leonardo",
+    "file": "00 - Bate coração - lv_0_20260403172741.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Bate Cora‡Æo - Leandro e Leonardo\\00 - Bate cora‡Æo - lv_0_20260403172741.mp3"
+  },
+  {
+    "rawFolder": "Beijo do Adeus Sublime Ren£ncia - Di Paulo e Paulino",
+    "rawFile": "00 - Beijo do adeus sublime ren£ncia - beijodoadeus.mp3",
+    "folder": "Beijo do Adeus Sublime Renúncia - Di Paulo e Paulino",
+    "file": "00 - Beijo do adeus sublime renúncia - beijodoadeus.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Beijo do Adeus Sublime Ren£ncia - Di Paulo e Paulino\\00 - Beijo do adeus sublime ren£ncia - beijodoadeus.mp3"
+  },
+  {
+    "rawFolder": "Blusa vermelha - Trio Parada Dura",
+    "rawFile": "00 - Blusa vermelha - lv_0_20260403154917.mp3",
+    "folder": "Blusa vermelha - Trio Parada Dura",
+    "file": "00 - Blusa vermelha - lv_0_20260403154917.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Blusa vermelha - Trio Parada Dura\\00 - Blusa vermelha - lv_0_20260403154917.mp3"
+  },
+  {
+    "rawFolder": "Boate Azul - Bruno e Marrone",
+    "rawFile": "00 - Boate Azul - boateazul.mp3",
+    "folder": "Boate Azul - Bruno e Marrone",
+    "file": "00 - Boate Azul - boateazul.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Boate Azul - Bruno e Marrone\\00 - Boate Azul - boateazul.mp3"
+  },
+  {
+    "rawFolder": "Cada Volta  Um Recome‡o - Zez‚ Di Camargo e Luciano",
+    "rawFile": "00 - Cada volta ‚ um recome‡o - cadavoltaeumrecomeco.mp3.mp3",
+    "folder": "Cada Volta  Um Recomeço - Zezé Di Camargo e Luciano",
+    "file": "00 - Cada volta é um recomeço - cadavoltaeumrecomeco.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Cada Volta  Um Recome‡o - Zez‚ Di Camargo e Luciano\\00 - Cada volta ‚ um recome‡o - cadavoltaeumrecomeco.mp3.mp3"
+  },
+  {
+    "rawFolder": "Can‡Æo da Madrugada - Dombar e Domzete",
+    "rawFile": "00 - Can‡Æo da madrugada - cancaodamadrugada.mp3",
+    "folder": "Canção da Madrugada - Dombar e Domzete",
+    "file": "00 - Canção da madrugada - cancaodamadrugada.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Can‡Æo da Madrugada - Dombar e Domzete\\00 - Can‡Æo da madrugada - cancaodamadrugada.mp3"
+  },
+  {
+    "rawFolder": "Chico Rey & Panar  - Topic - Chico Rey & Panar ",
+    "rawFile": "00 - Chico Rey & Panar  - Topic - Canarinho Prisioneiro _ O N£mero UM (Verso)(M4A_128K).mp3",
+    "folder": "Chico Rey & Panará - Topic - Chico Rey & Panará",
+    "file": "00 - Chico Rey & Panará - Topic - Canarinho Prisioneiro _ O Número UM (Verso)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Chico Rey & Panar  - Topic - Chico Rey & Panar \\00 - Chico Rey & Panar  - Topic - Canarinho Prisioneiro _ O N£mero UM (Verso)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Chico Rey & Paran  - Chico Rey & Paran  (ao Vivo)",
+    "rawFile": "00 - Chico Rey & Paran  - PaixÆo Proibida (Ao Vivo)(M4A_128K).mp3",
+    "folder": "Chico Rey & Paraná - Chico Rey & Paraná (ao Vivo)",
+    "file": "00 - Chico Rey & Paraná - Paixão Proibida (Ao Vivo)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Chico Rey & Paran  - Chico Rey & Paran  (ao Vivo)\\00 - Chico Rey & Paran  - PaixÆo Proibida (Ao Vivo)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Chrystian & Ralf - Sozinho em Nova York",
+    "rawFile": "00 - Chrystian & Ralf - De cara cheia(M4A_128K).mp3",
+    "folder": "Chrystian & Ralf - Sozinho em Nova York",
+    "file": "00 - Chrystian & Ralf - De cara cheia(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Chrystian & Ralf - Sozinho em Nova York\\00 - Chrystian & Ralf - De cara cheia(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Dei A Ela Minha Vida - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Dei a ela minha vida - lv_0_20260403160641.mp3",
+    "folder": "Dei A Ela Minha Vida - Zezé di Camargo e Luciano",
+    "file": "00 - Dei a ela minha vida - lv_0_20260403160641.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Dei A Ela Minha Vida - Zez‚ di Camargo e Luciano\\00 - Dei a ela minha vida - lv_0_20260403160641.mp3"
+  },
+  {
+    "rawFolder": "Deixe Seu Recado - Gino e Geno",
+    "rawFile": "00 - Deixe seu recado - Gino e Geno .mp3",
+    "folder": "Deixe Seu Recado - Gino e Geno",
+    "file": "00 - Deixe seu recado - Gino e Geno .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Deixe Seu Recado - Gino e Geno\\00 - Deixe seu recado - Gino e Geno .mp3"
+  },
+  {
+    "rawFolder": "Di Paullo & Paulino",
+    "rawFile": "00 - Di Paullo & Paulino - Topic - Aviao Das Nove(M4A_128K).mp3",
+    "folder": "Di Paullo & Paulino",
+    "file": "00 - Di Paullo & Paulino - Topic - Aviao Das Nove(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Di Paullo & Paulino\\00 - Di Paullo & Paulino - Topic - Aviao Das Nove(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "DJ IAGO BALA",
+    "rawFile": "00 - DJ IAGO BALA - Fa‡a j  seu CD Personalizado. Contato WhatsApp (65)99605-0637 - Milion rio e Jos‚ Rico.mp3",
+    "folder": "DJ IAGO BALA",
+    "file": "00 - DJ IAGO BALA - Faça já seu CD Personalizado. Contato WhatsApp (65)99605-0637 - Milionário e José Rico.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\DJ IAGO BALA\\00 - DJ IAGO BALA - Fa‡a j  seu CD Personalizado. Contato WhatsApp (65)99605-0637 - Milion rio e Jos‚ Rico.mp3"
+  },
+  {
+    "rawFolder": "Do Mundo Nada se Leva - Edson & Hudson",
+    "rawFile": "00 - Edson & Hudson - Topic - Do Mundo Nada Se Leva (Ao Vivo)(M4A_128K).mp3",
+    "folder": "Do Mundo Nada se Leva - Edson & Hudson",
+    "file": "00 - Edson & Hudson - Topic - Do Mundo Nada Se Leva (Ao Vivo)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Do Mundo Nada se Leva - Edson & Hudson\\00 - Edson & Hudson - Topic - Do Mundo Nada Se Leva (Ao Vivo)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Do Mundo Nada se Leva - Edson & Hudson",
+    "rawFile": "00 - Edson & Hudson - Topic - V  Pro Inferno Com Seu Amor _ Galopeira (Galopera) (Ao Vivo)(M4A_128K).mp3",
+    "folder": "Do Mundo Nada se Leva - Edson & Hudson",
+    "file": "00 - Edson & Hudson - Topic - Vá Pro Inferno Com Seu Amor _ Galopeira (Galopera) (Ao Vivo)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Do Mundo Nada se Leva - Edson & Hudson\\00 - Edson & Hudson - Topic - V  Pro Inferno Com Seu Amor _ Galopeira (Galopera) (Ao Vivo)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Duas Vezes Vocˆ - Cezar e Paulinho",
+    "rawFile": "00 - Duas vezes voce - duasvezesvoce.mp3",
+    "folder": "Duas Vezes Você - Cezar e Paulinho",
+    "file": "00 - Duas vezes voce - duasvezesvoce.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Duas Vezes Vocˆ - Cezar e Paulinho\\00 - Duas vezes voce - duasvezesvoce.mp3"
+  },
+  {
+    "rawFolder": "Ela ‚ Demais - Rick e Renner",
+    "rawFile": "00 - Ela ‚ demais - Rick e Renner.mp3",
+    "folder": "Ela é Demais - Rick e Renner",
+    "file": "00 - Ela é demais - Rick e Renner.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Ela ‚ Demais - Rick e Renner\\00 - Ela ‚ demais - Rick e Renner.mp3"
+  },
+  {
+    "rawFolder": "Empreitada Perigosa - TiÆo Carreiro e Pardinho",
+    "rawFile": "00 - Empreitada Perigosa - TiÆo Carreiro e Pardinho.mp3",
+    "folder": "Empreitada Perigosa - Tião Carreiro e Pardinho",
+    "file": "00 - Empreitada Perigosa - Tião Carreiro e Pardinho.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Empreitada Perigosa - TiÆo Carreiro e Pardinho\\00 - Empreitada Perigosa - TiÆo Carreiro e Pardinho.mp3"
+  },
+  {
+    "rawFolder": "Escolta de Vagalumes - Rick e Renner",
+    "rawFile": "00 - Escolta de Vagalumes - lv_0_20260403104318.mp3",
+    "folder": "Escolta de Vagalumes - Rick e Renner",
+    "file": "00 - Escolta de Vagalumes - lv_0_20260403104318.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Escolta de Vagalumes - Rick e Renner\\00 - Escolta de Vagalumes - lv_0_20260403104318.mp3"
+  },
+  {
+    "rawFolder": "Essa Noite Como Lembran‡a - JoÆo Mineiro e Marciano",
+    "rawFile": "00 - Essa noite como lembran‡a - essa noite como lembran‡a.mp3.mp3",
+    "folder": "Essa Noite Como Lembrança - João Mineiro e Marciano",
+    "file": "00 - Essa noite como lembrança - essa noite como lembrança.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Essa Noite Como Lembran‡a - JoÆo Mineiro e Marciano\\00 - Essa noite como lembran‡a - essa noite como lembran‡a.mp3.mp3"
+  },
+  {
+    "rawFolder": "Estrela de Ouro - Gino e Geno",
+    "rawFile": "00 - Estrela de Ouro - lv_0_20260403163202.mp3",
+    "folder": "Estrela de Ouro - Gino e Geno",
+    "file": "00 - Estrela de Ouro - lv_0_20260403163202.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Estrela de Ouro - Gino e Geno\\00 - Estrela de Ouro - lv_0_20260403163202.mp3"
+  },
+  {
+    "rawFolder": "Eu Disse NÆo Como Lembran‡a - Di Paulo e Paulino",
+    "rawFile": "00 - Eu disse nÆo   Como lembran‡a - eudissenao.mp3",
+    "folder": "Eu Disse Não Como Lembrança - Di Paulo e Paulino",
+    "file": "00 - Eu disse não   Como lembrança - eudissenao.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Eu Disse NÆo Como Lembran‡a - Di Paulo e Paulino\\00 - Eu disse nÆo   Como lembran‡a - eudissenao.mp3"
+  },
+  {
+    "rawFolder": "Eu J  Fui de Vocˆ - Gino e Geno",
+    "rawFile": "00 - Eu j  fui de vocˆ - Gino e Geno.mp3",
+    "folder": "Eu Já Fui de Você - Gino e Geno",
+    "file": "00 - Eu já fui de você - Gino e Geno.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Eu J  Fui de Vocˆ - Gino e Geno\\00 - Eu j  fui de vocˆ - Gino e Geno.mp3"
+  },
+  {
+    "rawFolder": "Eu te Amo - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Eu te amo - lv_0_20260403112207.mp3",
+    "folder": "Eu te Amo - Zezé di Camargo e Luciano",
+    "file": "00 - Eu te amo - lv_0_20260403112207.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Eu te Amo - Zez‚ di Camargo e Luciano\\00 - Eu te amo - lv_0_20260403112207.mp3"
+  },
+  {
+    "rawFolder": "Faz Mais Uma Vez - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Faz mais uma vez - fazmaisumavezcomigo.mp3",
+    "folder": "Faz Mais Uma Vez - Zezé di Camargo e Luciano",
+    "file": "00 - Faz mais uma vez - fazmaisumavezcomigo.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Faz Mais Uma Vez - Zez‚ di Camargo e Luciano\\00 - Faz mais uma vez - fazmaisumavezcomigo.mp3"
+  },
+  {
+    "rawFolder": "Faz um Ano - Milion rio e Jos‚ Rico",
+    "rawFile": "00 - Faz um ano - fazumano.mp3",
+    "folder": "Faz um Ano - Milionário e José Rico",
+    "file": "00 - Faz um ano - fazumano.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Faz um Ano - Milion rio e Jos‚ Rico\\00 - Faz um ano - fazumano.mp3"
+  },
+  {
+    "rawFolder": "Filho da Liberdade - TiÆo Carreiro e Pardinho",
+    "rawFile": "00 - Filho da Liberdade - TiÆo Carreiro e Pardinho.mp3",
+    "folder": "Filho da Liberdade - Tião Carreiro e Pardinho",
+    "file": "00 - Filho da Liberdade - Tião Carreiro e Pardinho.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Filho da Liberdade - TiÆo Carreiro e Pardinho\\00 - Filho da Liberdade - TiÆo Carreiro e Pardinho.mp3"
+  },
+  {
+    "rawFolder": "Fio de Cabelo - ChitÆozinho e Xoror¢",
+    "rawFile": "00 - Fio de Cabelo - fiodecabelo.mp3",
+    "folder": "Fio de Cabelo - Chitãozinho e Xororó",
+    "file": "00 - Fio de Cabelo - fiodecabelo.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Fio de Cabelo - ChitÆozinho e Xoror¢\\00 - Fio de Cabelo - fiodecabelo.mp3"
+  },
+  {
+    "rawFolder": "Flor do Meu SertÆo - Leonardo",
+    "rawFile": "00 - Flor do Meu SertÆo - Leonardo .mp3",
+    "folder": "Flor do Meu Sertão - Leonardo",
+    "file": "00 - Flor do Meu Sertão - Leonardo .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Flor do Meu SertÆo - Leonardo\\00 - Flor do Meu SertÆo - Leonardo .mp3"
+  },
+  {
+    "rawFolder": "Fui Dando Porrada - Leandro e Leonardo",
+    "rawFile": "00 - Fui dando porrada - lv_0_20260403110330.mp3",
+    "folder": "Fui Dando Porrada - Leandro e Leonardo",
+    "file": "00 - Fui dando porrada - lv_0_20260403110330.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Fui Dando Porrada - Leandro e Leonardo\\00 - Fui dando porrada - lv_0_20260403110330.mp3"
+  },
+  {
+    "rawFolder": "Goiano, Paranaense - Goiano & Paranaense, Vol. 1",
+    "rawFile": "00 - Goiano, Paranaense - BailÆo do Marco Brasil - ( Goiano e Paranaense ) - A Viola e a Saudade(M4A_128K).mp3",
+    "folder": "Goiano, Paranaense - Goiano & Paranaense, Vol. 1",
+    "file": "00 - Goiano, Paranaense - Bailão do Marco Brasil - ( Goiano e Paranaense ) - A Viola e a Saudade(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Goiano, Paranaense - Goiano & Paranaense, Vol. 1\\00 - Goiano, Paranaense - BailÆo do Marco Brasil - ( Goiano e Paranaense ) - A Viola e a Saudade(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Goiano, Paranaense - O Poder do Criador, Vol. 4",
+    "rawFile": "00 - Goiano, Paranaense - O Poder do Criador(M4A_128K).mp3",
+    "folder": "Goiano, Paranaense - O Poder do Criador, Vol. 4",
+    "file": "00 - Goiano, Paranaense - O Poder do Criador(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Goiano, Paranaense - O Poder do Criador, Vol. 4\\00 - Goiano, Paranaense - O Poder do Criador(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Guilherme & Santiago - Ac£stico 20 anos",
+    "rawFile": "00 - Guilherme & Santiago - Franguinho Na Panela(M4A_128K).mp3",
+    "folder": "Guilherme & Santiago - Acústico 20 anos",
+    "file": "00 - Guilherme & Santiago - Franguinho Na Panela(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Guilherme & Santiago - Ac£stico 20 anos\\00 - Guilherme & Santiago - Franguinho Na Panela(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Henrique & Hernane - Topic - Henrique & Hernane - Topic",
+    "rawFile": "00 - Henrique & Hernane - Topic - Aguenta Cora‡Æo _ Apaixonado(M4A_128K).mp3",
+    "folder": "Henrique & Hernane - Topic - Henrique & Hernane - Topic",
+    "file": "00 - Henrique & Hernane - Topic - Aguenta Coração _ Apaixonado(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Henrique & Hernane - Topic - Henrique & Hernane - Topic\\00 - Henrique & Hernane - Topic - Aguenta Cora‡Æo _ Apaixonado(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Hoje Eu Quero Te Amar - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Hoje eu quero te amar - lv_0_20260403165217.mp3",
+    "folder": "Hoje Eu Quero Te Amar - Zezé di Camargo e Luciano",
+    "file": "00 - Hoje eu quero te amar - lv_0_20260403165217.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Hoje Eu Quero Te Amar - Zez‚ di Camargo e Luciano\\00 - Hoje eu quero te amar - lv_0_20260403165217.mp3"
+  },
+  {
+    "rawFolder": "IrmÆo da Lua, Amigo das Estrelas - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - IrmÆo da Lua, Amigo das estrelas - Zez‚ di Camargo e Luciano.mp3",
+    "folder": "Irmão da Lua, Amigo das Estrelas - Zezé di Camargo e Luciano",
+    "file": "00 - Irmão da Lua, Amigo das estrelas - Zezé di Camargo e Luciano.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\IrmÆo da Lua, Amigo das Estrelas - Zez‚ di Camargo e Luciano\\00 - IrmÆo da Lua, Amigo das estrelas - Zez‚ di Camargo e Luciano.mp3"
+  },
+  {
+    "rawFolder": "Jayne",
+    "rawFile": "00 - Jayne - Topic - Dia de Formatura _Loira se vocˆ soubesse (Verso)(M4A_128K).mp3",
+    "folder": "Jayne",
+    "file": "00 - Jayne - Topic - Dia de Formatura _Loira se você soubesse (Verso)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Jayne\\00 - Jayne - Topic - Dia de Formatura _Loira se vocˆ soubesse (Verso)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Jeito Caipira - Gino e Geno",
+    "rawFile": "00 - Jeito caipira - jeitocaipira.mp3",
+    "folder": "Jeito Caipira - Gino e Geno",
+    "file": "00 - Jeito caipira - jeitocaipira.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Jeito Caipira - Gino e Geno\\00 - Jeito caipira - jeitocaipira.mp3"
+  },
+  {
+    "rawFolder": "Jogo do Amor - Milion rio e Jos‚ Rico",
+    "rawFile": "00 - Jogo do Amor - Milion rio e Jos‚ Rico.mp3",
+    "folder": "Jogo do Amor - Milionário e José Rico",
+    "file": "00 - Jogo do Amor - Milionário e José Rico.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Jogo do Amor - Milion rio e Jos‚ Rico\\00 - Jogo do Amor - Milion rio e Jos‚ Rico.mp3"
+  },
+  {
+    "rawFolder": "J  Tem Algu‚m No Seu Lugar - Os Gargantas de Ouro",
+    "rawFile": "00 - J  tem algu‚m no seu lugar - jatemalguemnoseulugarsomodaoedits.mp3",
+    "folder": "Já Tem Alguém No Seu Lugar - Os Gargantas de Ouro",
+    "file": "00 - Já tem alguém no seu lugar - jatemalguemnoseulugarsomodaoedits.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\J  Tem Algu‚m No Seu Lugar - Os Gargantas de Ouro\\00 - J  tem algu‚m no seu lugar - jatemalguemnoseulugarsomodaoedits.mp3"
+  },
+  {
+    "rawFolder": "Linda Demais - Eduardo Costa",
+    "rawFile": "00 - Linda Demais - Eduardo Costa.mp3",
+    "folder": "Linda Demais - Eduardo Costa",
+    "file": "00 - Linda Demais - Eduardo Costa.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Linda Demais - Eduardo Costa\\00 - Linda Demais - Eduardo Costa.mp3"
+  },
+  {
+    "rawFolder": "L grimas Geladas - Rionegro e Solimäes",
+    "rawFile": "00 - L grimas geladas - lv_0_20260403133244.mp3",
+    "folder": "Lágrimas Geladas - Rionegro e Solimões",
+    "file": "00 - Lágrimas geladas - lv_0_20260403133244.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\L grimas Geladas - Rionegro e Solimäes\\00 - L grimas geladas - lv_0_20260403133244.mp3"
+  },
+  {
+    "rawFolder": "Marciano - Meu Oficio  Cantar (Ao Vivo)",
+    "rawFile": "00 - Marciano - Amor Clandestino (Ao Vivo)(M4A_128K).mp3",
+    "folder": "Marciano - Meu Oficio  Cantar (Ao Vivo)",
+    "file": "00 - Marciano - Amor Clandestino (Ao Vivo)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Marciano - Meu Oficio  Cantar (Ao Vivo)\\00 - Marciano - Amor Clandestino (Ao Vivo)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Marco Brasil",
+    "rawFile": "00 - Marco Brasil - Topic - Ca‡ador de Cora‡äes _ Debaixo da µgua (Verso)(M4A_128K).mp3",
+    "folder": "Marco Brasil",
+    "file": "00 - Marco Brasil - Topic - Caçador de Corações _ Debaixo da Água (Verso)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Marco Brasil\\00 - Marco Brasil - Topic - Ca‡ador de Cora‡äes _ Debaixo da µgua (Verso)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Marco Brasil",
+    "rawFile": "00 - Marco Brasil - Topic - Do Outro Lado da Cidade _ GaranhÆo (Verso)(M4A_128K).mp3",
+    "folder": "Marco Brasil",
+    "file": "00 - Marco Brasil - Topic - Do Outro Lado da Cidade _ Garanhão (Verso)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Marco Brasil\\00 - Marco Brasil - Topic - Do Outro Lado da Cidade _ GaranhÆo (Verso)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Me Apaixonei - Eduardo Costa",
+    "rawFile": "00 - Me Apaixonei - lv_0_20260403172405.mp3",
+    "folder": "Me Apaixonei - Eduardo Costa",
+    "file": "00 - Me Apaixonei - lv_0_20260403172405.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Me Apaixonei - Eduardo Costa\\00 - Me Apaixonei - lv_0_20260403172405.mp3"
+  },
+  {
+    "rawFolder": "Melhor ou Pior - Eduardo Costa",
+    "rawFile": "00 - Melhor ou pior - melhoroupior.mp3",
+    "folder": "Melhor ou Pior - Eduardo Costa",
+    "file": "00 - Melhor ou pior - melhoroupior.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Melhor ou Pior - Eduardo Costa\\00 - Melhor ou pior - melhoroupior.mp3"
+  },
+  {
+    "rawFolder": "Menina - Bruno e Marrone",
+    "rawFile": "00 - Menina - lv_0_20260403111745.mp3",
+    "folder": "Menina - Bruno e Marrone",
+    "file": "00 - Menina - lv_0_20260403111745.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Menina - Bruno e Marrone\\00 - Menina - lv_0_20260403111745.mp3"
+  },
+  {
+    "rawFolder": "Meu Cora‡Æo S¢ Quer Chorar - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Meu cora‡Æo s¢ quer chorar - lv_0_20260403155721.mp3",
+    "folder": "Meu Coração Só Quer Chorar - Zezé di Camargo e Luciano",
+    "file": "00 - Meu coração só quer chorar - lv_0_20260403155721.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Meu Cora‡Æo S¢ Quer Chorar - Zez‚ di Camargo e Luciano\\00 - Meu cora‡Æo s¢ quer chorar - lv_0_20260403155721.mp3"
+  },
+  {
+    "rawFolder": "Meu SertÆo - Jad e Jefferson",
+    "rawFile": "00 - Meu sertÆo - Jad e Jefferson.mp3",
+    "folder": "Meu Sertão - Jad e Jefferson",
+    "file": "00 - Meu sertão - Jad e Jefferson.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Meu SertÆo - Jad e Jefferson\\00 - Meu sertÆo - Jad e Jefferson.mp3"
+  },
+  {
+    "rawFolder": "Minha Mensagem - JoÆo Paulo e Daniel",
+    "rawFile": "00 - Minha Mensagem - JoÆo Paulo e Daniel.mp3",
+    "folder": "Minha Mensagem - João Paulo e Daniel",
+    "file": "00 - Minha Mensagem - João Paulo e Daniel.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Minha Mensagem - JoÆo Paulo e Daniel\\00 - Minha Mensagem - JoÆo Paulo e Daniel.mp3"
+  },
+  {
+    "rawFolder": "Minha Serenata - Chico Rey e Paran ",
+    "rawFile": "00 - Minha Serenata - lv_0_20260403173019.mp3",
+    "folder": "Minha Serenata - Chico Rey e Paraná",
+    "file": "00 - Minha Serenata - lv_0_20260403173019.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Minha Serenata - Chico Rey e Paran \\00 - Minha Serenata - lv_0_20260403173019.mp3"
+  },
+  {
+    "rawFolder": "Minha Vida - TiÆo Carreiro e Pardinho",
+    "rawFile": "00 - Minha Vida - lv_0_20260403084032.mp3",
+    "folder": "Minha Vida - Tião Carreiro e Pardinho",
+    "file": "00 - Minha Vida - lv_0_20260403084032.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Minha Vida - TiÆo Carreiro e Pardinho\\00 - Minha Vida - lv_0_20260403084032.mp3"
+  },
+  {
+    "rawFolder": "Morena Bonita - Gino e Geno",
+    "rawFile": "00 - Morena bonita - morenabonita.mp3",
+    "folder": "Morena Bonita - Gino e Geno",
+    "file": "00 - Morena bonita - morenabonita.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Morena Bonita - Gino e Geno\\00 - Morena bonita - morenabonita.mp3"
+  },
+  {
+    "rawFolder": "Morto de Saudade - Cezar e Paulinho",
+    "rawFile": "00 - Morto de saudade - mortodesaudadesua.mp3",
+    "folder": "Morto de Saudade - Cezar e Paulinho",
+    "file": "00 - Morto de saudade - mortodesaudadesua.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Morto de Saudade - Cezar e Paulinho\\00 - Morto de saudade - mortodesaudadesua.mp3"
+  },
+  {
+    "rawFolder": "Morto por Dentro - Barrerito",
+    "rawFile": "00 - Morto por dentro - mortopordentro.mp3",
+    "folder": "Morto por Dentro - Barrerito",
+    "file": "00 - Morto por dentro - mortopordentro.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Morto por Dentro - Barrerito\\00 - Morto por dentro - mortopordentro.mp3"
+  },
+  {
+    "rawFolder": "Mulheres do Brasil - Mato Grosso e Mathias",
+    "rawFile": "00 - Matogrosso - Topic - Mulheres Do Brasil(M4A_128K).mp3",
+    "folder": "Mulheres do Brasil - Mato Grosso e Mathias",
+    "file": "00 - Matogrosso - Topic - Mulheres Do Brasil(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Mulheres do Brasil - Mato Grosso e Mathias\\00 - Matogrosso - Topic - Mulheres Do Brasil(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Mulheres do Brasil - Mato Grosso e Mathias",
+    "rawFile": "00 - Matogrosso - Topic - Um S‚culo Sem Ti (Un Siglo Sin Ti)(M4A_128K).mp3",
+    "folder": "Mulheres do Brasil - Mato Grosso e Mathias",
+    "file": "00 - Matogrosso - Topic - Um Século Sem Ti (Un Siglo Sin Ti)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Mulheres do Brasil - Mato Grosso e Mathias\\00 - Matogrosso - Topic - Um S‚culo Sem Ti (Un Siglo Sin Ti)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Nada Mudou - Di Paullo e Paulino",
+    "rawFile": "00 - Nada mudou - Di Paullo e Paulino .mp3",
+    "folder": "Nada Mudou - Di Paullo e Paulino",
+    "file": "00 - Nada mudou - Di Paullo e Paulino .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Nada Mudou - Di Paullo e Paulino\\00 - Nada mudou - Di Paullo e Paulino .mp3"
+  },
+  {
+    "rawFolder": "Nem ‚ Bom Lembrar - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Nem ‚ bom lembrar - lv_0_20260403105506.mp3",
+    "folder": "Nem é Bom Lembrar - Zezé di Camargo e Luciano",
+    "file": "00 - Nem é bom lembrar - lv_0_20260403105506.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Nem ‚ Bom Lembrar - Zez‚ di Camargo e Luciano\\00 - Nem ‚ bom lembrar - lv_0_20260403105506.mp3"
+  },
+  {
+    "rawFolder": "No C‚u dos Bra‡os Seus - Di Paullo e Paulino",
+    "rawFile": "00 - No C‚u dos Bra‡os seus - Di Paullo e Paulino .mp3",
+    "folder": "No Céu dos Braços Seus - Di Paullo e Paulino",
+    "file": "00 - No Céu dos Braços seus - Di Paullo e Paulino .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\No C‚u dos Bra‡os Seus - Di Paullo e Paulino\\00 - No C‚u dos Bra‡os seus - Di Paullo e Paulino .mp3"
+  },
+  {
+    "rawFolder": "Nois Enverga Mas NÆo Quebra - Gino e Geno",
+    "rawFile": "00 - Nois enverga mas nÆo quebra - noisenvergamaisnaoquebra.mp3",
+    "folder": "Nois Enverga Mas Não Quebra - Gino e Geno",
+    "file": "00 - Nois enverga mas não quebra - noisenvergamaisnaoquebra.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Nois Enverga Mas NÆo Quebra - Gino e Geno\\00 - Nois enverga mas nÆo quebra - noisenvergamaisnaoquebra.mp3"
+  },
+  {
+    "rawFolder": "Nos Bares da Cidade - Rick e Renner",
+    "rawFile": "00 - Nos bares da cidade - nosbaresdacidade.mp3",
+    "folder": "Nos Bares da Cidade - Rick e Renner",
+    "file": "00 - Nos bares da cidade - nosbaresdacidade.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Nos Bares da Cidade - Rick e Renner\\00 - Nos bares da cidade - nosbaresdacidade.mp3"
+  },
+  {
+    "rawFolder": "Oh TiÆo Carreiro - L‚o Goiano & Rafael",
+    "rawFile": "00 - Oh TiÆo Carreiro - L‚o Goiano & Rafael.mp3",
+    "folder": "Oh Tião Carreiro - Léo Goiano & Rafael",
+    "file": "00 - Oh Tião Carreiro - Léo Goiano & Rafael.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Oh TiÆo Carreiro - L‚o Goiano & Rafael\\00 - Oh TiÆo Carreiro - L‚o Goiano & Rafael.mp3"
+  },
+  {
+    "rawFolder": "Olhos Claros - JoÆo Paulo e Daniel",
+    "rawFile": "00 - Olhos claros - JoÆo Paulo e Daniel.mp3",
+    "folder": "Olhos Claros - João Paulo e Daniel",
+    "file": "00 - Olhos claros - João Paulo e Daniel.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Olhos Claros - JoÆo Paulo e Daniel\\00 - Olhos claros - JoÆo Paulo e Daniel.mp3"
+  },
+  {
+    "rawFolder": "Onde Anda Meu Amor - L‚o MagalhÆes",
+    "rawFile": "00 - Onde anda meu amor - L‚o MagalhÆes .mp3",
+    "folder": "Onde Anda Meu Amor - Léo Magalhães",
+    "file": "00 - Onde anda meu amor - Léo Magalhães .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Onde Anda Meu Amor - L‚o MagalhÆes\\00 - Onde anda meu amor - L‚o MagalhÆes .mp3"
+  },
+  {
+    "rawFolder": "Onde Anda Vocˆ - Di Paullo e Paulino",
+    "rawFile": "00 - Onde anda vocˆ - Di Paullo e Paulino .mp3",
+    "folder": "Onde Anda Você - Di Paullo e Paulino",
+    "file": "00 - Onde anda você - Di Paullo e Paulino .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Onde Anda Vocˆ - Di Paullo e Paulino\\00 - Onde anda vocˆ - Di Paullo e Paulino .mp3"
+  },
+  {
+    "rawFolder": "Pagode de Viola - Mayck e Lyan",
+    "rawFile": "00 - Mayck & Lyan - Topic - Defendendo A Tradi‡ao(M4A_128K).mp3",
+    "folder": "Pagode de Viola - Mayck e Lyan",
+    "file": "00 - Mayck & Lyan - Topic - Defendendo A Tradiçao(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Pagode de Viola - Mayck e Lyan\\00 - Mayck & Lyan - Topic - Defendendo A Tradi‡ao(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Pagode de Viola - Mayck e Lyan",
+    "rawFile": "00 - Mayck & Lyan - Topic - Pagode _ Linha De Frente _ Chora Viola (Ao Vivo)(M4A_128K).mp3",
+    "folder": "Pagode de Viola - Mayck e Lyan",
+    "file": "00 - Mayck & Lyan - Topic - Pagode _ Linha De Frente _ Chora Viola (Ao Vivo)(M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Pagode de Viola - Mayck e Lyan\\00 - Mayck & Lyan - Topic - Pagode _ Linha De Frente _ Chora Viola (Ao Vivo)(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "PaixÆo Recolhida - Solevano e Solene",
+    "rawFile": "00 - PaixÆo Recolhida - lv_0_20260403182300.mp3",
+    "folder": "Paixão Recolhida - Solevano e Solene",
+    "file": "00 - Paixão Recolhida - lv_0_20260403182300.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\PaixÆo Recolhida - Solevano e Solene\\00 - PaixÆo Recolhida - lv_0_20260403182300.mp3"
+  },
+  {
+    "rawFolder": "Passe Livre - Teodoro e Sampaio",
+    "rawFile": "00 - Passe livre - passelivre.mp3",
+    "folder": "Passe Livre - Teodoro e Sampaio",
+    "file": "00 - Passe livre - passelivre.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Passe Livre - Teodoro e Sampaio\\00 - Passe livre - passelivre.mp3"
+  },
+  {
+    "rawFolder": "Pela Porta da Frente - Bruno e Marrone",
+    "rawFile": "00 - Pela porta da frente - Bruno e Marrone .mp3",
+    "folder": "Pela Porta da Frente - Bruno e Marrone",
+    "file": "00 - Pela porta da frente - Bruno e Marrone .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Pela Porta da Frente - Bruno e Marrone\\00 - Pela porta da frente - Bruno e Marrone .mp3"
+  },
+  {
+    "rawFolder": "Pelejando - Rick e Renner part. Gino e Geno",
+    "rawFile": "00 - Pelejando - lv_0_20260403164353.mp3",
+    "folder": "Pelejando - Rick e Renner part. Gino e Geno",
+    "file": "00 - Pelejando - lv_0_20260403164353.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Pelejando - Rick e Renner part. Gino e Geno\\00 - Pelejando - lv_0_20260403164353.mp3"
+  },
+  {
+    "rawFolder": "PeÆo Paulista - Tangar  e PavÆo Norte",
+    "rawFile": "00 - PeÆo Paulista - lv_0_20260403101840.mp3",
+    "folder": "Peão Paulista - Tangará e Pavão Norte",
+    "file": "00 - Peão Paulista - lv_0_20260403101840.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\PeÆo Paulista - Tangar  e PavÆo Norte\\00 - PeÆo Paulista - lv_0_20260403101840.mp3"
+  },
+  {
+    "rawFolder": "Por Amor te Deixo Ir - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Por amor te deixo ir - lv_0_20260403160324.mp3",
+    "folder": "Por Amor te Deixo Ir - Zezé di Camargo e Luciano",
+    "file": "00 - Por amor te deixo ir - lv_0_20260403160324.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Por Amor te Deixo Ir - Zez‚ di Camargo e Luciano\\00 - Por amor te deixo ir - lv_0_20260403160324.mp3"
+  },
+  {
+    "rawFolder": "Pra NÆo Pensar Em Vocˆ - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Pra NÆo Pensar Em Vocˆ - Zez‚ di Camargo e Luciano.mp3",
+    "folder": "Pra Não Pensar Em Você - Zezé di Camargo e Luciano",
+    "file": "00 - Pra Não Pensar Em Você - Zezé di Camargo e Luciano.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Pra NÆo Pensar Em Vocˆ - Zez‚ di Camargo e Luciano\\00 - Pra NÆo Pensar Em Vocˆ - Zez‚ di Camargo e Luciano.mp3"
+  },
+  {
+    "rawFolder": "Pra Salvar Minha Vida - Gino e Geno",
+    "rawFile": "00 - Pra salvar minha vida - Gino e Geno.mp3",
+    "folder": "Pra Salvar Minha Vida - Gino e Geno",
+    "file": "00 - Pra salvar minha vida - Gino e Geno.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Pra Salvar Minha Vida - Gino e Geno\\00 - Pra salvar minha vida - Gino e Geno.mp3"
+  },
+  {
+    "rawFolder": "P‚ na Bunda - Trio Parada Dura",
+    "rawFile": "00 - P‚ na Bunda - Trio Parada Dura .mp3",
+    "folder": "Pé na Bunda - Trio Parada Dura",
+    "file": "00 - Pé na Bunda - Trio Parada Dura .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\P‚ na Bunda - Trio Parada Dura\\00 - P‚ na Bunda - Trio Parada Dura .mp3"
+  },
+  {
+    "rawFolder": "Quando Um Grande Amor se Faz - Gian e Giovani",
+    "rawFile": "00 - Quando um grande amor se faz - Gian e Giovani.mp3",
+    "folder": "Quando Um Grande Amor se Faz - Gian e Giovani",
+    "file": "00 - Quando um grande amor se faz - Gian e Giovani.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Quando Um Grande Amor se Faz - Gian e Giovani\\00 - Quando um grande amor se faz - Gian e Giovani.mp3"
+  },
+  {
+    "rawFolder": "Que Bicho Que  - Gino e Geno",
+    "rawFile": "00 - Que bicho que ‚ - quebichoquee.mp3",
+    "folder": "Que Bicho Que  - Gino e Geno",
+    "file": "00 - Que bicho que é - quebichoquee.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Que Bicho Que  - Gino e Geno\\00 - Que bicho que ‚ - quebichoquee.mp3"
+  },
+  {
+    "rawFolder": "Quem  - Leandro e Leonardo",
+    "rawFile": "00 - Quem ‚ - queme.mp3",
+    "folder": "Quem  - Leandro e Leonardo",
+    "file": "00 - Quem é - queme.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Quem  - Leandro e Leonardo\\00 - Quem ‚ - queme.mp3"
+  },
+  {
+    "rawFolder": "Quero Falar com Ela - Rick e Renner",
+    "rawFile": "00 - Quero falar com ela - Rick e Renner.mp3",
+    "folder": "Quero Falar com Ela - Rick e Renner",
+    "file": "00 - Quero falar com ela - Rick e Renner.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Quero Falar com Ela - Rick e Renner\\00 - Quero falar com ela - Rick e Renner.mp3"
+  },
+  {
+    "rawFolder": "Reis do Rodeio",
+    "rawFile": "03 - ChitÆozinho & Xoror¢ - 60 Dias Apaixonado.mp3",
+    "folder": "Reis do Rodeio",
+    "file": "03 - Chitãozinho & Xororó - 60 Dias Apaixonado.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Reis do Rodeio\\03 - ChitÆozinho & Xoror¢ - 60 Dias Apaixonado.mp3"
+  },
+  {
+    "rawFolder": "Rumo a Barretos - MenajÆo Muladeiro",
+    "rawFile": "00 - Rumo a Barretos - lv_0_20260403152856.mp3",
+    "folder": "Rumo a Barretos - Menajão Muladeiro",
+    "file": "00 - Rumo a Barretos - lv_0_20260403152856.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Rumo a Barretos - MenajÆo Muladeiro\\00 - Rumo a Barretos - lv_0_20260403152856.mp3"
+  },
+  {
+    "rawFolder": "Saudade Bandida - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Saudade Bandida - Zez‚ di Camargo e Luciano .mp3",
+    "folder": "Saudade Bandida - Zezé di Camargo e Luciano",
+    "file": "00 - Saudade Bandida - Zezé di Camargo e Luciano .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Saudade Bandida - Zez‚ di Camargo e Luciano\\00 - Saudade Bandida - Zez‚ di Camargo e Luciano .mp3"
+  },
+  {
+    "rawFolder": "Saudade da Minha Terra - ChitÆozinho e Xoror¢",
+    "rawFile": "00 - Saudade da Minha Terra - lv_0_20260403133713.mp3",
+    "folder": "Saudade da Minha Terra - Chitãozinho e Xororó",
+    "file": "00 - Saudade da Minha Terra - lv_0_20260403133713.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Saudade da Minha Terra - ChitÆozinho e Xoror¢\\00 - Saudade da Minha Terra - lv_0_20260403133713.mp3"
+  },
+  {
+    "rawFolder": "Se Eu NÆo Puder te Esquecer - JoÆo Mineiro e Marciano",
+    "rawFile": "00 - Se eu nÆo puder te esquecer - JoÆo Mineiro e Marciano.mp3",
+    "folder": "Se Eu Não Puder te Esquecer - João Mineiro e Marciano",
+    "file": "00 - Se eu não puder te esquecer - João Mineiro e Marciano.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Se Eu NÆo Puder te Esquecer - JoÆo Mineiro e Marciano\\00 - Se eu nÆo puder te esquecer - JoÆo Mineiro e Marciano.mp3"
+  },
+  {
+    "rawFolder": "Ser  Que foi Saudade - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Ser  que foi saudade - seraquefoisaudade.mp3",
+    "folder": "Será Que foi Saudade - Zezé di Camargo e Luciano",
+    "file": "00 - Será que foi saudade - seraquefoisaudade.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Ser  Que foi Saudade - Zez‚ di Camargo e Luciano\\00 - Ser  que foi saudade - seraquefoisaudade.mp3"
+  },
+  {
+    "rawFolder": "Sessenta Dias Apaixonado - Milion rio e Jos‚ Rico",
+    "rawFile": "00 - Sessenta dias apaixonado - lv_0_20260403100350.mp3",
+    "folder": "Sessenta Dias Apaixonado - Milionário e José Rico",
+    "file": "00 - Sessenta dias apaixonado - lv_0_20260403100350.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Sessenta Dias Apaixonado - Milion rio e Jos‚ Rico\\00 - Sessenta dias apaixonado - lv_0_20260403100350.mp3"
+  },
+  {
+    "rawFolder": "Seus Olhos - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Seus olhos - lv_0_20260403165900.mp3",
+    "folder": "Seus Olhos - Zezé di Camargo e Luciano",
+    "file": "00 - Seus olhos - lv_0_20260403165900.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Seus Olhos - Zez‚ di Camargo e Luciano\\00 - Seus olhos - lv_0_20260403165900.mp3"
+  },
+  {
+    "rawFolder": "Sistema Caipira - Gino e Geno e Continental",
+    "rawFile": "00 - Sistema Caipira - sistemacaipira.mp3",
+    "folder": "Sistema Caipira - Gino e Geno e Continental",
+    "file": "00 - Sistema Caipira - sistemacaipira.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Sistema Caipira - Gino e Geno e Continental\\00 - Sistema Caipira - sistemacaipira.mp3"
+  },
+  {
+    "rawFolder": "SolidÆo Por Perto - Eduardo Costa",
+    "rawFile": "00 - SolidÆo por perto - solidaoporperto.mp3.mp3",
+    "folder": "Solidão Por Perto - Eduardo Costa",
+    "file": "00 - Solidão por perto - solidaoporperto.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\SolidÆo Por Perto - Eduardo Costa\\00 - SolidÆo por perto - solidaoporperto.mp3.mp3"
+  },
+  {
+    "rawFolder": "Sonho Por Sonho - Leandro e Leonardo",
+    "rawFile": "00 - Sonho Por Sonho - Leandro e Leonardo.mp3",
+    "folder": "Sonho Por Sonho - Leandro e Leonardo",
+    "file": "00 - Sonho Por Sonho - Leandro e Leonardo.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Sonho Por Sonho - Leandro e Leonardo\\00 - Sonho Por Sonho - Leandro e Leonardo.mp3"
+  },
+  {
+    "rawFolder": "Sublime Ren£ncia - Leandro e Leonardo",
+    "rawFile": "00 - Sublime ren£ncia - lv_0_20260403134256.mp3",
+    "folder": "Sublime Renúncia - Leandro e Leonardo",
+    "file": "00 - Sublime renúncia - lv_0_20260403134256.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Sublime Ren£ncia - Leandro e Leonardo\\00 - Sublime ren£ncia - lv_0_20260403134256.mp3"
+  },
+  {
+    "rawFolder": "S¢ d  Vocˆ na Minha Vida - JoÆo Paulo e Daniel",
+    "rawFile": "00 - S¢ da voce na minha vida - sodavocenaminhavida.mp3.mp3",
+    "folder": "Só dá Você na Minha Vida - João Paulo e Daniel",
+    "file": "00 - Só da voce na minha vida - sodavocenaminhavida.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\S¢ d  Vocˆ na Minha Vida - JoÆo Paulo e Daniel\\00 - S¢ da voce na minha vida - sodavocenaminhavida.mp3.mp3"
+  },
+  {
+    "rawFolder": "Te Amo Demais - Leonardo",
+    "rawFile": "00 - Te amo demais - lv_0_20260403151031.mp3",
+    "folder": "Te Amo Demais - Leonardo",
+    "file": "00 - Te amo demais - lv_0_20260403151031.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Te Amo Demais - Leonardo\\00 - Te amo demais - lv_0_20260403151031.mp3"
+  },
+  {
+    "rawFolder": "Telefone Mudo - Trio Parada Dura",
+    "rawFile": "00 - Telefone Mudo - Trio Parada Dura.mp3",
+    "folder": "Telefone Mudo - Trio Parada Dura",
+    "file": "00 - Telefone Mudo - Trio Parada Dura.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Telefone Mudo - Trio Parada Dura\\00 - Telefone Mudo - Trio Parada Dura.mp3"
+  },
+  {
+    "rawFolder": "Tempo ao Tempo - Di Paullo e Paulino",
+    "rawFile": "00 - Tempo ao tempo - lv_0_20260403132709.mp3",
+    "folder": "Tempo ao Tempo - Di Paullo e Paulino",
+    "file": "00 - Tempo ao tempo - lv_0_20260403132709.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Tempo ao Tempo - Di Paullo e Paulino\\00 - Tempo ao tempo - lv_0_20260403132709.mp3"
+  },
+  {
+    "rawFolder": "Temporal de Amor - Leandro e Leonardo",
+    "rawFile": "00 - Temporal de Amor - lv_0_20260403170337.mp3",
+    "folder": "Temporal de Amor - Leandro e Leonardo",
+    "file": "00 - Temporal de Amor - lv_0_20260403170337.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Temporal de Amor - Leandro e Leonardo\\00 - Temporal de Amor - lv_0_20260403170337.mp3"
+  },
+  {
+    "rawFolder": "TiÆo Carreiro & Pardinho - Modas Sertanejas",
+    "rawFile": "00 - TiÆo Carreiro & Pardinho - Pousada de boiadeiro.mp3",
+    "folder": "Tião Carreiro & Pardinho - Modas Sertanejas",
+    "file": "00 - Tião Carreiro & Pardinho - Pousada de boiadeiro.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\TiÆo Carreiro & Pardinho - Modas Sertanejas\\00 - TiÆo Carreiro & Pardinho - Pousada de boiadeiro.mp3"
+  },
+  {
+    "rawFolder": "Toalha Branca - Gino e Geno",
+    "rawFile": "00 - Toalha branca - toalhabranca.mp3",
+    "folder": "Toalha Branca - Gino e Geno",
+    "file": "00 - Toalha branca - toalhabranca.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Toalha Branca - Gino e Geno\\00 - Toalha branca - toalhabranca.mp3"
+  },
+  {
+    "rawFolder": "Tocando em Frente - Paula Fernandes Part. Leonardo",
+    "rawFile": "00 - Tocando em frente - ocandoemfeerente.mp3.mp3",
+    "folder": "Tocando em Frente - Paula Fernandes Part. Leonardo",
+    "file": "00 - Tocando em frente - ocandoemfeerente.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Tocando em Frente - Paula Fernandes Part. Leonardo\\00 - Tocando em frente - ocandoemfeerente.mp3.mp3"
+  },
+  {
+    "rawFolder": "Trˆs Cuiabanas - TiÆo Carreiro e Pardinho",
+    "rawFile": "00 - Trˆs Cuiabanas - TiÆo Carreiro e Pardinho.mp3",
+    "folder": "Três Cuiabanas - Tião Carreiro e Pardinho",
+    "file": "00 - Três Cuiabanas - Tião Carreiro e Pardinho.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Trˆs Cuiabanas - TiÆo Carreiro e Pardinho\\00 - Trˆs Cuiabanas - TiÆo Carreiro e Pardinho.mp3"
+  },
+  {
+    "rawFolder": "T“ Ficando - Gino e Geno",
+    "rawFile": "00 - T“ ficando - lv_0_20260403132257.mp3",
+    "folder": "Tô Ficando - Gino e Geno",
+    "file": "00 - Tô ficando - lv_0_20260403132257.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\T“ Ficando - Gino e Geno\\00 - T“ ficando - lv_0_20260403132257.mp3"
+  },
+  {
+    "rawFolder": "Um Degrau Na Escada - Chico Rey e Paran ",
+    "rawFile": "00 - Um degrau na escada - Chico Rey e Paran  .mp3",
+    "folder": "Um Degrau Na Escada - Chico Rey e Paraná",
+    "file": "00 - Um degrau na escada - Chico Rey e Paraná .mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Um Degrau Na Escada - Chico Rey e Paran \\00 - Um degrau na escada - Chico Rey e Paran  .mp3"
+  },
+  {
+    "rawFolder": "Um sonhador - NÆo olhe assim - ChitÆozinho e Xoror¢ Part. Leonardo",
+    "rawFile": "00 - Um sonhador   NÆo olhe assim - umsonhadornaoolheassim.mp3.mp3",
+    "folder": "Um sonhador - Não olhe assim - Chitãozinho e Xororó Part. Leonardo",
+    "file": "00 - Um sonhador   Não olhe assim - umsonhadornaoolheassim.mp3.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Um sonhador - NÆo olhe assim - ChitÆozinho e Xoror¢ Part. Leonardo\\00 - Um sonhador   NÆo olhe assim - umsonhadornaoolheassim.mp3.mp3"
+  },
+  {
+    "rawFolder": "Us Mininus da Precu ria",
+    "rawFile": "00 - Us Mininus da Precu ria - Narra‡Æo de Rodeio e sele‡Æo de m£sica ??(M4A_128K).mp3",
+    "folder": "Us Mininus da Precuária",
+    "file": "00 - Us Mininus da Precuária - Narração de Rodeio e seleção de música (M4A_128K).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Us Mininus da Precu ria\\00 - Us Mininus da Precu ria - Narra‡Æo de Rodeio e sele‡Æo de m£sica ??(M4A_128K).mp3"
+  },
+  {
+    "rawFolder": "Viva a Vida - Milion rio e Jos‚ Rico",
+    "rawFile": "00 - Viva a Vida - Milion rio e Jos‚ Rico.mp3",
+    "folder": "Viva a Vida - Milionário e José Rico",
+    "file": "00 - Viva a Vida - Milionário e José Rico.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Viva a Vida - Milion rio e Jos‚ Rico\\00 - Viva a Vida - Milion rio e Jos‚ Rico.mp3"
+  },
+  {
+    "rawFolder": "Voando Sem Asas - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 - Voando sem asas - lv_0_20260403155248.mp3",
+    "folder": "Voando Sem Asas - Zezé di Camargo e Luciano",
+    "file": "00 - Voando sem asas - lv_0_20260403155248.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Voando Sem Asas - Zez‚ di Camargo e Luciano\\00 - Voando sem asas - lv_0_20260403155248.mp3"
+  },
+  {
+    "rawFolder": "Voce ‚ tudo que pedi pra Deus - Cezar e Paulinho",
+    "rawFile": "00 - Voce ‚ tudo que pedi pra Deus - nafazendadaesperancamorameuamor.mp3",
+    "folder": "Voce é tudo que pedi pra Deus - Cezar e Paulinho",
+    "file": "00 - Voce é tudo que pedi pra Deus - nafazendadaesperancamorameuamor.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Voce ‚ tudo que pedi pra Deus - Cezar e Paulinho\\00 - Voce ‚ tudo que pedi pra Deus - nafazendadaesperancamorameuamor.mp3"
+  },
+  {
+    "rawFolder": "Vontade Dividida - Milion rio e Jos‚ Rico",
+    "rawFile": "00 - Vontade dividida - vontadedividida.mp3",
+    "folder": "Vontade Dividida - Milionário e José Rico",
+    "file": "00 - Vontade dividida - vontadedividida.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Vontade Dividida - Milion rio e Jos‚ Rico\\00 - Vontade dividida - vontadedividida.mp3"
+  },
+  {
+    "rawFolder": "Vou Beber de Novo - Renan e Ray",
+    "rawFile": "00 - Vou beber de novo - voubeberdenovo.mp3",
+    "folder": "Vou Beber de Novo - Renan e Ray",
+    "file": "00 - Vou beber de novo - voubeberdenovo.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\Vou Beber de Novo - Renan e Ray\\00 - Vou beber de novo - voubeberdenovo.mp3"
+  },
+  {
+    "rawFolder": " o Amor - Zez‚ di Camargo e Luciano",
+    "rawFile": "00 -  o amor - eoamor.mp3",
+    "folder": "o Amor - Zezé di Camargo e Luciano",
+    "file": "00 -  o amor - eoamor.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\ o Amor - Zez‚ di Camargo e Luciano\\00 -  o amor - eoamor.mp3"
+  },
+  {
+    "rawFolder": "?DJ Ledie",
+    "rawFile": "00 - ?DJ Ledie - ?Chrystian & Ralf - Amor de Canavial - COM GRAVE - MODÇO BRUTO - MODAO 2026 - EDITADO.mp3",
+    "folder": "DJ Ledie",
+    "file": "00 - DJ Ledie - Chrystian & Ralf - Amor de Canavial - COM GRAVE - MODÃO BRUTO - MODAO 2026 - EDITADO.mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\?DJ Ledie\\00 - ?DJ Ledie - ?Chrystian & Ralf - Amor de Canavial - COM GRAVE - MODÇO BRUTO - MODAO 2026 - EDITADO.mp3"
+  },
+  {
+    "rawFolder": "?NOSSO BUTECO - XandyDJ Produ‡äes",
+    "rawFile": "00 - ?NOSSO BUTECO - xandyDj Produ‡äes - ?Pousada de Boiadeiro - TiÆo Carreiro & Pardinho - Maur¡cio e Eduardo -  S¢ Dizer o Pre‡o (FAIXA 30).mp3",
+    "folder": "NOSSO BUTECO - XandyDJ Produções",
+    "file": "00 - NOSSO BUTECO - xandyDj Produções - Pousada de Boiadeiro - Tião Carreiro & Pardinho - Maurício e Eduardo -  Só Dizer o Preço (FAIXA 30).mp3",
+    "fullLine": "C:\\Users\\Na‡ao digital\\Music\\?NOSSO BUTECO - XandyDJ Produ‡äes\\00 - ?NOSSO BUTECO - xandyDj Produ‡äes - ?Pousada de Boiadeiro - TiÆo Carreiro & Pardinho - Maur¡cio e Eduardo -  S¢ Dizer o Pre‡o (FAIXA 30).mp3"
+  }
+]

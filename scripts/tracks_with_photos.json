@@ -1,0 +1,969 @@
+[
+  {
+    "index": 1,
+    "folder": "A Saudade é Uma Pedra - Zezé di Camargo e Luciano",
+    "file": "00 - A Saudade é Uma Pedra - lv_0_20260403173513.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/A%20Saudade%20%C3%A9%20Uma%20Pedra%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20A%20Saudade%20%C3%A9%20Uma%20Pedra%20-%20lv_0_20260403173513.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/A%20Saudade%20%C3%A9%20Uma%20Pedra%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/A%20Saudade%20%C3%A9%20Uma%20Pedra%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 2,
+    "folder": "Aline - João Mineiro e Marciano",
+    "file": "00 - Aline - João Mineiro e Marciano.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Aline%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano/00%20-%20Aline%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Aline%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 3,
+    "folder": "Althaír & Alexandre - Ataíde e Alexandre em Vitória-ES (Ao Vivo)",
+    "file": "00 - Althaír & Alexandre - Laço Aberto (Ao Vivo)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Altha%C3%ADr%20%26%20Alexandre%20-%20Ata%C3%ADde%20e%20Alexandre%20em%20Vit%C3%B3ria-ES%20(Ao%20Vivo)/00%20-%20Altha%C3%ADr%20%26%20Alexandre%20-%20La%C3%A7o%20Aberto%20(Ao%20Vivo)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Altha%C3%ADr%20%26%20Alexandre%20-%20Ata%C3%ADde%20e%20Alexandre%20em%20Vit%C3%B3ria-ES%20(Ao%20Vivo)/ab67616d0000b27368d55b4a919741c603affd2c.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 4,
+    "folder": "Amaremos - Barrerito",
+    "file": "00 - Amaremos - amaremos.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Amaremos%20-%20Barrerito/00%20-%20Amaremos%20-%20amaremos.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Amaremos%20-%20Barrerito/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 5,
+    "folder": "Amaremos Acapella - Barrerito",
+    "file": "00 - Amaremos Acapella - amaremosacapella.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Amaremos%20Acapella%20-%20Barrerito/00%20-%20Amaremos%20Acapella%20-%20amaremosacapella.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Amaremos%20Acapella%20-%20Barrerito/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 6,
+    "folder": "Amor Selvagem - Zezé di Camargo e Luciano",
+    "file": "00 - Amor Selvagem - lv_0_20260403162554.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Amor%20Selvagem%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Amor%20Selvagem%20-%20lv_0_20260403162554.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Amor%20Selvagem%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 7,
+    "folder": "Anjo Loiro - Milionário e José Rico",
+    "file": "00 - Anjo Loiro - anjoloiro.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Anjo%20Loiro%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/00%20-%20Anjo%20Loiro%20-%20anjoloiro.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Anjo%20Loiro%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 8,
+    "folder": "Ara Po - Tião Carreiro e Pardinho",
+    "file": "00 - Ara po - arapo.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ara%20Po%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/00%20-%20Ara%20po%20-%20arapo.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ara%20Po%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 9,
+    "folder": "Arrependida - Gino e Geno",
+    "file": "00 - Arrependida - lv_0_20260403161855.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Arrependida%20-%20Gino%20e%20Geno/00%20-%20Arrependida%20-%20lv_0_20260403161855.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Arrependida%20-%20Gino%20e%20Geno/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 10,
+    "folder": "Barco de Papel - Trio Parada Dura",
+    "file": "00 - Barco de Papel - lv_0_20260403163637.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Barco%20de%20Papel%20-%20Trio%20Parada%20Dura/00%20-%20Barco%20de%20Papel%20-%20lv_0_20260403163637.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Barco%20de%20Papel%20-%20Trio%20Parada%20Dura/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 11,
+    "folder": "Bate Coração - Leandro e Leonardo",
+    "file": "00 - Bate coração - lv_0_20260403172741.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Bate%20Cora%C3%A7%C3%A3o%20-%20Leandro%20e%20Leonardo/00%20-%20Bate%20cora%C3%A7%C3%A3o%20-%20lv_0_20260403172741.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Bate%20Cora%C3%A7%C3%A3o%20-%20Leandro%20e%20Leonardo/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 12,
+    "folder": "Beijo do Adeus Sublime Renúncia - Di Paulo e Paulino",
+    "file": "00 - Beijo do adeus sublime renúncia - beijodoadeus.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Beijo%20do%20Adeus%20Sublime%20Ren%C3%BAncia%20-%20Di%20Paulo%20e%20Paulino/00%20-%20Beijo%20do%20adeus%20sublime%20ren%C3%BAncia%20-%20beijodoadeus.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Beijo%20do%20Adeus%20Sublime%20Ren%C3%BAncia%20-%20Di%20Paulo%20e%20Paulino/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 13,
+    "folder": "Blusa vermelha - Trio Parada Dura",
+    "file": "00 - Blusa vermelha - lv_0_20260403154917.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Blusa%20vermelha%20-%20Trio%20Parada%20Dura/00%20-%20Blusa%20vermelha%20-%20lv_0_20260403154917.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Blusa%20vermelha%20-%20Trio%20Parada%20Dura/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 14,
+    "folder": "Boate Azul - Bruno e Marrone",
+    "file": "00 - Boate Azul - boateazul.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Boate%20Azul%20-%20Bruno%20e%20Marrone/00%20-%20Boate%20Azul%20-%20boateazul.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Boate%20Azul%20-%20Bruno%20e%20Marrone/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 15,
+    "folder": "Cada Volta É Um Recomeço - Zezé Di Camargo e Luciano",
+    "file": "00 - Cada volta é um recomeço - cadavoltaeumrecomeco.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Cada%20Volta%20%C3%89%20Um%20Recome%C3%A7o%20-%20Zez%C3%A9%20Di%20Camargo%20e%20Luciano/00%20-%20Cada%20volta%20%C3%A9%20um%20recome%C3%A7o%20-%20cadavoltaeumrecomeco.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Cada%20Volta%20%C3%89%20Um%20Recome%C3%A7o%20-%20Zez%C3%A9%20Di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 16,
+    "folder": "Canção da Madrugada - Dombar e Domzete",
+    "file": "00 - Canção da madrugada - cancaodamadrugada.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Can%C3%A7%C3%A3o%20da%20Madrugada%20-%20Dombar%20e%20Domzete/00%20-%20Can%C3%A7%C3%A3o%20da%20madrugada%20-%20cancaodamadrugada.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Can%C3%A7%C3%A3o%20da%20Madrugada%20-%20Dombar%20e%20Domzete/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 17,
+    "folder": "Chico Rey & Panará - Topic - Chico Rey & Panará",
+    "file": "00 - Chico Rey & Panará - Topic - Canarinho Prisioneiro _ O Número UM (Verso)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Chico%20Rey%20%26%20Panar%C3%A1%20-%20Topic%20-%20Chico%20Rey%20%26%20Panar%C3%A1/00%20-%20Chico%20Rey%20%26%20Panar%C3%A1%20-%20Topic%20-%20Canarinho%20Prisioneiro%20_%20O%20N%C3%BAmero%20UM%20(Verso)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Chico%20Rey%20%26%20Panar%C3%A1%20-%20Topic%20-%20Chico%20Rey%20%26%20Panar%C3%A1/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 18,
+    "folder": "Chico Rey & Paraná - Chico Rey & Paraná (ao Vivo)",
+    "file": "00 - Chico Rey & Paraná - Paixão Proibida (Ao Vivo)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Chico%20Rey%20%26%20Paran%C3%A1%20-%20Chico%20Rey%20%26%20Paran%C3%A1%20(ao%20Vivo)/00%20-%20Chico%20Rey%20%26%20Paran%C3%A1%20-%20Paix%C3%A3o%20Proibida%20(Ao%20Vivo)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Chico%20Rey%20%26%20Paran%C3%A1%20-%20Chico%20Rey%20%26%20Paran%C3%A1%20(ao%20Vivo)/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 19,
+    "folder": "Chrystian & Ralf - Sozinho em Nova York",
+    "file": "00 - Chrystian & Ralf - De cara cheia(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Chrystian%20%26%20Ralf%20-%20Sozinho%20em%20Nova%20York/00%20-%20Chrystian%20%26%20Ralf%20-%20De%20cara%20cheia(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Chrystian%20%26%20Ralf%20-%20Sozinho%20em%20Nova%20York/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 20,
+    "folder": "Dei A Ela Minha Vida - Zezé di Camargo e Luciano",
+    "file": "00 - Dei a ela minha vida - lv_0_20260403160641.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Dei%20A%20Ela%20Minha%20Vida%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Dei%20a%20ela%20minha%20vida%20-%20lv_0_20260403160641.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Dei%20A%20Ela%20Minha%20Vida%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 21,
+    "folder": "Deixe Seu Recado - Gino e Geno",
+    "file": "00 - Deixe seu recado - Gino e Geno .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Deixe%20Seu%20Recado%20-%20Gino%20e%20Geno/00%20-%20Deixe%20seu%20recado%20-%20Gino%20e%20Geno%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Deixe%20Seu%20Recado%20-%20Gino%20e%20Geno/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 22,
+    "folder": "Di Paullo & Paulino",
+    "file": "00 - Di Paullo & Paulino - Topic - Aviao Das Nove(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Di%20Paullo%20%26%20Paulino/00%20-%20Di%20Paullo%20%26%20Paulino%20-%20Topic%20-%20Aviao%20Das%20Nove(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Di%20Paullo%20%26%20Paulino/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 23,
+    "folder": "DJ IAGO BALA",
+    "file": "00 - DJ IAGO BALA - Faça já seu CD Personalizado. Contato WhatsApp (65)99605-0637 - Milionário e José Rico.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/DJ%20IAGO%20BALA/00%20-%20DJ%20IAGO%20BALA%20-%20Fa%C3%A7a%20j%C3%A1%20seu%20CD%20Personalizado.%20Contato%20WhatsApp%20(65)99605-0637%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/DJ%20IAGO%20BALA/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 24,
+    "folder": "Do Mundo Nada se Leva - Edson & Hudson",
+    "file": "00 - Edson & Hudson - Topic - Do Mundo Nada Se Leva (Ao Vivo)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Do%20Mundo%20Nada%20se%20Leva%20-%20Edson%20%26%20Hudson/00%20-%20Edson%20%26%20Hudson%20-%20Topic%20-%20Do%20Mundo%20Nada%20Se%20Leva%20(Ao%20Vivo)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Do%20Mundo%20Nada%20se%20Leva%20-%20Edson%20%26%20Hudson/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 25,
+    "folder": "Do Mundo Nada se Leva - Edson & Hudson",
+    "file": "00 - Edson & Hudson - Topic - Vá Pro Inferno Com Seu Amor _ Galopeira (Galopera) (Ao Vivo)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Do%20Mundo%20Nada%20se%20Leva%20-%20Edson%20%26%20Hudson/00%20-%20Edson%20%26%20Hudson%20-%20Topic%20-%20V%C3%A1%20Pro%20Inferno%20Com%20Seu%20Amor%20_%20Galopeira%20(Galopera)%20(Ao%20Vivo)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Do%20Mundo%20Nada%20se%20Leva%20-%20Edson%20%26%20Hudson/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 26,
+    "folder": "Duas Vezes Você - Cezar e Paulinho",
+    "file": "00 - Duas vezes voce - duasvezesvoce.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Duas%20Vezes%20Voc%C3%AA%20-%20Cezar%20e%20Paulinho/00%20-%20Duas%20vezes%20voce%20-%20duasvezesvoce.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Duas%20Vezes%20Voc%C3%AA%20-%20Cezar%20e%20Paulinho/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 27,
+    "folder": "Ela é Demais - Rick e Renner",
+    "file": "00 - Ela é demais - Rick e Renner.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ela%20%C3%A9%20Demais%20-%20Rick%20e%20Renner/00%20-%20Ela%20%C3%A9%20demais%20-%20Rick%20e%20Renner.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ela%20%C3%A9%20Demais%20-%20Rick%20e%20Renner/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 28,
+    "folder": "Empreitada Perigosa - Tião Carreiro e Pardinho",
+    "file": "00 - Empreitada Perigosa - Tião Carreiro e Pardinho.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Empreitada%20Perigosa%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/00%20-%20Empreitada%20Perigosa%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho.mp3",
+    "coverUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "index": 29,
+    "folder": "Escolta de Vagalumes - Rick e Renner",
+    "file": "00 - Escolta de Vagalumes - lv_0_20260403104318.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Escolta%20de%20Vagalumes%20-%20Rick%20e%20Renner/00%20-%20Escolta%20de%20Vagalumes%20-%20lv_0_20260403104318.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Escolta%20de%20Vagalumes%20-%20Rick%20e%20Renner/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 30,
+    "folder": "Essa Noite Como Lembrança - João Mineiro e Marciano",
+    "file": "00 - Essa noite como lembrança - essa noite como lembrança.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Essa%20Noite%20Como%20Lembran%C3%A7a%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano/00%20-%20Essa%20noite%20como%20lembran%C3%A7a%20-%20essa%20noite%20como%20lembran%C3%A7a.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Essa%20Noite%20Como%20Lembran%C3%A7a%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 31,
+    "folder": "Estrela de Ouro - Gino e Geno",
+    "file": "00 - Estrela de Ouro - lv_0_20260403163202.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Estrela%20de%20Ouro%20-%20Gino%20e%20Geno/00%20-%20Estrela%20de%20Ouro%20-%20lv_0_20260403163202.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Estrela%20de%20Ouro%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 32,
+    "folder": "Eu Disse Não Como Lembrança - Di Paulo e Paulino",
+    "file": "00 - Eu disse não   Como lembrança - eudissenao.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Eu%20Disse%20N%C3%A3o%20Como%20Lembran%C3%A7a%20-%20Di%20Paulo%20e%20Paulino/00%20-%20Eu%20disse%20n%C3%A3o%20%20%20Como%20lembran%C3%A7a%20-%20eudissenao.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Eu%20Disse%20N%C3%A3o%20Como%20Lembran%C3%A7a%20-%20Di%20Paulo%20e%20Paulino/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 33,
+    "folder": "Eu Já Fui de Você - Gino e Geno",
+    "file": "00 - Eu já fui de você - Gino e Geno.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Eu%20J%C3%A1%20Fui%20de%20Voc%C3%AA%20-%20Gino%20e%20Geno/00%20-%20Eu%20j%C3%A1%20fui%20de%20voc%C3%AA%20-%20Gino%20e%20Geno.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Eu%20J%C3%A1%20Fui%20de%20Voc%C3%AA%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 34,
+    "folder": "Eu te Amo - Zezé di Camargo e Luciano",
+    "file": "00 - Eu te amo - lv_0_20260403112207.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Eu%20te%20Amo%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Eu%20te%20amo%20-%20lv_0_20260403112207.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Eu%20te%20Amo%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 35,
+    "folder": "Faz Mais Uma Vez - Zezé di Camargo e Luciano",
+    "file": "00 - Faz mais uma vez - fazmaisumavezcomigo.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Faz%20Mais%20Uma%20Vez%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Faz%20mais%20uma%20vez%20-%20fazmaisumavezcomigo.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Faz%20Mais%20Uma%20Vez%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 36,
+    "folder": "Faz um Ano - Milionário e José Rico",
+    "file": "00 - Faz um ano - fazumano.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Faz%20um%20Ano%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/00%20-%20Faz%20um%20ano%20-%20fazumano.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Faz%20um%20Ano%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 37,
+    "folder": "Filho da Liberdade - Tião Carreiro e Pardinho",
+    "file": "00 - Filho da Liberdade - Tião Carreiro e Pardinho.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Filho%20da%20Liberdade%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/00%20-%20Filho%20da%20Liberdade%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Filho%20da%20Liberdade%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 38,
+    "folder": "Fio de Cabelo - Chitãozinho e Xororó",
+    "file": "00 - Fio de Cabelo - fiodecabelo.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Fio%20de%20Cabelo%20-%20Chit%C3%A3ozinho%20e%20Xoror%C3%B3/00%20-%20Fio%20de%20Cabelo%20-%20fiodecabelo.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Fio%20de%20Cabelo%20-%20Chit%C3%A3ozinho%20e%20Xoror%C3%B3/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 39,
+    "folder": "Flor do Meu Sertão - Leonardo",
+    "file": "00 - Flor do Meu Sertão - Leonardo .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Flor%20do%20Meu%20Sert%C3%A3o%20-%20Leonardo/00%20-%20Flor%20do%20Meu%20Sert%C3%A3o%20-%20Leonardo%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Flor%20do%20Meu%20Sert%C3%A3o%20-%20Leonardo/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 40,
+    "folder": "Fui Dando Porrada - Leandro e Leonardo",
+    "file": "00 - Fui dando porrada - lv_0_20260403110330.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Fui%20Dando%20Porrada%20-%20Leandro%20e%20Leonardo/00%20-%20Fui%20dando%20porrada%20-%20lv_0_20260403110330.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Fui%20Dando%20Porrada%20-%20Leandro%20e%20Leonardo/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 41,
+    "folder": "Goiano, Paranaense - Goiano & Paranaense, Vol. 1",
+    "file": "00 - Goiano, Paranaense - Bailão do Marco Brasil - ( Goiano e Paranaense ) - A Viola e a Saudade(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Goiano%2C%20Paranaense%20-%20Goiano%20%26%20Paranaense%2C%20Vol.%201/00%20-%20Goiano%2C%20Paranaense%20-%20Bail%C3%A3o%20do%20Marco%20Brasil%20-%20(%20Goiano%20e%20Paranaense%20)%20-%20A%20Viola%20e%20a%20Saudade(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Goiano%2C%20Paranaense%20-%20Goiano%20%26%20Paranaense%2C%20Vol.%201/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 42,
+    "folder": "Goiano, Paranaense - O Poder do Criador, Vol. 4",
+    "file": "00 - Goiano, Paranaense - O Poder do Criador(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Goiano%2C%20Paranaense%20-%20O%20Poder%20do%20Criador%2C%20Vol.%204/00%20-%20Goiano%2C%20Paranaense%20-%20O%20Poder%20do%20Criador(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Goiano%2C%20Paranaense%20-%20O%20Poder%20do%20Criador%2C%20Vol.%204/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 43,
+    "folder": "Guilherme & Santiago - Acústico 20 anos",
+    "file": "00 - Guilherme & Santiago - Franguinho Na Panela(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Guilherme%20%26%20Santiago%20-%20Ac%C3%BAstico%2020%20anos/00%20-%20Guilherme%20%26%20Santiago%20-%20Franguinho%20Na%20Panela(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Guilherme%20%26%20Santiago%20-%20Ac%C3%BAstico%2020%20anos/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 44,
+    "folder": "Henrique & Hernane - Topic - Henrique & Hernane - Topic",
+    "file": "00 - Henrique & Hernane - Topic - Aguenta Coração _ Apaixonado(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Henrique%20%26%20Hernane%20-%20Topic%20-%20Henrique%20%26%20Hernane%20-%20Topic/00%20-%20Henrique%20%26%20Hernane%20-%20Topic%20-%20Aguenta%20Cora%C3%A7%C3%A3o%20_%20Apaixonado(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Henrique%20%26%20Hernane%20-%20Topic%20-%20Henrique%20%26%20Hernane%20-%20Topic/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 45,
+    "folder": "Hoje Eu Quero Te Amar - Zezé di Camargo e Luciano",
+    "file": "00 - Hoje eu quero te amar - lv_0_20260403165217.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Hoje%20Eu%20Quero%20Te%20Amar%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Hoje%20eu%20quero%20te%20amar%20-%20lv_0_20260403165217.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Hoje%20Eu%20Quero%20Te%20Amar%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 46,
+    "folder": "Irmão da Lua, Amigo das Estrelas - Zezé di Camargo e Luciano",
+    "file": "00 - Irmão da Lua, Amigo das estrelas - Zezé di Camargo e Luciano.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Irm%C3%A3o%20da%20Lua%2C%20Amigo%20das%20Estrelas%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Irm%C3%A3o%20da%20Lua%2C%20Amigo%20das%20estrelas%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Irm%C3%A3o%20da%20Lua%2C%20Amigo%20das%20Estrelas%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 47,
+    "folder": "Jayne",
+    "file": "00 - Jayne - Topic - Dia de Formatura _Loira se você soubesse (Verso)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Jayne/00%20-%20Jayne%20-%20Topic%20-%20Dia%20de%20Formatura%20_Loira%20se%20voc%C3%AA%20soubesse%20(Verso)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Jayne/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 48,
+    "folder": "Jeito Caipira - Gino e Geno",
+    "file": "00 - Jeito caipira - jeitocaipira.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Jeito%20Caipira%20-%20Gino%20e%20Geno/00%20-%20Jeito%20caipira%20-%20jeitocaipira.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Jeito%20Caipira%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 49,
+    "folder": "Jogo do Amor - Milionário e José Rico",
+    "file": "00 - Jogo do Amor - Milionário e José Rico.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Jogo%20do%20Amor%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/00%20-%20Jogo%20do%20Amor%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Jogo%20do%20Amor%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 50,
+    "folder": "Já Tem Alguém No Seu Lugar - Os Gargantas de Ouro",
+    "file": "00 - Já tem alguém no seu lugar - jatemalguemnoseulugarsomodaoedits.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/J%C3%A1%20Tem%20Algu%C3%A9m%20No%20Seu%20Lugar%20-%20Os%20Gargantas%20de%20Ouro/00%20-%20J%C3%A1%20tem%20algu%C3%A9m%20no%20seu%20lugar%20-%20jatemalguemnoseulugarsomodaoedits.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/J%C3%A1%20Tem%20Algu%C3%A9m%20No%20Seu%20Lugar%20-%20Os%20Gargantas%20de%20Ouro/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 51,
+    "folder": "Linda Demais - Eduardo Costa",
+    "file": "00 - Linda Demais - Eduardo Costa.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Linda%20Demais%20-%20Eduardo%20Costa/00%20-%20Linda%20Demais%20-%20Eduardo%20Costa.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Linda%20Demais%20-%20Eduardo%20Costa/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 52,
+    "folder": "Lágrimas Geladas - Rionegro e Solimões",
+    "file": "00 - Lágrimas geladas - lv_0_20260403133244.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/L%C3%A1grimas%20Geladas%20-%20Rionegro%20e%20Solim%C3%B5es/00%20-%20L%C3%A1grimas%20geladas%20-%20lv_0_20260403133244.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/L%C3%A1grimas%20Geladas%20-%20Rionegro%20e%20Solim%C3%B5es/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 53,
+    "folder": "Marciano - Meu Oficio É Cantar (Ao Vivo)",
+    "file": "00 - Marciano - Amor Clandestino (Ao Vivo)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Marciano%20-%20Meu%20Oficio%20%C3%89%20Cantar%20(Ao%20Vivo)/00%20-%20Marciano%20-%20Amor%20Clandestino%20(Ao%20Vivo)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Marciano%20-%20Meu%20Oficio%20%C3%89%20Cantar%20(Ao%20Vivo)/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 54,
+    "folder": "Marco Brasil",
+    "file": "00 - Marco Brasil - Topic - Caçador de Corações _ Debaixo da Água (Verso)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Marco%20Brasil/00%20-%20Marco%20Brasil%20-%20Topic%20-%20Ca%C3%A7ador%20de%20Cora%C3%A7%C3%B5es%20_%20Debaixo%20da%20%C3%81gua%20(Verso)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Marco%20Brasil/images%20ca%C3%A7ador%20de%20coracoes.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 55,
+    "folder": "Marco Brasil",
+    "file": "00 - Marco Brasil - Topic - Do Outro Lado da Cidade _ Garanhão (Verso)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Marco%20Brasil/00%20-%20Marco%20Brasil%20-%20Topic%20-%20Do%20Outro%20Lado%20da%20Cidade%20_%20Garanh%C3%A3o%20(Verso)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Marco%20Brasil/images%20do%20outro%20lado%20da%20cidade.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 56,
+    "folder": "Me Apaixonei - Eduardo Costa",
+    "file": "00 - Me Apaixonei - lv_0_20260403172405.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Me%20Apaixonei%20-%20Eduardo%20Costa/00%20-%20Me%20Apaixonei%20-%20lv_0_20260403172405.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Me%20Apaixonei%20-%20Eduardo%20Costa/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 57,
+    "folder": "Melhor ou Pior - Eduardo Costa",
+    "file": "00 - Melhor ou pior - melhoroupior.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Melhor%20ou%20Pior%20-%20Eduardo%20Costa/00%20-%20Melhor%20ou%20pior%20-%20melhoroupior.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Melhor%20ou%20Pior%20-%20Eduardo%20Costa/melhor.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 58,
+    "folder": "Menina - Bruno e Marrone",
+    "file": "00 - Menina - lv_0_20260403111745.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Menina%20-%20Bruno%20e%20Marrone/00%20-%20Menina%20-%20lv_0_20260403111745.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Menina%20-%20Bruno%20e%20Marrone/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 59,
+    "folder": "Meu Coração Só Quer Chorar - Zezé di Camargo e Luciano",
+    "file": "00 - Meu coração só quer chorar - lv_0_20260403155721.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Meu%20Cora%C3%A7%C3%A3o%20S%C3%B3%20Quer%20Chorar%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Meu%20cora%C3%A7%C3%A3o%20s%C3%B3%20quer%20chorar%20-%20lv_0_20260403155721.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Meu%20Cora%C3%A7%C3%A3o%20S%C3%B3%20Quer%20Chorar%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 60,
+    "folder": "Meu Sertão - Jad e Jefferson",
+    "file": "00 - Meu sertão - Jad e Jefferson.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Meu%20Sert%C3%A3o%20-%20Jad%20e%20Jefferson/00%20-%20Meu%20sert%C3%A3o%20-%20Jad%20e%20Jefferson.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Meu%20Sert%C3%A3o%20-%20Jad%20e%20Jefferson/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 61,
+    "folder": "Minha Mensagem - João Paulo e Daniel",
+    "file": "00 - Minha Mensagem - João Paulo e Daniel.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Minha%20Mensagem%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel/00%20-%20Minha%20Mensagem%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Minha%20Mensagem%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 62,
+    "folder": "Minha Serenata - Chico Rey e Paraná",
+    "file": "00 - Minha Serenata - lv_0_20260403173019.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Minha%20Serenata%20-%20Chico%20Rey%20e%20Paran%C3%A1/00%20-%20Minha%20Serenata%20-%20lv_0_20260403173019.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Minha%20Serenata%20-%20Chico%20Rey%20e%20Paran%C3%A1/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 63,
+    "folder": "Minha Vida - Tião Carreiro e Pardinho",
+    "file": "00 - Minha Vida - lv_0_20260403084032.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Minha%20Vida%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/00%20-%20Minha%20Vida%20-%20lv_0_20260403084032.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Minha%20Vida%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 64,
+    "folder": "Morena Bonita - Gino e Geno",
+    "file": "00 - Morena bonita - morenabonita.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Morena%20Bonita%20-%20Gino%20e%20Geno/00%20-%20Morena%20bonita%20-%20morenabonita.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Morena%20Bonita%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 65,
+    "folder": "Morto de Saudade - Cezar e Paulinho",
+    "file": "00 - Morto de saudade - mortodesaudadesua.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Morto%20de%20Saudade%20-%20Cezar%20e%20Paulinho/00%20-%20Morto%20de%20saudade%20-%20mortodesaudadesua.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Morto%20de%20Saudade%20-%20Cezar%20e%20Paulinho/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 66,
+    "folder": "Morto por Dentro - Barrerito",
+    "file": "00 - Morto por dentro - mortopordentro.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Morto%20por%20Dentro%20-%20Barrerito/00%20-%20Morto%20por%20dentro%20-%20mortopordentro.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Morto%20por%20Dentro%20-%20Barrerito/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 67,
+    "folder": "Mulheres do Brasil - Mato Grosso e Mathias",
+    "file": "00 - Matogrosso - Topic - Mulheres Do Brasil(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Mulheres%20do%20Brasil%20-%20Mato%20Grosso%20e%20Mathias/00%20-%20Matogrosso%20-%20Topic%20-%20Mulheres%20Do%20Brasil(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Mulheres%20do%20Brasil%20-%20Mato%20Grosso%20e%20Mathias/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 68,
+    "folder": "Mulheres do Brasil - Mato Grosso e Mathias",
+    "file": "00 - Matogrosso - Topic - Um Século Sem Ti (Un Siglo Sin Ti)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Mulheres%20do%20Brasil%20-%20Mato%20Grosso%20e%20Mathias/00%20-%20Matogrosso%20-%20Topic%20-%20Um%20S%C3%A9culo%20Sem%20Ti%20(Un%20Siglo%20Sin%20Ti)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Mulheres%20do%20Brasil%20-%20Mato%20Grosso%20e%20Mathias/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 69,
+    "folder": "Nada Mudou - Di Paullo e Paulino",
+    "file": "00 - Nada mudou - Di Paullo e Paulino .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nada%20Mudou%20-%20Di%20Paullo%20e%20Paulino/00%20-%20Nada%20mudou%20-%20Di%20Paullo%20e%20Paulino%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nada%20Mudou%20-%20Di%20Paullo%20e%20Paulino/images%20(2).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 70,
+    "folder": "Nem é Bom Lembrar - Zezé di Camargo e Luciano",
+    "file": "00 - Nem é bom lembrar - lv_0_20260403105506.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nem%20%C3%A9%20Bom%20Lembrar%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Nem%20%C3%A9%20bom%20lembrar%20-%20lv_0_20260403105506.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nem%20%C3%A9%20Bom%20Lembrar%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 71,
+    "folder": "No Céu dos Braços Seus - Di Paullo e Paulino",
+    "file": "00 - No Céu dos Braços seus - Di Paullo e Paulino .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/No%20C%C3%A9u%20dos%20Bra%C3%A7os%20Seus%20-%20Di%20Paullo%20e%20Paulino/00%20-%20No%20C%C3%A9u%20dos%20Bra%C3%A7os%20seus%20-%20Di%20Paullo%20e%20Paulino%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/No%20C%C3%A9u%20dos%20Bra%C3%A7os%20Seus%20-%20Di%20Paullo%20e%20Paulino/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 72,
+    "folder": "Nois Enverga Mas Não Quebra - Gino e Geno",
+    "file": "00 - Nois enverga mas não quebra - noisenvergamaisnaoquebra.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nois%20Enverga%20Mas%20N%C3%A3o%20Quebra%20-%20Gino%20e%20Geno/00%20-%20Nois%20enverga%20mas%20n%C3%A3o%20quebra%20-%20noisenvergamaisnaoquebra.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nois%20Enverga%20Mas%20N%C3%A3o%20Quebra%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 73,
+    "folder": "Nos Bares da Cidade - Rick e Renner",
+    "file": "00 - Nos bares da cidade - nosbaresdacidade.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nos%20Bares%20da%20Cidade%20-%20Rick%20e%20Renner/00%20-%20Nos%20bares%20da%20cidade%20-%20nosbaresdacidade.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Nos%20Bares%20da%20Cidade%20-%20Rick%20e%20Renner/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 74,
+    "folder": "Oh Tião Carreiro - Léo Goiano & Rafael",
+    "file": "00 - Oh Tião Carreiro - Léo Goiano & Rafael.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Oh%20Ti%C3%A3o%20Carreiro%20-%20L%C3%A9o%20Goiano%20%26%20Rafael/00%20-%20Oh%20Ti%C3%A3o%20Carreiro%20-%20L%C3%A9o%20Goiano%20%26%20Rafael.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Oh%20Ti%C3%A3o%20Carreiro%20-%20L%C3%A9o%20Goiano%20%26%20Rafael/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 75,
+    "folder": "Olhos Claros - João Paulo e Daniel",
+    "file": "00 - Olhos claros - João Paulo e Daniel.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Olhos%20Claros%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel/00%20-%20Olhos%20claros%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Olhos%20Claros%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 76,
+    "folder": "Onde Anda Meu Amor - Léo Magalhães",
+    "file": "00 - Onde anda meu amor - Léo Magalhães .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Onde%20Anda%20Meu%20Amor%20-%20L%C3%A9o%20Magalh%C3%A3es/00%20-%20Onde%20anda%20meu%20amor%20-%20L%C3%A9o%20Magalh%C3%A3es%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Onde%20Anda%20Meu%20Amor%20-%20L%C3%A9o%20Magalh%C3%A3es/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 77,
+    "folder": "Onde Anda Você - Di Paullo e Paulino",
+    "file": "00 - Onde anda você - Di Paullo e Paulino .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Onde%20Anda%20Voc%C3%AA%20-%20Di%20Paullo%20e%20Paulino/00%20-%20Onde%20anda%20voc%C3%AA%20-%20Di%20Paullo%20e%20Paulino%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Onde%20Anda%20Voc%C3%AA%20-%20Di%20Paullo%20e%20Paulino/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 78,
+    "folder": "Pagode de Viola - Mayck e Lyan",
+    "file": "00 - Mayck & Lyan - Topic - Defendendo A Tradiçao(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pagode%20de%20Viola%20-%20Mayck%20e%20Lyan/00%20-%20Mayck%20%26%20Lyan%20-%20Topic%20-%20Defendendo%20A%20Tradi%C3%A7ao(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pagode%20de%20Viola%20-%20Mayck%20e%20Lyan/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 79,
+    "folder": "Pagode de Viola - Mayck e Lyan",
+    "file": "00 - Mayck & Lyan - Topic - Pagode _ Linha De Frente _ Chora Viola (Ao Vivo)(M4A_128K).mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pagode%20de%20Viola%20-%20Mayck%20e%20Lyan/00%20-%20Mayck%20%26%20Lyan%20-%20Topic%20-%20Pagode%20_%20Linha%20De%20Frente%20_%20Chora%20Viola%20(Ao%20Vivo)(M4A_128K).mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pagode%20de%20Viola%20-%20Mayck%20e%20Lyan/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 80,
+    "folder": "Paixão Recolhida - Solevano e Solene",
+    "file": "00 - Paixão Recolhida - lv_0_20260403182300.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Paix%C3%A3o%20Recolhida%20-%20Solevano%20e%20Solene/00%20-%20Paix%C3%A3o%20Recolhida%20-%20lv_0_20260403182300.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Paix%C3%A3o%20Recolhida%20-%20Solevano%20e%20Solene/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 81,
+    "folder": "Passe Livre - Teodoro e Sampaio",
+    "file": "00 - Passe livre - passelivre.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Passe%20Livre%20-%20Teodoro%20e%20Sampaio/00%20-%20Passe%20livre%20-%20passelivre.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Passe%20Livre%20-%20Teodoro%20e%20Sampaio/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 82,
+    "folder": "Pela Porta da Frente - Bruno e Marrone",
+    "file": "00 - Pela porta da frente - Bruno e Marrone .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pela%20Porta%20da%20Frente%20-%20Bruno%20e%20Marrone/00%20-%20Pela%20porta%20da%20frente%20-%20Bruno%20e%20Marrone%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pela%20Porta%20da%20Frente%20-%20Bruno%20e%20Marrone/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 83,
+    "folder": "Pelejando - Rick e Renner part. Gino e Geno",
+    "file": "00 - Pelejando - lv_0_20260403164353.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pelejando%20-%20Rick%20e%20Renner%20part.%20Gino%20e%20Geno/00%20-%20Pelejando%20-%20lv_0_20260403164353.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pelejando%20-%20Rick%20e%20Renner%20part.%20Gino%20e%20Geno/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 84,
+    "folder": "Peão Paulista - Tangará e Pavão Norte",
+    "file": "00 - Peão Paulista - lv_0_20260403101840.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pe%C3%A3o%20Paulista%20-%20Tangar%C3%A1%20e%20Pav%C3%A3o%20Norte/00%20-%20Pe%C3%A3o%20Paulista%20-%20lv_0_20260403101840.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pe%C3%A3o%20Paulista%20-%20Tangar%C3%A1%20e%20Pav%C3%A3o%20Norte/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 85,
+    "folder": "Por Amor te Deixo Ir - Zezé di Camargo e Luciano",
+    "file": "00 - Por amor te deixo ir - lv_0_20260403160324.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Por%20Amor%20te%20Deixo%20Ir%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Por%20amor%20te%20deixo%20ir%20-%20lv_0_20260403160324.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Por%20Amor%20te%20Deixo%20Ir%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 86,
+    "folder": "Pra Não Pensar Em Você - Zezé di Camargo e Luciano",
+    "file": "00 - Pra Não Pensar Em Você - Zezé di Camargo e Luciano.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pra%20N%C3%A3o%20Pensar%20Em%20Voc%C3%AA%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Pra%20N%C3%A3o%20Pensar%20Em%20Voc%C3%AA%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pra%20N%C3%A3o%20Pensar%20Em%20Voc%C3%AA%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 87,
+    "folder": "Pra Salvar Minha Vida - Gino e Geno",
+    "file": "00 - Pra salvar minha vida - Gino e Geno.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pra%20Salvar%20Minha%20Vida%20-%20Gino%20e%20Geno/00%20-%20Pra%20salvar%20minha%20vida%20-%20Gino%20e%20Geno.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Pra%20Salvar%20Minha%20Vida%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 88,
+    "folder": "Pé na Bunda - Trio Parada Dura",
+    "file": "00 - Pé na Bunda - Trio Parada Dura .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/P%C3%A9%20na%20Bunda%20-%20Trio%20Parada%20Dura/00%20-%20P%C3%A9%20na%20Bunda%20-%20Trio%20Parada%20Dura%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/P%C3%A9%20na%20Bunda%20-%20Trio%20Parada%20Dura/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 89,
+    "folder": "Quando Um Grande Amor se Faz - Gian e Giovani",
+    "file": "00 - Quando um grande amor se faz - Gian e Giovani.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Quando%20Um%20Grande%20Amor%20se%20Faz%20-%20Gian%20e%20Giovani/00%20-%20Quando%20um%20grande%20amor%20se%20faz%20-%20Gian%20e%20Giovani.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Quando%20Um%20Grande%20Amor%20se%20Faz%20-%20Gian%20e%20Giovani/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 90,
+    "folder": "Que Bicho Que É - Gino e Geno",
+    "file": "00 - Que bicho que é - quebichoquee.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Que%20Bicho%20Que%20%C3%89%20-%20Gino%20e%20Geno/00%20-%20Que%20bicho%20que%20%C3%A9%20-%20quebichoquee.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Que%20Bicho%20Que%20%C3%89%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 91,
+    "folder": "Quem É - Leandro e Leonardo",
+    "file": "00 - Quem é - queme.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Quem%20%C3%89%20-%20Leandro%20e%20Leonardo/00%20-%20Quem%20%C3%A9%20-%20queme.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Quem%20%C3%89%20-%20Leandro%20e%20Leonardo/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 92,
+    "folder": "Quero Falar com Ela - Rick e Renner",
+    "file": "00 - Quero falar com ela - Rick e Renner.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Quero%20Falar%20com%20Ela%20-%20Rick%20e%20Renner/00%20-%20Quero%20falar%20com%20ela%20-%20Rick%20e%20Renner.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Quero%20Falar%20com%20Ela%20-%20Rick%20e%20Renner/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 93,
+    "folder": "Reis do Rodeio",
+    "file": "03 - Chitãozinho & Xororó - 60 Dias Apaixonado.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Reis%20do%20Rodeio/03%20-%20Chit%C3%A3ozinho%20%26%20Xoror%C3%B3%20-%2060%20Dias%20Apaixonado.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Reis%20do%20Rodeio/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 94,
+    "folder": "Rumo a Barretos - Menajão Muladeiro",
+    "file": "00 - Rumo a Barretos - lv_0_20260403152856.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Rumo%20a%20Barretos%20-%20Menaj%C3%A3o%20Muladeiro/00%20-%20Rumo%20a%20Barretos%20-%20lv_0_20260403152856.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Rumo%20a%20Barretos%20-%20Menaj%C3%A3o%20Muladeiro/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 95,
+    "folder": "Saudade Bandida - Zezé di Camargo e Luciano",
+    "file": "00 - Saudade Bandida - Zezé di Camargo e Luciano .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Saudade%20Bandida%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Saudade%20Bandida%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Saudade%20Bandida%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 96,
+    "folder": "Saudade da Minha Terra - Chitãozinho e Xororó",
+    "file": "00 - Saudade da Minha Terra - lv_0_20260403133713.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Saudade%20da%20Minha%20Terra%20-%20Chit%C3%A3ozinho%20e%20Xoror%C3%B3/00%20-%20Saudade%20da%20Minha%20Terra%20-%20lv_0_20260403133713.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Saudade%20da%20Minha%20Terra%20-%20Chit%C3%A3ozinho%20e%20Xoror%C3%B3/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 97,
+    "folder": "Se Eu Não Puder te Esquecer - João Mineiro e Marciano",
+    "file": "00 - Se eu não puder te esquecer - João Mineiro e Marciano.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Se%20Eu%20N%C3%A3o%20Puder%20te%20Esquecer%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano/00%20-%20Se%20eu%20n%C3%A3o%20puder%20te%20esquecer%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Se%20Eu%20N%C3%A3o%20Puder%20te%20Esquecer%20-%20Jo%C3%A3o%20Mineiro%20e%20Marciano/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 98,
+    "folder": "Será Que foi Saudade - Zezé di Camargo e Luciano",
+    "file": "00 - Será que foi saudade - seraquefoisaudade.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ser%C3%A1%20Que%20foi%20Saudade%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Ser%C3%A1%20que%20foi%20saudade%20-%20seraquefoisaudade.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ser%C3%A1%20Que%20foi%20Saudade%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 99,
+    "folder": "Sessenta Dias Apaixonado - Milionário e José Rico",
+    "file": "00 - Sessenta dias apaixonado - lv_0_20260403100350.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sessenta%20Dias%20Apaixonado%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/00%20-%20Sessenta%20dias%20apaixonado%20-%20lv_0_20260403100350.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sessenta%20Dias%20Apaixonado%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 100,
+    "folder": "Seus Olhos - Zezé di Camargo e Luciano",
+    "file": "00 - Seus olhos - lv_0_20260403165900.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Seus%20Olhos%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Seus%20olhos%20-%20lv_0_20260403165900.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Seus%20Olhos%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 101,
+    "folder": "Sistema Caipira - Gino e Geno e Continental",
+    "file": "00 - Sistema Caipira - sistemacaipira.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sistema%20Caipira%20-%20Gino%20e%20Geno%20e%20Continental/00%20-%20Sistema%20Caipira%20-%20sistemacaipira.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sistema%20Caipira%20-%20Gino%20e%20Geno%20e%20Continental/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 102,
+    "folder": "Solidão Por Perto - Eduardo Costa",
+    "file": "00 - Solidão por perto - solidaoporperto.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Solid%C3%A3o%20Por%20Perto%20-%20Eduardo%20Costa/00%20-%20Solid%C3%A3o%20por%20perto%20-%20solidaoporperto.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Solid%C3%A3o%20Por%20Perto%20-%20Eduardo%20Costa/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 103,
+    "folder": "Sonho Por Sonho - Leandro e Leonardo",
+    "file": "00 - Sonho Por Sonho - Leandro e Leonardo.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sonho%20Por%20Sonho%20-%20Leandro%20e%20Leonardo/00%20-%20Sonho%20Por%20Sonho%20-%20Leandro%20e%20Leonardo.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sonho%20Por%20Sonho%20-%20Leandro%20e%20Leonardo/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 104,
+    "folder": "Sublime Renúncia - Leandro e Leonardo",
+    "file": "00 - Sublime renúncia - lv_0_20260403134256.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sublime%20Ren%C3%BAncia%20-%20Leandro%20e%20Leonardo/00%20-%20Sublime%20ren%C3%BAncia%20-%20lv_0_20260403134256.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Sublime%20Ren%C3%BAncia%20-%20Leandro%20e%20Leonardo/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 105,
+    "folder": "Só dá Você na Minha Vida - João Paulo e Daniel",
+    "file": "00 - Só da voce na minha vida - sodavocenaminhavida.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/S%C3%B3%20d%C3%A1%20Voc%C3%AA%20na%20Minha%20Vida%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel/00%20-%20S%C3%B3%20da%20voce%20na%20minha%20vida%20-%20sodavocenaminhavida.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/S%C3%B3%20d%C3%A1%20Voc%C3%AA%20na%20Minha%20Vida%20-%20Jo%C3%A3o%20Paulo%20e%20Daniel/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 106,
+    "folder": "Te Amo Demais - Leonardo",
+    "file": "00 - Te amo demais - lv_0_20260403151031.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Te%20Amo%20Demais%20-%20Leonardo/00%20-%20Te%20amo%20demais%20-%20lv_0_20260403151031.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Te%20Amo%20Demais%20-%20Leonardo/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 107,
+    "folder": "Telefone Mudo - Trio Parada Dura",
+    "file": "00 - Telefone Mudo - Trio Parada Dura.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Telefone%20Mudo%20-%20Trio%20Parada%20Dura/00%20-%20Telefone%20Mudo%20-%20Trio%20Parada%20Dura.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Telefone%20Mudo%20-%20Trio%20Parada%20Dura/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 108,
+    "folder": "Tempo ao Tempo - Di Paullo e Paulino",
+    "file": "00 - Tempo ao tempo - lv_0_20260403132709.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Tempo%20ao%20Tempo%20-%20Di%20Paullo%20e%20Paulino/00%20-%20Tempo%20ao%20tempo%20-%20lv_0_20260403132709.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Tempo%20ao%20Tempo%20-%20Di%20Paullo%20e%20Paulino/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 109,
+    "folder": "Temporal de Amor - Leandro e Leonardo",
+    "file": "00 - Temporal de Amor - lv_0_20260403170337.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Temporal%20de%20Amor%20-%20Leandro%20e%20Leonardo/00%20-%20Temporal%20de%20Amor%20-%20lv_0_20260403170337.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Temporal%20de%20Amor%20-%20Leandro%20e%20Leonardo/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 110,
+    "folder": "Tião Carreiro & Pardinho - Modas Sertanejas",
+    "file": "00 - Tião Carreiro & Pardinho - Pousada de boiadeiro.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ti%C3%A3o%20Carreiro%20%26%20Pardinho%20-%20Modas%20Sertanejas/00%20-%20Ti%C3%A3o%20Carreiro%20%26%20Pardinho%20-%20Pousada%20de%20boiadeiro.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Ti%C3%A3o%20Carreiro%20%26%20Pardinho%20-%20Modas%20Sertanejas/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 111,
+    "folder": "Toalha Branca - Gino e Geno",
+    "file": "00 - Toalha branca - toalhabranca.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Toalha%20Branca%20-%20Gino%20e%20Geno/00%20-%20Toalha%20branca%20-%20toalhabranca.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Toalha%20Branca%20-%20Gino%20e%20Geno/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 112,
+    "folder": "Tocando em Frente - Paula Fernandes Part. Leonardo",
+    "file": "00 - Tocando em frente - ocandoemfeerente.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Tocando%20em%20Frente%20-%20Paula%20Fernandes%20Part.%20Leonardo/00%20-%20Tocando%20em%20frente%20-%20ocandoemfeerente.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Tocando%20em%20Frente%20-%20Paula%20Fernandes%20Part.%20Leonardo/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 113,
+    "folder": "Três Cuiabanas - Tião Carreiro e Pardinho",
+    "file": "00 - Três Cuiabanas - Tião Carreiro e Pardinho.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Tr%C3%AAs%20Cuiabanas%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/00%20-%20Tr%C3%AAs%20Cuiabanas%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Tr%C3%AAs%20Cuiabanas%20-%20Ti%C3%A3o%20Carreiro%20e%20Pardinho/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 114,
+    "folder": "Tô Ficando - Gino e Geno",
+    "file": "00 - Tô ficando - lv_0_20260403132257.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/T%C3%B4%20Ficando%20-%20Gino%20e%20Geno/00%20-%20T%C3%B4%20ficando%20-%20lv_0_20260403132257.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/T%C3%B4%20Ficando%20-%20Gino%20e%20Geno/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 115,
+    "folder": "Um Degrau Na Escada - Chico Rey e Paraná",
+    "file": "00 - Um degrau na escada - Chico Rey e Paraná .mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Um%20Degrau%20Na%20Escada%20-%20Chico%20Rey%20e%20Paran%C3%A1/00%20-%20Um%20degrau%20na%20escada%20-%20Chico%20Rey%20e%20Paran%C3%A1%20.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Um%20Degrau%20Na%20Escada%20-%20Chico%20Rey%20e%20Paran%C3%A1/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 116,
+    "folder": "Um sonhador - Não olhe assim - Chitãozinho e Xororó Part. Leonardo",
+    "file": "00 - Um sonhador   Não olhe assim - umsonhadornaoolheassim.mp3.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Um%20sonhador%20-%20N%C3%A3o%20olhe%20assim%20-%20Chit%C3%A3ozinho%20e%20Xoror%C3%B3%20Part.%20Leonardo/00%20-%20Um%20sonhador%20%20%20N%C3%A3o%20olhe%20assim%20-%20umsonhadornaoolheassim.mp3.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Um%20sonhador%20-%20N%C3%A3o%20olhe%20assim%20-%20Chit%C3%A3ozinho%20e%20Xoror%C3%B3%20Part.%20Leonardo/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 118,
+    "folder": "Viva a Vida - Milionário e José Rico",
+    "file": "00 - Viva a Vida - Milionário e José Rico.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Viva%20a%20Vida%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/00%20-%20Viva%20a%20Vida%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Viva%20a%20Vida%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 119,
+    "folder": "Voando Sem Asas - Zezé di Camargo e Luciano",
+    "file": "00 - Voando sem asas - lv_0_20260403155248.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Voando%20Sem%20Asas%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/00%20-%20Voando%20sem%20asas%20-%20lv_0_20260403155248.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Voando%20Sem%20Asas%20-%20Zez%C3%A9%20di%20Camargo%20e%20Luciano/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 120,
+    "folder": "Voce é tudo que pedi pra Deus - Cezar e Paulinho",
+    "file": "00 - Voce é tudo que pedi pra Deus - nafazendadaesperancamorameuamor.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Voce%20%C3%A9%20tudo%20que%20pedi%20pra%20Deus%20-%20Cezar%20e%20Paulinho/00%20-%20Voce%20%C3%A9%20tudo%20que%20pedi%20pra%20Deus%20-%20nafazendadaesperancamorameuamor.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Voce%20%C3%A9%20tudo%20que%20pedi%20pra%20Deus%20-%20Cezar%20e%20Paulinho/images.jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 121,
+    "folder": "Vontade Dividida - Milionário e José Rico",
+    "file": "00 - Vontade dividida - vontadedividida.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Vontade%20Dividida%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/00%20-%20Vontade%20dividida%20-%20vontadedividida.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Vontade%20Dividida%20-%20Milion%C3%A1rio%20e%20Jos%C3%A9%20Rico/images%20(1).jpg",
+    "hasCustomCover": true
+  },
+  {
+    "index": 122,
+    "folder": "Vou Beber de Novo - Renan e Ray",
+    "file": "00 - Vou beber de novo - voubeberdenovo.mp3",
+    "audioUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Vou%20Beber%20de%20Novo%20-%20Renan%20e%20Ray/00%20-%20Vou%20beber%20de%20novo%20-%20voubeberdenovo.mp3",
+    "coverUrl": "https://pub-e61f6969a7e54904b6e2de540add8d0a.r2.dev/Vou%20Beber%20de%20Novo%20-%20Renan%20e%20Ray/images.jpg",
+    "hasCustomCover": true
+  }
+]

@@ -287,10 +287,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
           {ARTISTS.map((artist) => (
             <div
               key={artist.id}
-              onClick={() => onNavigate({ type: 'artist', artistId: artist.id })}
-              className="group p-3 sm:p-4 rounded-2xl bg-[#242424] hover:bg-[#2A2A2A] border border-[#2E2E2E] hover:border-[#C98A2E]/50 transition cursor-pointer text-center flex flex-col items-center"
+              className="p-3 sm:p-4 rounded-2xl bg-[#1E1E1E] border border-[#2B2B2B] text-center flex flex-col items-center select-none shadow-md"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-3 border-2 border-[#3A3A3A] group-hover:border-[#C98A2E] shadow-md group-hover:scale-105 transition duration-300">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-3 border-2 border-[#383838] shadow-md ring-1 ring-white/5">
                 <img
                   src={artist.photoUrl}
                   alt={artist.name}
@@ -299,10 +298,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
                 />
               </div>
 
-              <h4 className="font-heading font-bold text-sm sm:text-base text-[#FAF7F2] group-hover:text-[#C98A2E] transition line-clamp-1">
+              <h4 className="font-heading font-bold text-sm sm:text-base text-[#FAF7F2] line-clamp-1">
                 {artist.name}
               </h4>
-              <p className="text-[11px] sm:text-xs text-[#A7A7A7] line-clamp-1 mt-0.5">
+              <p className="text-[11px] sm:text-xs text-[#999999] line-clamp-1 mt-0.5">
                 {artist.role}
               </p>
             </div>

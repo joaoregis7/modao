@@ -1,60 +1,97 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
-interface BeforeInstallPromptEvent extends Event {
+export interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
 }
 
-export function usePWAInstall() {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [isInstalled, setIsInstalled] = useState(false);
-  const [isIOS, setIsIOS] = useState(false);
+// Global state to capture beforeinstallprompt at module load time (never missed by race conditions)
+let globalDeferredPrompt: BeforeInstallPromptEvent | null = null;
+const promptSubscribers = new Set<(prompt: BeforeInstallPromptEvent | null) => void>();
 
-  useEffect(() => {
-    // Detect standalone mode (already installed)
-    const isStandalone =
+let isGlobalInstalled = false;
+const installSubscribers = new Set<(installed: boolean) => void>();
+
+if (typeof window !== 'undefined') {
+  // Check standalone mode initially
+  try {
+    isGlobalInstalled =
       window.matchMedia('(display-mode: standalone)').matches ||
       (window.navigator as unknown as { standalone?: boolean }).standalone === true;
-    setIsInstalled(isStandalone);
+  } catch {}
 
-    // Detect iOS devices
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    const isIOSDevice = /iphone|ipad|ipod/.test(userAgent);
-    setIsIOS(isIOSDevice);
+  window.addEventListener('beforeinstallprompt', (e: Event) => {
+    e.preventDefault();
+    globalDeferredPrompt = e as BeforeInstallPromptEvent;
+    promptSubscribers.forEach((fn) => fn(globalDeferredPrompt));
+  });
 
-    const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
+  window.addEventListener('appinstalled', () => {
+    isGlobalInstalled = true;
+    globalDeferredPrompt = null;
+    promptSubscribers.forEach((fn) => fn(null));
+    installSubscribers.forEach((fn) => fn(true));
+  });
+}
+
+export function usePWAInstall() {
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(globalDeferredPrompt);
+  const [isInstalled, setIsInstalled] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    return (
+      isGlobalInstalled ||
+      window.matchMedia('(display-mode: standalone)').matches ||
+      (window.navigator as unknown as { standalone?: boolean }).standalone === true
+    );
+  });
+  const [isIOS, setIsIOS] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    const ua = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(ua) || (window.navigator.maxTouchPoints > 1 && /macintosh/.test(ua));
+  });
+
+  useEffect(() => {
+    const handlePromptChange = (prompt: BeforeInstallPromptEvent | null) => {
+      setDeferredPrompt(prompt);
+    };
+    const handleInstallChange = (installed: boolean) => {
+      setIsInstalled(installed);
     };
 
-    const handleAppInstalled = () => {
-      setIsInstalled(true);
-      setDeferredPrompt(null);
-    };
+    promptSubscribers.add(handlePromptChange);
+    installSubscribers.add(handleInstallChange);
 
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('appinstalled', handleAppInstalled);
+    if (globalDeferredPrompt && !deferredPrompt) {
+      setDeferredPrompt(globalDeferredPrompt);
+    }
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('appinstalled', handleAppInstalled);
+      promptSubscribers.delete(handlePromptChange);
+      installSubscribers.delete(handleInstallChange);
     };
-  }, []);
+  }, [deferredPrompt]);
 
-  const install = async () => {
-    if (!deferredPrompt) return false;
-    await deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
-      setIsInstalled(true);
-      setDeferredPrompt(null);
-      return true;
+  const install = useCallback(async (): Promise<boolean> => {
+    const promptToUse = deferredPrompt || globalDeferredPrompt;
+    if (!promptToUse) return false;
+    try {
+      await promptToUse.prompt();
+      const choice = await promptToUse.userChoice;
+      if (choice.outcome === 'accepted') {
+        setIsInstalled(true);
+        isGlobalInstalled = true;
+        globalDeferredPrompt = null;
+        setDeferredPrompt(null);
+        return true;
+      }
+    } catch (e) {
+      console.warn('PWA install prompt error', e);
     }
     return false;
-  };
+  }, [deferredPrompt]);
 
   return {
-    isInstallable: !!deferredPrompt,
+    isInstallable: !!(deferredPrompt || globalDeferredPrompt),
     isInstalled,
     isIOS,
     install,

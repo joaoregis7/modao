@@ -111,7 +111,15 @@ export const CarModeView: React.FC = () => {
   const volumePercent = Math.round(volume * 100);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0A0A0A] text-[#FAF7F2] flex flex-col justify-between p-4 sm:p-8 select-none overflow-hidden">
+    <div
+      className="fixed inset-0 z-50 bg-[#0A0A0A] text-[#FAF7F2] flex flex-col justify-between p-4 sm:p-8 select-none overflow-hidden"
+      style={{
+        paddingTop: 'max(1rem, env(safe-area-inset-top, 1rem))',
+        paddingBottom: 'max(1rem, env(safe-area-inset-bottom, 1rem))',
+        paddingLeft: 'max(1rem, env(safe-area-inset-left, 1rem))',
+        paddingRight: 'max(1rem, env(safe-area-inset-right, 1rem))',
+      }}
+    >
       {/* Highway Night Lighting Effect & Ambient Glow */}
       <div
         className="absolute inset-0 bg-cover bg-center filter blur-3xl opacity-20 pointer-events-none scale-125"

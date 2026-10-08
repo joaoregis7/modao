@@ -15,6 +15,7 @@ import { CarModeView } from './components/player/CarModeView';
 import { QueueDrawer } from './components/player/QueueDrawer';
 import { OfflineIndicator } from './components/common/OfflineIndicator';
 import { PWAInstallModal } from './components/common/PWAInstallModal';
+import { ToastNotification } from './components/common/ToastNotification';
 
 import { HomeView } from './components/views/HomeView';
 import { FavoritesView } from './components/views/FavoritesView';
@@ -99,7 +100,7 @@ const MainAppContent: React.FC = () => {
   };
 
   return (
-    <div className="h-[100dvh] w-full bg-[#121212] text-[#FAF7F2] flex flex-col selection:bg-[#C98A2E] selection:text-black overflow-hidden">
+    <div className="h-screen h-[100dvh] max-h-[100dvh] w-full bg-[#121212] text-[#FAF7F2] flex flex-col selection:bg-[#C98A2E] selection:text-black overflow-hidden">
       {/* Upper Layout: Desktop Sidebar + Scrollable Content View */}
       <div className="flex-1 flex overflow-hidden min-h-0">
         {/* Desktop Sidebar (hidden on mobile) */}
@@ -113,7 +114,7 @@ const MainAppContent: React.FC = () => {
 
           <main
             ref={mainScrollRef}
-            className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 pb-32 md:pb-10 scroll-smooth"
+            className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 pb-[calc(10rem+env(safe-area-inset-bottom,0px))] md:pb-12 scroll-smooth"
           >
             <div className="max-w-7xl mx-auto w-full">
               {renderView()}
@@ -133,6 +134,7 @@ const MainAppContent: React.FC = () => {
       <QueueDrawer />
       <CarModeView />
       <PWAInstallModal />
+      <ToastNotification />
     </div>
   );
 };

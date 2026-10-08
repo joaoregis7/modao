@@ -22,7 +22,11 @@ export const QueueDrawer: React.FC = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-md bg-[#1B1B1B] h-full flex flex-col border-l border-[#2E2E2E] shadow-2xl animate-in slide-in-from-right duration-200 pb-safe"
+        className="w-full max-w-md bg-[#1B1B1B] h-full flex flex-col border-l border-[#2E2E2E] shadow-2xl animate-in slide-in-from-right duration-200"
+        style={{
+          paddingTop: 'max(0.5rem, env(safe-area-inset-top, 0.5rem))',
+          paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom, 0.5rem))',
+        }}
       >
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-[#2A2A2A] flex items-center justify-between">

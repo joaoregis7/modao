@@ -62,19 +62,15 @@ export const TrackCard: React.FC<TrackCardProps> = React.memo(({
     toggleFavorite(track.id);
   };
 
-  const handleDownloadClick = async (e: React.MouseEvent) => {
+  const handleDownloadClick = async (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
     if (isDownloading) return;
 
-    if (downloaded) {
-      await removeDownloadedTrack(track.id);
-    } else {
-      setIsDownloading(true);
-      try {
-        await downloadTrack(track);
-      } finally {
-        setIsDownloading(false);
-      }
+    setIsDownloading(true);
+    try {
+      await downloadTrack(track, true);
+    } finally {
+      setIsDownloading(false);
     }
   };
 
@@ -198,17 +194,20 @@ export const TrackCard: React.FC<TrackCardProps> = React.memo(({
           <button
             type="button"
             onClick={handleDownloadClick}
-            className={`p-1.5 rounded-full hover:bg-[#2C2C2C] active:scale-75 transition ${
+            onTouchEnd={(e) => {
+              e.stopPropagation();
+            }}
+            className={`p-2 -m-0.5 rounded-full hover:bg-[#2C2C2C] active:scale-75 transition touch-manipulation cursor-pointer ${
               downloaded
                 ? 'text-emerald-400'
                 : 'text-[#777777] hover:text-[#C98A2E]'
             }`}
             title={
               downloaded
-                ? 'Salva no aparelho (toque para remover)'
-                : 'Baixar para ouvir offline'
+                ? 'Baixar arquivo MP3 novamente no celular (já salvo offline)'
+                : 'Baixar modão no celular (arquivo MP3 + offline)'
             }
-            aria-label="Baixar modão"
+            aria-label="Baixar modão no celular"
           >
             {isDownloading ? (
               <Loader2 className="w-4 h-4 animate-spin text-[#C98A2E]" />

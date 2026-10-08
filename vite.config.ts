@@ -11,7 +11,20 @@ export default defineConfig(() => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg'],
+        includeAssets: [
+          'favicon.ico',
+          'apple-touch-icon.png',
+          'apple-touch-icon-180x180.png',
+          'logo-radio-modao.webp',
+          'favicon-32x32.png',
+          'favicon-16x16.png',
+          'pwa-192x192.png',
+          'pwa-512x512.png',
+          'pwa-maskable-192x192.png',
+          'pwa-maskable-512x512.png',
+          'manifest.webmanifest',
+          'manifest.json'
+        ],
         manifest: {
           id: '/',
           name: 'Rádio Modão',
@@ -20,6 +33,7 @@ export default defineConfig(() => {
           theme_color: '#121212',
           background_color: '#121212',
           display: 'standalone',
+          orientation: 'portrait-primary',
           start_url: '/',
           scope: '/',
           icons: [
@@ -34,6 +48,12 @@ export default defineConfig(() => {
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any',
+            },
+            {
+              src: '/pwa-maskable-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'maskable',
             },
             {
               src: '/pwa-maskable-512x512.png',

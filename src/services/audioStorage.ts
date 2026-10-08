@@ -42,25 +42,54 @@ class AudioStorageService {
   }
 
   /**
-   * Save a real MP3 Blob for a track
+   * Save a real MP3 Blob for a track (with ArrayBuffer fallback for iOS Safari)
    */
   async saveAudioBlob(trackId: string, blob: Blob): Promise<void> {
-    const db = await this.getDB();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
+    try {
+      const db = await this.getDB();
+      await new Promise<void>((resolve, reject) => {
+        try {
+          const tx = db.transaction(STORE_NAME, 'readwrite');
+          const store = tx.objectStore(STORE_NAME);
 
-      const record = {
-        trackId,
-        blob,
-        sizeBytes: blob.size,
-        savedAt: Date.now(),
-      };
+          const record = {
+            trackId,
+            blob,
+            sizeBytes: blob.size,
+            savedAt: Date.now(),
+          };
 
-      const req = store.put(record);
-      req.onsuccess = () => resolve();
-      req.onerror = () => reject(req.error);
-    });
+          const req = store.put(record);
+          req.onsuccess = () => resolve();
+          req.onerror = () => reject(req.error);
+        } catch (err) {
+          reject(err);
+        }
+      });
+    } catch (primaryErr) {
+      // Fallback for older iOS Safari / WebViews where Blob in IDB throws DataCloneError:
+      try {
+        const buffer = await blob.arrayBuffer();
+        const db = await this.getDB();
+        await new Promise<void>((resolve, reject) => {
+          const tx = db.transaction(STORE_NAME, 'readwrite');
+          const store = tx.objectStore(STORE_NAME);
+          const record = {
+            trackId,
+            buffer,
+            sizeBytes: blob.size,
+            type: blob.type || 'audio/mpeg',
+            savedAt: Date.now(),
+          };
+          const req = store.put(record);
+          req.onsuccess = () => resolve();
+          req.onerror = () => reject(req.error);
+        });
+      } catch (fallbackErr) {
+        console.warn('AudioStorage: failed to save audio in IndexedDB', fallbackErr);
+        throw fallbackErr;
+      }
+    }
   }
 
   /**
@@ -88,9 +117,17 @@ class AudioStorageService {
         const req = store.get(trackId);
 
         req.onsuccess = () => {
-          if (req.result && req.result.blob) {
-            const url = URL.createObjectURL(req.result.blob);
-            resolve(url);
+          if (req.result) {
+            if (req.result.blob) {
+              const url = URL.createObjectURL(req.result.blob);
+              resolve(url);
+            } else if (req.result.buffer) {
+              const blob = new Blob([req.result.buffer], { type: req.result.type || 'audio/mpeg' });
+              const url = URL.createObjectURL(blob);
+              resolve(url);
+            } else {
+              resolve(null);
+            }
           } else {
             resolve(null);
           }

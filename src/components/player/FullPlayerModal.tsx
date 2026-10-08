@@ -86,7 +86,13 @@ export const FullPlayerModal: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/80 via-[#121212]/95 to-[#121212] pointer-events-none" />
 
       {/* Main Container */}
-      <div className="relative z-10 flex-1 flex flex-col justify-between max-w-xl md:max-w-5xl mx-auto w-full px-6 py-4 sm:py-6 md:py-8 pb-safe">
+      <div
+        className="relative z-10 flex-1 flex flex-col justify-between max-w-xl md:max-w-5xl mx-auto w-full px-5 sm:px-6 py-3 sm:py-6 md:py-8"
+        style={{
+          paddingTop: 'max(1rem, env(safe-area-inset-top, 1rem))',
+          paddingBottom: 'max(1rem, env(safe-area-inset-bottom, 1rem))',
+        }}
+      >
         {/* Top bar */}
         <div className="flex items-center justify-between">
           <button
@@ -169,24 +175,23 @@ export const FullPlayerModal: React.FC = () => {
                   type="button"
                   onClick={async () => {
                     if (isDownloading) return;
-                    if (isDownloaded(currentTrack.id)) {
-                      await removeDownloadedTrack(currentTrack.id);
-                    } else {
-                      setIsDownloading(true);
-                      try {
-                        await downloadTrack(currentTrack);
-                      } finally {
-                        setIsDownloading(false);
-                      }
+                    setIsDownloading(true);
+                    try {
+                      await downloadTrack(currentTrack, true);
+                    } finally {
+                      setIsDownloading(false);
                     }
                   }}
-                  className={`p-3 rounded-full transition active:scale-75 ${
+                  onTouchEnd={(e) => {
+                    e.stopPropagation();
+                  }}
+                  className={`p-3 rounded-full transition active:scale-75 touch-manipulation cursor-pointer ${
                     isDownloaded(currentTrack.id)
                       ? 'text-emerald-400 hover:text-emerald-300'
                       : 'text-[#777777] hover:text-[#C98A2E]'
                   }`}
-                  aria-label={isDownloaded(currentTrack.id) ? 'Salva no aparelho' : 'Baixar no aparelho'}
-                  title={isDownloaded(currentTrack.id) ? 'Salva no aparelho (toca offline)' : 'Baixar para ouvir offline no app'}
+                  aria-label={isDownloaded(currentTrack.id) ? 'Baixar arquivo MP3 novamente no celular' : 'Baixar modão no celular'}
+                  title={isDownloaded(currentTrack.id) ? 'Baixar arquivo MP3 novamente no celular (já salvo offline)' : 'Baixar modão no celular (arquivo MP3 + offline)'}
                 >
                   {isDownloading ? (
                     <Loader2 className="w-6 h-6 animate-spin text-[#C98A2E]" />

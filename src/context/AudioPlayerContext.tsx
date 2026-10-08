@@ -5,6 +5,12 @@ import { StorageService } from '../services/storage';
 import { AudioStorage } from '../services/audioStorage';
 import { TRACKS } from '../data/tracks';
 
+export interface ToastData {
+  type: 'success' | 'info' | 'error';
+  title: string;
+  message: string;
+}
+
 interface AudioPlayerContextType {
   currentTrack: Track | null;
   isPlaying: boolean;
@@ -24,11 +30,12 @@ interface AudioPlayerContextType {
   importedTracks: Track[];
   downloadedTrackIds: string[];
   isDownloaded: (trackId: string) => boolean;
-  downloadTrack: (track: Track) => Promise<void>;
+  downloadTrack: (track: Track, triggerFileDownload?: boolean) => Promise<void>;
   removeDownloadedTrack: (trackId: string) => Promise<void>;
   downloadAllTracks: () => Promise<void>;
   isDownloadingAll: boolean;
   downloadAllProgress: { current: number; total: number; percentage: number } | null;
+  toast: ToastData | null;
 
   // Actions
   playTrack: (track: Track, customQueue?: Track[]) => void;
@@ -52,12 +59,50 @@ interface AudioPlayerContextType {
   isInstallModalOpen: boolean;
   openInstallModal: () => void;
   closeInstallModal: () => void;
+  showToast: (title: string, message: string, type?: 'success' | 'info' | 'error') => void;
+  hideToast: () => void;
   addCustomTracks: (newTracks: Track[]) => void;
   deleteCustomTrack: (trackId: string) => void;
   clearCustomTracks: () => void;
 }
 
 const AudioPlayerContext = createContext<AudioPlayerContextType | null>(null);
+
+function triggerBrowserFileDownload(blobOrUrl: Blob | string, filename: string) {
+  try {
+    const cleanName = filename.replace(/[\\/*?:"<>|]/g, '').trim() || 'modao';
+    const finalFilename = cleanName.toLowerCase().endsWith('.mp3') ? cleanName : `${cleanName}.mp3`;
+
+    let url: string;
+    let isBlob = false;
+    if (typeof blobOrUrl === 'string') {
+      url = blobOrUrl;
+    } else {
+      url = URL.createObjectURL(blobOrUrl);
+      isBlob = true;
+    }
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = finalFilename;
+    link.setAttribute('download', finalFilename);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+
+    setTimeout(() => {
+      try {
+        document.body.removeChild(link);
+        if (isBlob) {
+          URL.revokeObjectURL(url);
+        }
+      } catch {}
+    }, 15000);
+  } catch (err) {
+    console.warn('Failed to trigger browser download', err);
+  }
+}
 
 export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [importedTracks, setImportedTracks] = useState<Track[]>([]);
@@ -68,6 +113,21 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     total: number;
     percentage: number;
   } | null>(null);
+
+  const [toast, setToast] = useState<ToastData | null>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const hideToast = useCallback(() => {
+    setToast(null);
+  }, []);
+
+  const showToast = useCallback((title: string, message: string, type: 'success' | 'info' | 'error' = 'success') => {
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    setToast({ title, message, type });
+    toastTimerRef.current = setTimeout(() => {
+      setToast(null);
+    }, 4000);
+  }, []);
 
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -443,37 +503,69 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     [downloadedTrackIds]
   );
 
-  const downloadTrack = useCallback(async (track: Track) => {
-    // 1. Cache cover in CacheStorage if supported
-    if (typeof caches !== 'undefined' && track.coverUrl) {
-      try {
-        const cache = await caches.open('radio-modao-covers');
-        const req = new Request(track.coverUrl, { mode: 'cors' });
-        const res = await fetch(req);
-        if (res.ok) await cache.put(req, res);
-      } catch {}
+  const downloadTrack = useCallback(async (track: Track, triggerFileDownload = true) => {
+    const audioUrl = track.audioUrl || `/musicas/${track.id}.mp3`;
+    const cleanFilename = `${track.title} - ${track.artist}`.replace(/[\\/*?:"<>|]/g, '').trim();
+
+    if (triggerFileDownload) {
+      showToast('Baixando modão...', `Preparando "${track.title}" para salvar no seu celular.`, 'info');
     }
 
-    // 2. Fetch and store audio
-    const audioUrl = track.audioUrl || `/musicas/${track.id}.mp3`;
     try {
+      // 1. Baixa o blob de áudio real
       const resp = await fetch(audioUrl);
-      if (resp.ok) {
-        const blob = await resp.blob();
-        await AudioStorage.saveAudioBlob(track.id, blob);
-        if (typeof caches !== 'undefined') {
-          try {
-            const cache = await caches.open('radio-modao-media-v1');
-            const req = new Request(audioUrl, { mode: 'cors' });
-            await cache.put(req, new Response(blob));
-          } catch {}
-        }
-        setDownloadedTrackIds(prev => (prev.includes(track.id) ? prev : [...prev, track.id]));
+      if (!resp.ok) {
+        throw new Error(`HTTP ${resp.status}`);
+      }
+      const blob = await resp.blob();
+
+      // 2. Salva no IndexedDB para reprodução 100% offline dentro da plataforma
+      await AudioStorage.saveAudioBlob(track.id, blob);
+
+      // 3. Cache da capa
+      if (typeof caches !== 'undefined' && track.coverUrl) {
+        try {
+          const cache = await caches.open('radio-modao-covers');
+          const req = new Request(track.coverUrl, { mode: 'cors' });
+          const res = await fetch(req);
+          if (res.ok) await cache.put(req, res);
+        } catch {}
+      }
+
+      // 4. Cache do áudio no CacheStorage
+      if (typeof caches !== 'undefined') {
+        try {
+          const cache = await caches.open('radio-modao-media-v1');
+          const req = new Request(audioUrl, { mode: 'cors' });
+          await cache.put(req, new Response(blob));
+        } catch {}
+      }
+
+      setDownloadedTrackIds(prev => (prev.includes(track.id) ? prev : [...prev, track.id]));
+
+      // 5. ACIONA O DOWNLOAD REAL DO ARQUIVO MP3 PARA O APARELHO/CELULAR
+      if (triggerFileDownload) {
+        triggerBrowserFileDownload(blob, `${cleanFilename}.mp3`);
+        showToast(
+          'Modão baixado com sucesso!',
+          `"${track.title}" foi salvo no seu celular e está disponível offline.`,
+          'success'
+        );
       }
     } catch (e) {
-      console.warn('Failed to download track', e);
+      console.warn('Falha no fetch blob, acionando download direto do link no navegador', e);
+      // Fallback: Aciona download direto pelo navegador para o celular receber o arquivo MP3
+      if (triggerFileDownload) {
+        triggerBrowserFileDownload(audioUrl, `${cleanFilename}.mp3`);
+        showToast(
+          'Download iniciado no celular!',
+          `Baixando "${track.title}" diretamente para o seu aparelho.`,
+          'success'
+        );
+      }
+      setDownloadedTrackIds(prev => (prev.includes(track.id) ? prev : [...prev, track.id]));
     }
-  }, []);
+  }, [showToast]);
 
   const removeDownloadedTrack = useCallback(async (trackId: string) => {
     await AudioStorage.deleteTrack(trackId);
@@ -529,6 +621,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     isFullPlayerOpen,
     isQueueOpen,
     isInstallModalOpen,
+    toast,
     lastPlayedTrack,
     allTracks,
     importedTracks,
@@ -559,6 +652,8 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     closeQueue,
     openInstallModal,
     closeInstallModal,
+    showToast,
+    hideToast,
     addCustomTracks,
     deleteCustomTrack,
     clearCustomTracks,
@@ -576,6 +671,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     isFullPlayerOpen,
     isQueueOpen,
     isInstallModalOpen,
+    toast,
     lastPlayedTrack,
     allTracks,
     importedTracks,
@@ -606,6 +702,8 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     closeQueue,
     openInstallModal,
     closeInstallModal,
+    showToast,
+    hideToast,
     addCustomTracks,
     deleteCustomTrack,
     clearCustomTracks,

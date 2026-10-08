@@ -75,18 +75,14 @@ export const MiniPlayer: React.FC = () => {
     seek(seekVal);
   };
 
-  const handleDownloadClick = async (e: React.MouseEvent) => {
+  const handleDownloadClick = async (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
     if (isDownloading) return;
-    if (downloaded) {
-      await removeDownloadedTrack(currentTrack.id);
-    } else {
-      setIsDownloading(true);
-      try {
-        await downloadTrack(currentTrack);
-      } finally {
-        setIsDownloading(false);
-      }
+    setIsDownloading(true);
+    try {
+      await downloadTrack(currentTrack, true);
+    } finally {
+      setIsDownloading(false);
     }
   };
 
@@ -152,9 +148,12 @@ export const MiniPlayer: React.FC = () => {
             <button
               type="button"
               onClick={handleDownloadClick}
-              aria-label={downloaded ? 'Música salva no aparelho' : 'Baixar no aparelho'}
-              title={downloaded ? 'Salva no aparelho (offline)' : 'Salvar no aparelho'}
-              className={`p-1.5 sm:p-2 rounded-full transition active:scale-75 ${
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+              }}
+              aria-label={downloaded ? 'Baixar arquivo MP3 novamente no celular' : 'Baixar modão no celular'}
+              title={downloaded ? 'Baixar arquivo MP3 novamente no celular (já salvo offline)' : 'Baixar modão no celular (arquivo MP3 + offline)'}
+              className={`p-1.5 sm:p-2 rounded-full transition active:scale-75 touch-manipulation cursor-pointer ${
                 downloaded ? 'text-emerald-400' : 'text-[#777777] hover:text-[#C98A2E]'
               }`}
             >
@@ -332,7 +331,8 @@ export const MiniPlayer: React.FC = () => {
       {/* ========================================================= */}
       <div
         onClick={openFullPlayer}
-        className="md:hidden fixed left-0 right-0 bottom-16 z-30 bg-[#1B1B1B]/95 backdrop-blur-xl border-t border-[#2A2A2A] shadow-2xl transition-all cursor-pointer group select-none"
+        className="md:hidden fixed left-0 right-0 z-30 bg-[#1B1B1B]/95 backdrop-blur-xl border-t border-[#2A2A2A] shadow-2xl transition-all cursor-pointer group select-none"
+        style={{ bottom: 'calc(4rem + env(safe-area-inset-bottom, 0px))' }}
       >
         {/* Real-time mini progress line at top of player */}
         <div className="w-full h-1 bg-[#2E2E2E]">

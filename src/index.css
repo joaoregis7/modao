@@ -51,3 +51,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   padding-top: env(safe-area-inset-top, 1rem);
 }
 
+/* Standalone app mode (when added to Home Screen on iPhone and Android) */
+@media all and (display-mode: standalone) {
+  .app-header-bar {
+    padding-top: max(2.85rem, calc(env(safe-area-inset-top, 0px) + 0.75rem)) !important;
+  }
+}
+
+html.is-standalone .app-header-bar {
+  padding-top: max(2.85rem, calc(env(safe-area-inset-top, 0px) + 0.75rem)) !important;
+}
+

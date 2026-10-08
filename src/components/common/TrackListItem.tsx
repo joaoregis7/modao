@@ -55,20 +55,15 @@ export const TrackListItem: React.FC<TrackListItemProps> = React.memo(({
     toggleFavorite(track.id);
   };
 
-  const handleDownloadClick = async (e: React.MouseEvent) => {
+  const handleDownloadClick = async (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
     if (isDownloading) return;
 
-    if (downloaded) {
-      // Toggle remove to free device storage
-      await removeDownloadedTrack(track.id);
-    } else {
-      setIsDownloading(true);
-      try {
-        await downloadTrack(track);
-      } finally {
-        setIsDownloading(false);
-      }
+    setIsDownloading(true);
+    try {
+      await downloadTrack(track, true);
+    } finally {
+      setIsDownloading(false);
     }
   };
 
@@ -156,9 +151,12 @@ export const TrackListItem: React.FC<TrackListItemProps> = React.memo(({
         <button
           type="button"
           onClick={handleDownloadClick}
-          aria-label={downloaded ? 'Música salva no aparelho' : 'Baixar para ouvir offline no app'}
-          title={downloaded ? 'Salva no aparelho (toca offline na plataforma)' : 'Baixar para ouvir offline dentro do app'}
-          className={`p-1.5 rounded-full transition active:scale-75 ${
+          onTouchEnd={(e) => {
+            e.stopPropagation();
+          }}
+          aria-label={downloaded ? 'Baixar arquivo MP3 novamente no celular' : 'Baixar modão no celular'}
+          title={downloaded ? 'Baixar arquivo MP3 novamente no celular (já salvo offline)' : 'Baixar modão no celular (arquivo MP3 + offline)'}
+          className={`p-2 -m-0.5 rounded-full transition active:scale-75 touch-manipulation cursor-pointer ${
             downloaded
               ? 'text-emerald-400 hover:text-red-400'
               : 'text-[#666666] hover:text-[#C98A2E]'

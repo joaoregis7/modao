@@ -23,6 +23,9 @@ import { AllTracksView } from './components/views/AllTracksView';
 import { StationDetailView } from './components/views/StationDetailView';
 import { ArtistDetailView } from './components/views/ArtistDetailView';
 import { PlaylistDetailView } from './components/views/PlaylistDetailView';
+import { AccessProvider } from './context/AccessContext';
+import { AccessGate } from './components/access/AccessGate';
+import { AccessAccount } from './components/access/AccessAccount';
 
 const MainAppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>({ type: 'home' });
@@ -117,6 +120,7 @@ const MainAppContent: React.FC = () => {
             className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 pb-[calc(10rem+env(safe-area-inset-bottom,0px))] md:pb-12 scroll-smooth"
           >
             <div className="max-w-7xl mx-auto w-full">
+              {currentView.type === 'home' && <AccessAccount />}
               {renderView()}
             </div>
           </main>
@@ -141,8 +145,12 @@ const MainAppContent: React.FC = () => {
 
 export default function App() {
   return (
-    <AudioPlayerProvider>
-      <MainAppContent />
-    </AudioPlayerProvider>
+    <AccessProvider>
+      <AccessGate>
+        <AudioPlayerProvider>
+          <MainAppContent />
+        </AudioPlayerProvider>
+      </AccessGate>
+    </AccessProvider>
   );
 }

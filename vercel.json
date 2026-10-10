@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "installCommand": "npm ci",
   "cleanUrls": true,
   "rewrites": [
     {
@@ -13,7 +14,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "private, no-store"
         },
         {
           "key": "Accept-Ranges",

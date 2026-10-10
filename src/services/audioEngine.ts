@@ -5,6 +5,7 @@ type AudioEventCallback = () => void;
 type TimeUpdateCallback = (currentTime: number, duration: number) => void;
 
 class AudioEngine {
+  private accessEnabled = false;
   private audioCtx: AudioContext | null = null;
   private currentTrack: Track | null = null;
   private isPlaying: boolean = false;
@@ -95,7 +96,13 @@ class AudioEngine {
     return this.volume;
   }
 
+  public setAccessEnabled(enabled: boolean): void {
+    this.accessEnabled = enabled;
+    if (!enabled) this.pause();
+  }
+
   public async playTrack(track: Track, startPosition?: number): Promise<void> {
+    if (!this.accessEnabled) return;
     // 1. Stop any currently active audio or procedurally generated synth immediately
     if (this.synthTimerId) {
       clearInterval(this.synthTimerId);
@@ -122,6 +129,7 @@ class AudioEngine {
     // 2. Check if real MP3 was downloaded to local phone storage (IndexedDB)
     try {
       const localBlobUrl = await AudioStorage.getLocalAudioUrl(track.id);
+      if (!this.accessEnabled) return;
       if (localBlobUrl && this.htmlAudio) {
         this.htmlAudio.src = localBlobUrl;
         try {
@@ -133,6 +141,7 @@ class AudioEngine {
         const playPromise = this.htmlAudio.play();
         if (playPromise !== undefined) {
           await playPromise;
+          if (!this.accessEnabled) return;
           this.useHtmlAudio = true;
           this.isPlaying = true;
           this.notifyPlay();
@@ -148,8 +157,10 @@ class AudioEngine {
       if (typeof window !== 'undefined' && 'caches' in window && track.audioUrl) {
         const cache = await caches.open('radio-modao-media-v1');
         const matched = await cache.match(track.audioUrl);
+        if (!this.accessEnabled) return;
         if (matched) {
           const blob = await matched.blob();
+          if (!this.accessEnabled) return;
           const cachedBlobUrl = URL.createObjectURL(blob);
           if (this.htmlAudio) {
             this.htmlAudio.src = cachedBlobUrl;
@@ -162,6 +173,7 @@ class AudioEngine {
             const playPromise = this.htmlAudio.play();
             if (playPromise !== undefined) {
               await playPromise;
+              if (!this.accessEnabled) return;
               this.useHtmlAudio = true;
               this.isPlaying = true;
               this.notifyPlay();
@@ -175,6 +187,7 @@ class AudioEngine {
     }
 
     // 3. If online audioUrl or /musicas/ folder audio is available, stream via HTML audio
+    if (!this.accessEnabled) return;
     const audioSource = track.audioUrl || (track.id.startsWith('custom-') ? undefined : `/musicas/${track.id}.mp3`);
     if (audioSource && this.htmlAudio) {
       try {
@@ -188,6 +201,7 @@ class AudioEngine {
         const playPromise = this.htmlAudio.play();
         if (playPromise !== undefined) {
           await playPromise;
+          if (!this.accessEnabled) return;
           this.useHtmlAudio = true;
           this.isPlaying = true;
           this.notifyPlay();
@@ -200,6 +214,7 @@ class AudioEngine {
     }
 
     // Default & reliable: Built-in Sertanejo Viola & Accordion procedurally synthesized performance
+    if (!this.accessEnabled) return;
     this.useHtmlAudio = false;
     this.isPlaying = true;
     this.startProceduralSynth();
@@ -208,7 +223,7 @@ class AudioEngine {
 
   public pause(): void {
     this.isPlaying = false;
-    if (this.useHtmlAudio && this.htmlAudio) {
+    if (this.htmlAudio) {
       this.htmlAudio.pause();
     }
     if (this.synthTimerId) {
@@ -219,11 +234,13 @@ class AudioEngine {
   }
 
   public resume(): void {
+    if (!this.accessEnabled) return;
     if (!this.currentTrack) return;
     this.initAudioContext();
 
     if (this.useHtmlAudio && this.htmlAudio) {
       this.htmlAudio.play().catch(() => {
+        if (!this.accessEnabled) return;
         this.useHtmlAudio = false;
         this.isPlaying = true;
         this.startProceduralSynth();

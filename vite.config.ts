@@ -29,7 +29,7 @@ export default defineConfig(() => {
           id: '/',
           name: 'Rádio Modão',
           short_name: 'Rádio Modão',
-          description: 'O modão de verdade no seu celular. Sertanejo raiz, moda de viola e clássicos antigos sem login.',
+          description: 'O modão de verdade no seu celular. Acesse com o e-mail da sua compra.',
           theme_color: '#121212',
           background_color: '#121212',
           display: 'standalone',
@@ -64,6 +64,7 @@ export default defineConfig(() => {
           ],
         },
         workbox: {
+          navigateFallbackDenylist: [/^\/api\//, /^\/musicas\//],
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
           runtimeCaching: [
             {

@@ -213,6 +213,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // Sync audio engine events (optimized: without high-frequency React re-renders)
   useEffect(() => {
+    audioEngine.setAccessEnabled(true);
     const unsubPlay = audioEngine.onPlay(() => {
       setIsPlaying(true);
       if ('mediaSession' in navigator) {
@@ -267,6 +268,7 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     });
 
     return () => {
+      audioEngine.setAccessEnabled(false);
       unsubPlay();
       unsubPause();
       unsubTime();
@@ -413,6 +415,12 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     } catch (err) {
       console.warn('Error configuring MediaSession actions', err);
     }
+    return () => {
+      for (const action of ['play', 'pause', 'stop', 'previoustrack', 'nexttrack', 'seekto', 'seekforward', 'seekbackward'] as MediaSessionAction[]) {
+        try { navigator.mediaSession.setActionHandler(action, null); } catch {}
+      }
+      navigator.mediaSession.metadata = null;
+    };
   }, [currentTrack, isPlaying, togglePlayPause, previousTrack, nextTrack]);
 
   const seek = useCallback((seconds: number) => {

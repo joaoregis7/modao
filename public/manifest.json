@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Rádio Modão",
   "short_name": "Rádio Modão",
-  "description": "O modão de verdade no seu celular. Sertanejo raiz, moda de viola e clássicos antigos sem login.",
+  "description": "O modão de verdade no seu celular. Acesse com o e-mail da sua compra, sem senha.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

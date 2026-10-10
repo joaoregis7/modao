@@ -2,7 +2,7 @@
 
 > **O modão de verdade no seu celular.**
 
-Web App responsivo e Progressive Web App (PWA) voltado para os amantes de sertanejo raiz, modas de viola e clássicos antigos. Sem necessidade de login ou cadastro, pronto para tocar no celular, no computador ou no carro via Bluetooth.
+Web App responsivo e Progressive Web App (PWA) voltado para os amantes de sertanejo raiz, modas de viola e clássicos antigos. Acesso pelo e-mail da compra, sem senha, no celular, no computador ou no carro via Bluetooth.
 
 ---
 
@@ -27,11 +27,13 @@ O reprodutor do **Rádio Modão** já está programado para localizar e tocar au
    npm install
    ```
 
-2. **Iniciar o servidor de desenvolvimento:**
+2. **Iniciar apenas o frontend de desenvolvimento:**
    ```bash
    npm run dev
    ```
    Acesse no navegador: `http://localhost:3000`
+
+   Para testar acesso, APIs e middleware, configure `.env` e use `vercel dev`, conforme `docs/ACESSO-E-PAGAMENTOS.md`.
 
 3. **Gerar a versão de produção:**
    ```bash
@@ -41,7 +43,11 @@ O reprodutor do **Rádio Modão** já está programado para localizar e tocar au
 ---
 
 ## 📱 Recursos Principais
-- **100% Offline (PWA)**: As músicas podem ser baixadas para o armazenamento interno do celular e tocadas sem gastar internet.
+- **PWA com músicas baixadas**: Músicas podem ser salvas no celular; a entrada e a validação periódica de acesso exigem conexão.
 - **Navegação Direta**: Apenas *Início*, *Músicas* e *Modo Estrada*.
 - **Modo Estrada**: Interface simplificada com botões gigantes para viagens e uso no carro.
 - **Suporte a Bluetooth**: Compatível com som do carro e caixas de som Bluetooth com controles de mídia nativos (`MediaSession API`).
+
+## Acesso por e-mail e pagamentos
+
+A configuração de Supabase, Vercel, Zuptos e produtos complementares está em [docs/ACESSO-E-PAGAMENTOS.md](docs/ACESSO-E-PAGAMENTOS.md).

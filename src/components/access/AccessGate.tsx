@@ -47,8 +47,7 @@ export function AccessGate({ children }: { children: React.ReactNode }) {
           <section aria-labelledby="access-title" className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-modao-gold/20 bg-modao-surface p-6 text-center shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:p-9">
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-modao-gold/70 to-transparent" />
             <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-modao-gold/20 bg-modao-gold/10"><Mail className="h-5 w-5 text-modao-gold" /></div>
-            <h2 id="access-title" className="font-heading text-2xl font-bold tracking-tight">Entre e dê o play.</h2>
-            <p className="mb-5 mt-2 text-sm leading-relaxed text-modao-gray">Sem senha. Sem complicação.<br />É só informar seu e-mail e dar o play.</p>
+            <h2 id="access-title" className="mb-5 font-heading text-2xl font-bold tracking-tight">Entre e dê o play.</h2>
             {loading ? <div role="status" className="flex min-h-40 items-center justify-center gap-3 text-sm text-modao-gray"><LoaderCircle className="h-5 w-5 animate-spin motion-reduce:animate-none text-modao-gold" /> Consultando seu acesso...</div> : (
               <form onSubmit={submit} aria-busy={busy}>
                 <p id="purchase-email-notice" className="mb-5 rounded-xl border border-modao-gold/20 bg-modao-gold/5 px-3.5 py-3 text-sm leading-relaxed text-modao-beige"><span className="font-semibold text-modao-gold">Importante:</span> utilize o mesmo e-mail informado na compra para acessar.</p>

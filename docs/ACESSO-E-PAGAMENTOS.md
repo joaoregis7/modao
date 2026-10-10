@@ -30,7 +30,9 @@ Todas as tabelas têm RLS e não permitem leitura pelo cliente. Contas e senhas 
 
 A entrada por e-mail foi publicada em `https://app.radiomodao.online`, com banco Supabase dedicado e variáveis configuradas no projeto `modao` da Vercel. A verificação em produção confirmou compra aprovada, sessão, bloqueio após revogação e recebimento autenticado de webhook. Os registros de teste foram removidos.
 
-A liberação automática de vendas reais depende da conexão no painel Zuptos e do mapeamento de uma notificação real, conforme a seção 3. O banco inicia sem compradores cadastrados.
+A conexão Zuptos foi ativada e uma compra real aprovada por Pix foi recebida, mapeada e reprocessada. O login pelo e-mail dessa compra foi verificado em produção. Novas aprovações do produto associado são processadas automaticamente.
+
+O mapeamento observado usa `customer.email`, `sale_id`, `products.*.id`, `status` e `created_at`. `APPROVED` foi confirmado no evento real; `REFUNDED` e `CHARGEBACK` estão configurados para revogação, mas ainda precisam ser confrontados com notificações reais desses eventos. O teste em produção cobre também aprovação e reembolso simulados, repetição de evento e limpeza dos registros temporários. Cartão, boleto e reembolso reais da Zuptos não foram testados de ponta a ponta.
 
 ## 2. Configurar a Vercel
 
@@ -132,7 +134,7 @@ Para testar funções e middleware localmente, use `vercel dev` com `.env` e `AP
 
 Para provisionar novamente a migração e as variáveis, há `npm run access:provision`. Ele exige `SUPABASE_ACCESS_TOKEN`, `SUPABASE_PROJECT_REF`, `VERCEL_PROJECT_ID` e `VERCEL_SCOPE`, e autenticação na CLI Vercel. As credenciais devem ficar em `.env.setup.local`, ignorado pelo Git. O script preserva um token Zuptos já cadastrado.
 
-`npm run access:check-live` usa `.env.production.local` (também ignorado pelo Git), cria uma compra temporária com endereço `example.com`, verifica os fluxos reais e remove os dados no fim. Para baixar as variáveis localmente, use `vercel env pull .env.production.local --environment=production`. O valor de `ZUPTOS_WEBHOOK_TOKEN` nesse arquivo pode ser copiado para configurar a conexão Zuptos; não compartilhe o arquivo, pois ele também contém a chave privada do banco.
+`npm run access:check-live` usa `.env.production.local` (também ignorado pelo Git), cria uma compra temporária com endereço `example.com`, verifica os fluxos nas APIs publicadas e remove os dados no fim. Com o mapeamento configurado, envia eventos simulados de aprovação, repetição e reembolso. Para baixar as variáveis localmente, use `vercel env pull .env.production.local --environment=production`. O valor de `ZUPTOS_WEBHOOK_TOKEN` nesse arquivo pode ser copiado para configurar a conexão Zuptos; não compartilhe o arquivo, pois ele também contém a chave privada do banco.
 
 Confirme em ambiente de teste: e-mail sem compra bloqueado, comprador autorizado, cookie de sessão, acesso direto a `/musicas/...` bloqueado sem sessão, complemento bloqueado antes da compra, conteúdo liberado após a compra, evento duplicado e reembolso. Também confira o player com busca por trecho (Range) na Vercel.
 

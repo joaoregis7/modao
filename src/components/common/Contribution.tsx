@@ -112,10 +112,10 @@ export function ContributionModal({ open, onClose }: { open: boolean; onClose: (
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4" onClick={onClose}>
-      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="contribution-title" aria-describedby="contribution-description" onClick={event => event.stopPropagation()} className="relative w-full max-w-[420px] max-h-[90dvh] overflow-y-auto rounded-3xl border border-[#C98A2E]/50 bg-gradient-to-b from-[#211D17] to-[#121212] p-5 sm:p-6 text-[#FAF7F2] shadow-2xl">
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="contribution-title" aria-describedby="contribution-description" onClick={event => event.stopPropagation()} className="relative w-full max-w-[420px] max-h-[90dvh] overflow-y-auto rounded-3xl border border-[#C98A2E]/50 bg-gradient-to-b from-[#211D17] to-[#121212] p-5 sm:p-6 text-center text-[#FAF7F2] shadow-2xl">
         <button type="button" onClick={onClose} aria-label="Fechar lembrete de contribuição" className="absolute top-3 right-3 p-2 rounded-full bg-white/10 hover:bg-white/20"><X className="w-5 h-5" /></button>
-        <img src="/logo-radio-modao.webp" alt="Rádio Modão" className="h-12 w-auto mb-5" />
-        <h2 id="contribution-title" className="font-heading font-bold text-xl pr-4">Seu modão já está liberado!</h2>
+        <img src="/logo-radio-modao.webp" alt="Rádio Modão" className="h-12 w-auto mx-auto mb-5" />
+        <h2 id="contribution-title" className="font-heading font-bold text-xl">Seu modão já está liberado!</h2>
         <p id="contribution-description" className="mt-2 text-sm text-[#C6BCAE] leading-relaxed">Você recebeu o acesso antes do pagamento. Se ainda não fez sua contribuição, lembre-se de enviar o PIX e depois o comprovante.</p>
         <div className="grid grid-cols-3 gap-2 my-4" aria-label="Valores de contribuição">
           {AMOUNTS.map(amount => <div key={amount} className="rounded-xl border border-[#C98A2E]/40 bg-[#C98A2E]/10 py-3 text-center text-sm font-bold text-[#E9B968]">R$ {amount}</div>)}

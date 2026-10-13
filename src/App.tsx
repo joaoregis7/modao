@@ -28,17 +28,32 @@ const MainAppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>({ type: 'home' });
   const [isContributionOpen, setContributionOpen] = useState(false);
   useEffect(() => {
-    // Lembra uma vez por sessão, inclusive no aplicativo instalado.
+    // Repete a cada 30 minutos e preserva o prazo ao recarregar a página.
+    const reminderInterval = 30 * 60 * 1000;
+    let initialDelay = 1200;
     try {
-      if (sessionStorage.getItem('modao_contribution_reminded') === 'true') return;
+      const lastReminder = Number(sessionStorage.getItem('modao_contribution_last_reminder'));
+      if (Number.isFinite(lastReminder) && lastReminder > 0) {
+        initialDelay = Math.max(0, reminderInterval - (Date.now() - lastReminder));
+      }
     } catch {}
-    const timer = window.setTimeout(() => setContributionOpen(true), 1200);
-    return () => window.clearTimeout(timer);
+    const showReminder = () => {
+      setContributionOpen(true);
+      try { sessionStorage.setItem('modao_contribution_last_reminder', String(Date.now())); } catch {}
+    };
+    let interval: number | undefined;
+    const timer = window.setTimeout(() => {
+      showReminder();
+      interval = window.setInterval(showReminder, reminderInterval);
+    }, initialDelay);
+    return () => {
+      window.clearTimeout(timer);
+      window.clearInterval(interval);
+    };
   }, []);
 
   const closeContribution = () => {
     setContributionOpen(false);
-    try { sessionStorage.setItem('modao_contribution_reminded', 'true'); } catch {}
   };
   const {
     togglePlayPause,

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Radio, Car, Shuffle, Search, X, Download } from 'lucide-react';
+import { Car, Shuffle, Search, X } from 'lucide-react';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
-import { usePWAInstall } from '../../hooks/usePWAInstall';
 import { ViewState } from '../../types';
 
 interface HeaderProps {
@@ -10,21 +9,9 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
-  const { openCarMode, playRandomTrack, openInstallModal } = useAudioPlayer();
-  const { isInstallable, install } = usePWAInstall();
+  const { openCarMode, playRandomTrack } = useAudioPlayer();
   const currentSearchQuery = currentView.type === 'all_tracks' ? currentView.searchQuery || '' : '';
   const [headerSearch, setHeaderSearch] = useState(currentSearchQuery);
-
-  const handleDownloadAppClick = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (isInstallable) {
-      try {
-        const accepted = await install();
-        if (accepted) return;
-      } catch {}
-    }
-    openInstallModal();
-  };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,17 +113,6 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
             <span className="hidden sm:inline">Modo Estrada</span>
           </button>
 
-          {/* Botão Baixar no Celular (ao lado do ícone do carro, visível no celular, tablet e computador) */}
-          <button
-            type="button"
-            onClick={handleDownloadAppClick}
-            className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-[#1B1B1B] hover:bg-[#222222] border border-[#3A3A3A] hover:border-[#C98A2E] text-xs sm:text-sm font-semibold text-[#FAF7F2] hover:text-[#C98A2E] transition active:scale-90 shadow-sm shrink-0 touch-manipulation cursor-pointer"
-            title="Baixar aplicativo no celular (Instalar App PWA)"
-            aria-label="Baixar aplicativo no celular"
-          >
-            <Download className="w-6 h-6 sm:w-7 sm:h-7 text-[#C98A2E] shrink-0 stroke-[2.2]" />
-            <span className="hidden sm:inline">Baixar App</span>
-          </button>
         </div>
       </div>
     </header>

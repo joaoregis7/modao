@@ -3,7 +3,6 @@ import { Home, Music2, Car, Radio, Sparkles, Heart } from 'lucide-react';
 import { ViewState } from '../../types';
 import { STATIONS } from '../../data/stations';
 import { useAudioPlayer } from '../../context/AudioPlayerContext';
-import { PWAInstallButton } from '../common/PWAInstallButton';
 
 interface SidebarProps {
   currentView: ViewState;
@@ -134,7 +133,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => 
 
       {/* Bottom PWA Install Widget */}
       <div className="pt-3 border-t border-[#242424]">
-        <PWAInstallButton variant="sidebar" />
       </div>
     </aside>
   );

@@ -106,13 +106,13 @@ test('conteúdo privado gera URL temporária apenas para comprador autorizado', 
   assert.equal(JSON.parse(res.body).url, 'https://database.example/storage/v1/object/sign/conteudos/extra.pdf?token=temporario');
   assert.equal(res.headers['Cache-Control'], 'no-store, private');
 });
-test('middleware bloqueia áudio sem sessão e preserva fluxo autenticado', async () => {
-  const unauthorized = await middleware(new Request('https://app.radiomodao.online/musicas/faixa.mp3'));
-  assert.equal(unauthorized.status, 401);
-  stubAccess(['radio-modao']);
-  const allowed = await middleware(new Request('https://app.radiomodao.online/musicas/faixa.mp3', { headers: { cookie: `modao_session=${'a'.repeat(64)}`, Range: 'bytes=0-100' } }));
-  assert.equal(allowed.headers.get('x-middleware-next'), '1');
-  assert.equal(allowed.headers.get('cache-control'), 'private, no-store');
+test('middleware libera áudio e streaming Range sem sessão ou banco de acesso', async () => {
+  globalThis.fetch = async () => { throw new Error('Acesso direto não deve consultar o banco'); };
+  for (const headers of [{}, { Range: 'bytes=0-100' }]) {
+    const allowed = await middleware(new Request('https://app.radiomodao.online/musicas/faixa.mp3', { headers }));
+    assert.equal(allowed.headers.get('x-middleware-next'), '1');
+    assert.equal(allowed.headers.get('cache-control'), 'private, no-store');
+  }
 });
 test('webhook exige segredo antes de persistir ou conceder acesso', async () => {
   globalThis.fetch = async () => { throw new Error('Não deveria acessar o banco'); };

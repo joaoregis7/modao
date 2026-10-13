@@ -29,7 +29,7 @@ export default defineConfig(() => {
           id: '/',
           name: 'Rádio Modão',
           short_name: 'Rádio Modão',
-          description: 'O modão de verdade no seu celular. Acesse com o e-mail da sua compra.',
+          description: 'O modão de verdade no seu celular. Acesso direto, sem login.',
           theme_color: '#121212',
           background_color: '#121212',
           display: 'standalone',

@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Rádio Modão",
   "short_name": "Rádio Modão",
-  "description": "O modão de verdade no seu celular. Acesse com o e-mail da sua compra, sem senha.",
+  "description": "O modão de verdade no seu celular. Acesso direto, sem login.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

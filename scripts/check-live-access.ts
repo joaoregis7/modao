@@ -55,8 +55,10 @@ try {
   console.log('Produção: revogação da compra bloqueia sessão existente; saída funciona.');
 
   assert.equal((await fetch(`${base}/api/zuptos-webhook`, { method: 'POST', headers: { Authorization: 'Bearer invalid-test-token', 'Content-Type': 'application/json' }, body: '{}' })).status, 401);
-  assert.equal((await fetch(`${base}/musicas/track-1.mp3`, { headers: { Range: 'bytes=0-100' } })).status, 401);
-  console.log('Produção: webhook sem token válido e áudio local sem sessão bloqueados.');
+  const audio = await fetch(`${base}/musicas/track-1.mp3`, { headers: { Range: 'bytes=0-100' } });
+  assert.ok([200, 206].includes(audio.status), `Áudio deve abrir sem sessão; recebido ${audio.status}`);
+  await audio.body?.cancel();
+  console.log('Produção: webhook sem token válido bloqueado; áudio local liberado sem sessão.');
 
   if (mappingConfigured()) {
     const mappings = await db<{ external_id: string }[]>('product_provider_ids?provider=eq.zuptos&product_id=eq.radio-modao&select=external_id&limit=1');

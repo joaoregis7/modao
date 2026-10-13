@@ -149,27 +149,6 @@ export const AudioPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const lastSavedPositionRef = useRef<number>(0);
   const lastMediaSessionUpdateRef = useRef<number>(0);
 
-  // Exibe o popup de instalação ao entrar no aplicativo no celular (se ainda não instalado)
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const isStandalone =
-      window.matchMedia('(display-mode: standalone)').matches ||
-      (window.navigator as unknown as { standalone?: boolean }).standalone === true;
-
-    if (isStandalone) return;
-
-    try {
-      const dismissed = localStorage.getItem('modao_pwa_dismissed');
-      if (dismissed !== 'true') {
-        const timer = setTimeout(() => {
-          setIsInstallModalOpen(true);
-        }, 1200);
-        return () => clearTimeout(timer);
-      }
-    } catch {}
-  }, []);
-
   // Combine built-in tracks + user-imported tracks
   const allTracks = useMemo(() => {
     return [...importedTracks, ...TRACKS];

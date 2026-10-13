@@ -14,7 +14,7 @@ import { FullPlayerModal } from './components/player/FullPlayerModal';
 import { CarModeView } from './components/player/CarModeView';
 import { QueueDrawer } from './components/player/QueueDrawer';
 import { OfflineIndicator } from './components/common/OfflineIndicator';
-import { PWAInstallModal } from './components/common/PWAInstallModal';
+import { ContributionBanner, ContributionModal } from './components/common/Contribution';
 import { ToastNotification } from './components/common/ToastNotification';
 
 import { HomeView } from './components/views/HomeView';
@@ -23,12 +23,23 @@ import { AllTracksView } from './components/views/AllTracksView';
 import { StationDetailView } from './components/views/StationDetailView';
 import { ArtistDetailView } from './components/views/ArtistDetailView';
 import { PlaylistDetailView } from './components/views/PlaylistDetailView';
-import { AccessProvider } from './context/AccessContext';
-import { AccessGate } from './components/access/AccessGate';
-import { AccessAccount } from './components/access/AccessAccount';
 
 const MainAppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>({ type: 'home' });
+  const [isContributionOpen, setContributionOpen] = useState(false);
+  useEffect(() => {
+    // Lembra uma vez por sessão, inclusive no aplicativo instalado.
+    try {
+      if (sessionStorage.getItem('modao_contribution_reminded') === 'true') return;
+    } catch {}
+    const timer = window.setTimeout(() => setContributionOpen(true), 1200);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  const closeContribution = () => {
+    setContributionOpen(false);
+    try { sessionStorage.setItem('modao_contribution_reminded', 'true'); } catch {}
+  };
   const {
     togglePlayPause,
     nextTrack,
@@ -52,7 +63,7 @@ const MainAppContent: React.FC = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Ignore if user is currently typing in an input
-      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
+      if (isContributionOpen || ['INPUT', 'TEXTAREA', 'BUTTON', 'A'].includes((e.target as HTMLElement)?.tagName)) {
         return;
       }
 
@@ -72,7 +83,7 @@ const MainAppContent: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [togglePlayPause, nextTrack, previousTrack, closeFullPlayer, isFullPlayerOpen, isQueueOpen, closeQueue, isCarMode, closeCarMode]);
+  }, [togglePlayPause, nextTrack, previousTrack, closeFullPlayer, isFullPlayerOpen, isQueueOpen, closeQueue, isCarMode, closeCarMode, isContributionOpen]);
 
   // Render current view
   const renderView = () => {
@@ -114,13 +125,13 @@ const MainAppContent: React.FC = () => {
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden bg-[#121212]">
           <Header currentView={currentView} onNavigate={setCurrentView} />
+          <ContributionBanner onOpen={() => setContributionOpen(true)} />
 
           <main
             ref={mainScrollRef}
             className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 pb-[calc(10rem+env(safe-area-inset-bottom,0px))] md:pb-12 scroll-smooth"
           >
             <div className="max-w-7xl mx-auto w-full">
-              {currentView.type === 'home' && <AccessAccount />}
               {renderView()}
             </div>
           </main>
@@ -137,7 +148,7 @@ const MainAppContent: React.FC = () => {
       <FullPlayerModal />
       <QueueDrawer />
       <CarModeView />
-      <PWAInstallModal />
+      <ContributionModal open={isContributionOpen} onClose={closeContribution} />
       <ToastNotification />
     </div>
   );
@@ -145,12 +156,8 @@ const MainAppContent: React.FC = () => {
 
 export default function App() {
   return (
-    <AccessProvider>
-      <AccessGate>
-        <AudioPlayerProvider>
-          <MainAppContent />
-        </AudioPlayerProvider>
-      </AccessGate>
-    </AccessProvider>
+    <AudioPlayerProvider>
+      <MainAppContent />
+    </AudioPlayerProvider>
   );
 }

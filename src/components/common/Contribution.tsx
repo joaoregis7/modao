@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Copy, Check, Heart, MessageCircle, X } from 'lucide-react';
 
-const PIX_KEY = '61982441768';
+const PIX_KEY = '61982507459';
 const AMOUNTS = ['19,90', '29,90', '39,90'];
-const RECEIPT_URL = `https://wa.me/5561982447459?text=${encodeURIComponent('Olá! Quero enviar o comprovante da minha contribuição para a Rádio Modão.')}`;
+const RECEIPT_URL = `https://wa.me/5561982507459?text=${encodeURIComponent('Olá! Quero enviar o comprovante da minha contribuição para a Rádio Modão.')}`;
 
 function CopyPixButton({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<'idle' | 'copied' | 'error'>('idle');
@@ -128,7 +128,7 @@ export function ContributionModal({ open, onClose }: { open: boolean; onClose: (
         </div>
         <CopyPixButton />
         <div className="mt-3"><ReceiptLink /></div>
-        <p className="text-center text-xs text-[#A8A8A8] mt-1">Envie pelo WhatsApp: (61) 98244-7459</p>
+        <p className="text-center text-xs text-[#A8A8A8] mt-1">Envie pelo WhatsApp: (61) 98250-7459</p>
         <button type="button" onClick={onClose} className="w-full mt-4 py-2 text-sm text-[#C6BCAE] hover:text-white">Lembrar depois e continuar ouvindo</button>
       </div>
     </div>
